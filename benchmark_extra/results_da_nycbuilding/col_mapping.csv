@@ -1,0 +1,5 @@
+﻿aux_column,task_column
+VIOLATION STATUS,ViolationStatus
+STREET NAME,StreetName
+LATITUDE,Latitude
+LONGITUDE,Longitude
