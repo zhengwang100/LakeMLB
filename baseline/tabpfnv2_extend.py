@@ -18,8 +18,8 @@ from tabpfn.constants import ModelVersion
 from tabpfn_extensions.many_class import ManyClassClassifier
 
 from rllm.types import ColType
-from lakemlb0204.datasets.mstraffic_datasets import MSTrafficDataset
-from lakemlb0204.datasets.ncbuilding_datasets import NCBuildingDataset
+from datasets.mstraffic_datasets import MSTrafficDataset
+from datasets.ncbuilding_datasets import NCBuildingDataset
 from rllm.transforms.table_transforms import DefaultTableTransform
 # from utils import set_global_seed
 

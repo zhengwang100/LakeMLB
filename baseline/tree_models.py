@@ -28,7 +28,7 @@ from catboost import CatBoostClassifier
 import lightgbm as lgb
 
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
-from lakemlb0204.datasets.mstraffic_datasets import MSTrafficDataset
+from datasets.mstraffic_datasets import MSTrafficDataset
 from utils import set_seed, get_device
 
 
