@@ -22,14 +22,14 @@ Modern data lakes and lakehouses often store heterogeneous tables that exhibit w
 ```
 LakeMLB/
 ├── benckmark/              # Benchmark datasets (see below)
-│   ├── join_based/         # Join-based weak-association datasets
-│   │   ├── dsmusic/        #   Discogs–Spotify Music
-│   │   ├── lhstocks/       #   Stocks (L–H split)
-│   │   └── nnstocks/       #   Stocks (N–N split)
-│   └── union_based/        # Union-based weak-association datasets
-│       ├── gacars/         #   German–Australian Used Cars
-│       ├── mstraffic/      #   Maryland–Seattle Traffic
-│       └── ncbuilding/     #   New York–Chicago Building Energy
+│   ├── join_based/         # Join-based datasets
+│   │   ├── dsmusic/
+│   │   ├── lhstocks/
+│   │   └── nnstocks/
+│   └── union_based/        # Union-based datasets
+│       ├── gacars/
+│       ├── mstraffic/
+│       └── ncbuilding/
 ├── benchmark_extra/        # FA / DA augmentation data used in the paper
 │   ├── results_fa_*/       #   Feature Augmentation outputs
 │   └── results_da_*/       #   Data Augmentation outputs
