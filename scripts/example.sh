@@ -42,5 +42,5 @@ CUDA_VISIBLE_DEVICES=0 python transtab_transfer_cl.py
 CUDA_VISIBLE_DEVICES=0 python tabpfnv2.py --device cuda:0
 
 # TabICL
-CUDA_VISIBLE_DEVICES=0 python tabicl_clf.py --device cuda:0
+# CUDA_VISIBLE_DEVICES=0 python tabicl_clf.py --device cuda:0
 

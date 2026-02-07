@@ -82,7 +82,7 @@ All benchmark datasets are located in the **`benckmark/`** directory and are org
     <tr>
       <td rowspan="3"><strong>Join</strong></td>
       <td>NNStocks</td><td>sector-cls</td>
-      <td>NNList</td><td>1,078</td><td>12</td><td>11</td>
+      <td>NNList</td><td>1,078</td><td>11</td><td>11</td>
       <td>NNWiki</td><td>937</td><td>22</td><td>—</td>
     </tr>
     <tr>
@@ -154,6 +154,7 @@ This script sequentially launches each baseline model with default hyperparamete
 
 - The modified source code of third-party libraries (e.g., `transtab`, `carte_ai`, `rllm`) is bundled in the **`lib/`** directory. These modifications ensure unified data loading, fixed train/test splits, and standardized preprocessing across all baselines.
 - CARTE-based methods require the FastText model `cc.en.300.bin`. Download it from [here](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz) and place it at `lib/FastText/cc.en.300.bin`.
+- TabICL-based methods require the model checkpoint `tabicl-classifier-v1.1-0506.ckpt`. Due to its large file size (103 MB), it is not included in this repository. Please download or obtain the checkpoint and place it at `lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt` before running TabICL experiments.
 
 ---
 

@@ -20,5 +20,9 @@ Download it and place it at `../lib/FastText/cc.en.300.bin` before running.
 
 Download: https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz
 
+TabICL methods (`tabicl_clf.py`) require the model checkpoint `tabicl-classifier-v1.1-0506.ckpt`.
+Due to its large file size (103 MB), it is not included in this repository.
+Please obtain the checkpoint and place it at `../lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt` before running.
+
 Detailed grid search ranges and hyperparameter settings are described in the paper appendix.
 
