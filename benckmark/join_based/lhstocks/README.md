@@ -1,37 +1,38 @@
 ## Overview
 
-**London and HongKong Stocks (short for LHStocks)** 是一个面向 Data Lake(House) 场景下弱关联（Join关系）的表格数据集。该数据集聚焦于上市企业场景，包含两张弱关联的表格，分别为任务表（London, HongKong上市公司）和辅助表（wiki百科）。任务表（stocks.csv）包含London, Hongkong的上市公司信息，共计1120条数据；辅助表（wiki.csv）包含对应存在于wiki百科的公司信息，共计937条数据。本数据集的任务为预测上市公司的行业类别（分类任务）。  
+**London and Hong Kong Stocks (LHStocks)** is a tabular dataset designed for weakly related (Join-based) table scenarios in Data Lake(House) settings. The dataset focuses on publicly listed companies and comprises two weakly related tables: a task table (London and Hong Kong listed companies) and an auxiliary table (Wikipedia information). The task table (stocks.csv) contains information on 1,120 companies listed in London and Hong Kong, while the auxiliary table (wiki.csv) contains 937 records of company information available on Wikipedia. The objective of this dataset is to predict the industry sector of listed companies (a classification task).
 
-两张表之间存在弱关联（Join）关系，可以利用辅助表中的信息提升任务表的机器学习效果，以实现更精准的关联分析。
+The two tables exhibit a weak association (Join relationship), where information from the auxiliary table can be leveraged to enhance machine learning performance on the task table, thereby enabling more accurate relational analysis.
 
 ## Data Processing
 
-LHStocks 数据集包含两张弱关联的数据表（任务表与辅助表），数据来源为London, Hongkong的官方名单与维基百科。以下为数据处理步骤的详细说明：
+The LHStocks dataset consists of two weakly related tables (a task table and an auxiliary table), derived from the official listings of London and Hong Kong exchanges and Wikipedia. The detailed data processing steps are described below:
 
-**任务表：** London, HongKong上市公司（stocks.csv）  
-- **数据来源：**
+**Task Table:** London and Hong Kong Listed Companies (stocks.csv)
+- **Data Source:**
 [London Stocks](https://docs.londonstockexchange.com/sites/default/files/reports/Issuer%20list_2.xlsx)
-[HongKong Stocks](https://www3.hkexnews.hk/reports/dirsearch?sc_lang=en)    
-- **数据清洗：**
-将London与HongKong的两张表格合并，并添加Source列标注样本来源London/HongKong, 由于HongKong的Industry分类体系与ICB体系极为相似，故将HongKong的Industry类别映射到ICB体系，保证了合并后标签的一致性。 
-- **数据筛选：**
-根据 ICB Industry 列，提取样本数大于112的类别（因保证类别样本均衡且足够，忽略了样本数为55的Telecommunications类别），每类随机选取112个样本（如有配对的wiki信息则优先从中选取）作为任务表数据。
+[Hong Kong Stocks](https://www3.hkexnews.hk/reports/dirsearch?sc_lang=en)
+- **Data Cleaning:**
+The two tables from London and Hong Kong were merged, with a Source column added to indicate the origin (London/Hong Kong) of each sample. Since the Industry classification system used in Hong Kong is highly similar to the ICB (Industry Classification Benchmark) system, the Hong Kong Industry categories were mapped to the ICB system to ensure label consistency after merging.
+- **Data Filtering:**
+Categories with more than 112 samples were retained based on the ICB Industry column (the Telecommunications category with 55 samples was excluded to ensure class balance and sufficiency). A total of 112 samples were randomly selected from each category (with priority given to samples that have corresponding Wikipedia information) to form the task table.
 
-**辅助表：** wiki百科信息（wiki.csv）  
-- **数据清洗：**
-将对应公司样本的主页infobox信息提取后保留空缺值在95%以内的属性。  
-- **数据筛选：**
-如果有实体匹配的wiki页面相同（例如主公司与子公司）则执行去重操作。
+**Auxiliary Table:** Wikipedia Information (wiki.csv)
+- **Data Cleaning:**
+Infobox information was extracted from the Wikipedia homepage of corresponding companies, retaining only attributes with less than 95% missing values.
+- **Data Filtering:**
+Deduplication was performed when entity-matched Wikipedia pages were identical (e.g., parent companies and subsidiaries).
 
 ## Dataset Composition
 
-- **stocks.csv** :该文件包含1078条上市公司信息，具有 16 个字段，共有 10 个行业类别。 
+- **stocks.csv**: This file contains information on 1,078 listed companies with 16 features, covering 10 industry sector categories.
 
-- **wiki.csv** :该文件包含937条能获取的wiki百科主页infobox信息，清洗后共有21个特征。 
+- **wiki.csv**: This file contains 937 retrievable Wikipedia homepage infobox records, with 21 features after cleaning.
 
-- **map.csv** :该文件包含我们根据实体名采取1NN匹配得到的映射关系，可利用其进行join操作，从而利用wiki.csv提供特征增量，共三列结构为：(T1_index, T2_index, cosine_similarity)。 
+- **map.csv**: This file contains the mapping relationships obtained through 1NN matching based on entity names, which can be used for join operations to leverage feature augmentation from wiki.csv. It has a three-column structure: (T1_index, T2_index, cosine_similarity).
+
 <p>
 
-- **mask.pt** :该文件为任务表stocks.csv的train/val/test 划分，因数据集各类别样本平衡，我们将各类别样本随机以70%/10%/20%的比例划分入train/val/test。mask.pt 文件存储了一个字典，其中包含 train_mask、val_mask 和 test_mask 三个键，每个键对应一个与样本总数(1078)相同长度的布尔张量，分别用于标识样本属于训练集、验证集或测试集。
+- **mask.pt**: This file provides the train/validation/test split for the task table (stocks.csv). Since the dataset is class-balanced, samples within each category are randomly partitioned into train/validation/test sets at a ratio of 70%/10%/20%, respectively. The mask.pt file stores a dictionary containing three keys — train_mask, val_mask, and test_mask — each corresponding to a Boolean tensor of the same length as the total number of samples (1,078), indicating whether each sample belongs to the training, validation, or test set.
 
 ## References

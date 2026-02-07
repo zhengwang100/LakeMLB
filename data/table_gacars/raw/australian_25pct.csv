@@ -1,0 +1,903 @@
+Brand,Year,Model,Car/Suv,Title,UsedOrNew,Transmission,Engine,DriveType,FuelType,FuelConsumption,Kilometres,ColourExtInt,Location,CylindersinEngine,BodyType,Doors,Seats,Price
+Kia,2014,Optima,Sedan,2014 Kia Optima SLI,USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.9 L / 100 km,160000,Black / -,"Clontarf, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2016,Colorado,Ute / Tray,2016 Holden Colorado LS (4X2),USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,8.9 L / 100 km,207250,White / -,"Smithfield, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2013,Golf,Hatchback,2013 Volkswagen Golf 90 TSI Comfortline,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,5.4 L / 100 km,169766,Grey / Grey,"Dandenong, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Subaru,2014,Impreza,Hatchback,2014 Subaru Impreza 2.0I (awd),USED,Manual,"4 cyl, 2 L",AWD,Unleaded,7.1 L / 100 km,151835,Blue / Grey,"West Gosford, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mitsubishi,2014,Lancer,Sedan,2014 Mitsubishi Lancer ES Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,147362,Blue / -,"Cardiff, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2010,Commodore,Ute / Tray,2010 Holden Commodore SS,USED,Manual,"8 cyl, 6 L",Rear,Unleaded,14.5 L / 100 km,242000,Green / -,"Smithfield, NSW",8 cyl,Ute / Tray, 2 Doors, 2 Seats,10000-20000 AUD
+Mazda,2015,3,Hatchback,2015 Mazda 3 SP25 GT,USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,6.1 L / 100 km,260385,White / -,"Minto, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Holden,2013,Colorado,Ute / Tray,2013 Holden Colorado LX (4X2),USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,8.9 L / 100 km,195055,White / -,"Toowoomba, QLD",4 cyl,Ute / Tray, 2 Doors, 2 Seats,10000-20000 AUD
+Mitsubishi,2015,Lancer,Sedan,2015 Mitsubishi Lancer LS,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,134175,Red / Black,"Mayfield West, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Kia,2014,Sportage,SUV,2014 Kia Sportage SI (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.8 L / 100 km,137044,Grey / -,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Subaru,2014,Impreza,Hatchback,2014 Subaru Impreza 2.0I-S (awd),USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,6.8 L / 100 km,130641,Silver / Black,"Hamilton North, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mazda,2016,3,Sedan,2016 Mazda 3 NEO,USED,Manual,"4 cyl, 2 L",Front,Unleaded,5.8 L / 100 km,78201,Grey / -,"Woodridge, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2015,Golf,Hatchback,2015 Volkswagen Golf 110 TDI Highline,USED,Automatic,"4 cyl, 2 L",Front,Diesel,4.9 L / 100 km,167500,Black / -,"St Albans, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Audi,2016,Q3,SUV,2016 Audi Q3 1.4 Tfsi (110KW),USED,Automatic,"4 cyl, 1.4 L",Front,Premium,5.9 L / 100 km,115482,Red / -,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Kia,2013,Cerato,Sedan,2013 Kia Cerato S,USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.8 L / 100 km,152513,White / Black,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Jeep,2014,Grand,SUV,2014 Jeep Grand Cherokee Blackhawk,USED,Automatic,"6 cyl, 3.6 L",4WD,Premium,10.4 L / 100 km,290932,Grey / -,"Slacks Creek, QLD",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Subaru,2013,Forester,SUV,2013 Subaru Forester 2.0I,USED,Manual,"4 cyl, 2 L",AWD,Unleaded,7.2 L / 100 km,122077,Red / -,"Sylvania, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2016,3,Sedan,2016 Mazda 3 SP25,USED,Manual,"4 cyl, 2.5 L",Front,Unleaded,6.5 L / 100 km,70553,Black / Cloth,"Belconnen, ACT",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2012,3,Hatchback,2012 Mazda 3 NEO,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.2 L / 100 km,67639,Red / Grey,"Castle Hill, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mazda,2010,CX-7,SUV,2010 Mazda CX-7 Luxury Sports (4X4),USED,Automatic,"4 cyl, 2.3 L",AWD,Unleaded,11.5 L / 100 km,110702,Silver / Grey,"Mayfield West, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2014,Barina,Hatchback,2014 Holden Barina Spark CD,USED,Manual,"4 cyl, 1.2 L",Front,Unleaded,5.2 L / 100 km,142142,Red / Black,"Ringwood, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mazda,2013,CX-5,SUV,2013 Mazda CX-5 Grand Tourer (4X4),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,149666,Silver / -,"Liverpool, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Subaru,2012,XV,SUV,2012 Subaru XV 2.0I,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,7.1 L / 100 km,173365,Grey / Black,"Mayfield West, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2009,BT-50,Ute / Tray,2009 Mazda BT-50 B3000 Freestyle DX+,USED,Manual,"4 cyl, 3 L",Rear,Diesel,8.3 L / 100 km,257000,White / -,"Archerfield, QLD",4 cyl,Ute / Tray, 2 Doors, 4 Seats,10000-20000 AUD
+Kia,2014,Sportage,SUV,2014 Kia Sportage SI Premium (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.8 L / 100 km,104878,Grey / -,"Morningside, QLD",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2011,Golf,Wagon,2011 Volkswagen Golf 90 TSI Trendline,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,6.2 L / 100 km,159000,White / -,"Moorabbin, VIC",4 cyl,Wagon, 4 Doors, 5 Seats,10000-20000 AUD
+Hyundai,2015,IX35,SUV,2015 Hyundai IX35 SE (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.4 L / 100 km,117578,White / -,"Cardiff, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2008,X-Trail,SUV,2008 Nissan X-Trail ST (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,9.3 L / 100 km,184398,Silver / Grey,"Croydon, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2013,Cruze,Sedan,2013 Holden Cruze CD Equipe,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,124292,White / Black,"West Footscray, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,2013,Territory,SUV,2013 Ford Territory TS (rwd),USED,Automatic,"6 cyl, 2.7 L",Rear,Diesel,8.2 L / 100 km,157045,Red / Black,"Minchinbury, NSW",6 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Volkswagen,2015,Golf,SUV,2015 Volkswagen Golf Alltrack 132 TSI,USED,Automatic,"4 cyl, 1.8 L",AWD,Premium,6.7 L / 100 km,189451,White / Black,"Hobart, TAS",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+MG,2022,MG3,Hatchback,2022 MG MG3 Auto Core,USED,Automatic,"4 cyl, 1.5 L",Front,Premium,6.7 L / 100 km,10552,White / -,"Minchinbury, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Nissan,2010,Navara,Ute / Tray,2010 Nissan Navara ST (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.8 L / 100 km,315001,Red / -,"Belmont, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2013,Commodore,Sedan,2013 Holden Commodore SV6,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,9.5 L / 100 km,229933,White / Black,"Granville, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2008,Navara,Ute / Tray,2008 Nissan Navara ST-X (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.8 L / 100 km,198000,Grey / -,"Moorabbin, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2016,Polo,Hatchback,2016 Volkswagen Polo 66 TSI Trendline,USED,Automatic,"4 cyl, 1.2 L",Front,Premium,4.8 L / 100 km,83470,Grey / -,"Alexandria, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Honda,2012,Accord,Sedan,2012 Honda Accord Euro Luxury Navi,USED,Automatic,"4 cyl, 2.4 L",Front,Premium,8.5 L / 100 km,92597,Silver / Black,"Helensvale, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Hyundai,2014,I30,Hatchback,2014 Hyundai I30 Active,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.1 L / 100 km,60329,White / Black,"Brooklyn, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Hyundai,2013,IX35,SUV,2013 Hyundai IX35 SE (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.5 L / 100 km,224493,Grey / -,"Labrador, QLD",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,1990,Maverick,SUV,1990 Ford Maverick XL (4X4),USED,Manual,"6 cyl, 4.2 L",4WD,Diesel,0 L / 100 km,382463,Silver / -,"Coopers Plains, QLD",6 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Nissan,2014,X-Trail,SUV,2014 Nissan X-Trail ST (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,8.3 L / 100 km,203806,Silver / Cloth,"Elderslie, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Toyota,2015,Corolla,Hatchback,2015 Toyota Corolla Ascent Sport,USED,Manual,"4 cyl, 1.8 L",Front,Unleaded,7.1 L / 100 km,97000,White / Cloth,"Blacktown, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2009,Tiguan,SUV,2009 Volkswagen Tiguan 125 TSI,USED,Automatic,"4 cyl, 2 L",4WD,Premium,9.2 L / 100 km,123040,Silver / Black,"Mordialloc, VIC",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Toyota,2012,Prius,USED Dealer ad,2012 Toyota Prius G,USED,Automatic,-,Other,-,-,137187,Blue / Black,"Braeside, VIC",-,,,,10000-20000 AUD
+Audi,2013,A1,Hatchback,2013 Audi A1 Sportback 1.4 Tfsi S Line Comp,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,5.3 L / 100 km,160861,White / Black,"Minchinbury, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+LDV,2015,V80,Commercial,2015 LDV V80 LWB High,USED,Manual,"4 cyl, 2.5 L",Front,Diesel,8.9 L / 100 km,307894,White / Black,"Minchinbury, NSW",4 cyl,Commercial, 4 Doors, 3 Seats,10000-20000 AUD
+Mazda,2007,BT-50,Ute / Tray,2007 Mazda BT-50 B2500 DX,USED,Manual,"4 cyl, 2.5 L",Rear,Diesel,8.3 L / 100 km,90855,White / -,"Garbutt, QLD",4 cyl,Ute / Tray, 2 Doors, 3 Seats,10000-20000 AUD
+Jeep,2012,Grand,SUV,2012 Jeep Grand Cherokee Overland (4X4),USED,Automatic,"6 cyl, 3.6 L",AWD,Premium,11 L / 100 km,140521,Grey / Black,"Dudley Park, WA",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2015,X-Trail,SUV,2015 Nissan X-Trail TS (fwd),USED,Automatic,"4 cyl, 1.6 L",Front,Diesel,5.3 L / 100 km,156574,Silver / -,"Coffs Harbour, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2015,Captiva,Taree City Car Sales,2015 Holden Captiva CG 7 LTZ Wagon 7st 5dr Spts Auto 6sp 4x4 3.0i MY15,USED,Automatic,-,Other,-,-,96853,White / -,"Taree, NSW",-,Wagon,,,10000-20000 AUD
+Toyota,2012,Hilux,Ute / Tray,2012 Toyota Hilux SR,USED,Manual,"4 cyl, 3 L",Rear,Diesel,8.1 L / 100 km,323542,White / Grey,"Blacktown, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,2013,Fiesta,Hatchback,2013 Ford Fiesta LX,USED,Manual,"4 cyl, 1.6 L",Front,Unleaded,6.1 L / 100 km,123373,Blue / -,"Osborne Park, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Honda,2008,Civic,Hatchback,2008 Honda Civic Type R,USED,Manual,"4 cyl, 2 L",Front,Premium,9.3 L / 100 km,165450,Silver / -,"Minchinbury, NSW",4 cyl,Hatchback, 3 Doors, 4 Seats,10000-20000 AUD
+Hyundai,2012,I20,Hatchback,2012 Hyundai I20 Active,USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,6.4 L / 100 km,125446,White / -,"Lidcombe, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Nissan,2014,Juke,SUV,2014 Nissan Juke ST (fwd),USED,Manual,"4 cyl, 1.6 L",Front,Premium,6 L / 100 km,61783,Grey / -,"Campbelltown, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Honda,2015,Jazz,Hatchback,2015 Honda Jazz VTI,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,5.8 L / 100 km,201156,Yellow / -,"Oak Flats, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Ford,2010,Falcon,Sedan,2010 Ford Falcon G6E 50TH Anniversary,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,9.9 L / 100 km,117800,Black / Black,"New Lambton, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2011,Navara,Ute / Tray,2011 Nissan Navara ST-R (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.2 L / 100 km,211820,White / -,"Blair Athol, SA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,2014,Ranger,Melbourne Quality Cars,2014 Ford Ranger XL,USED,Automatic,-,Other,Diesel,-,300903,White / -,"Moorabbin, VIC",-,Ute / Tray,,,10000-20000 AUD
+Mitsubishi,2013,Outlander,SUV,2013 Mitsubishi Outlander ES (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.6 L / 100 km,141211,Blue / Black,"Granville, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+MG,2021,MG3,Hatchback,2021 MG MG3 Auto Core,USED,Automatic,"4 cyl, 1.5 L",Front,Premium,6.7 L / 100 km,26480,White / -,"Sandgate, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Holden,2018,Captiva,SUV,2018 Holden Captiva 7 LTZ (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,8.1 L / 100 km,114737,White / Black,"Nunawading, VIC",4 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Nissan,2014,Navara,Ute / Tray,2014 Nissan Navara ST (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.8 L / 100 km,217934,Black / -,"Rocklea, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2014,BT-50,Ute / Tray,2014 Mazda BT-50 XT (4X2),USED,Manual,"4 cyl, 2.2 L",Rear,Diesel,7.6 L / 100 km,150495,Blue / Cloth,"Ipswich, QLD",4 cyl,Ute / Tray, 2 Doors, 3 Seats,10000-20000 AUD
+BMW,2008,X5,SUV,2008 BMW X5 3.0SD,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,8.8 L / 100 km,147538,Black / Black,"Minchinbury, NSW",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2016,CX-5,SUV,2016 Mazda CX-5 Maxx (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.4 L / 100 km,109390,Grey / Black,"Boolaroo, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,2016,Focus,Hatchback,2016 Ford Focus Titanium,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,6.4 L / 100 km,167037,White / -,"Penrith, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Toyota,2017,Corolla,Autoproject,2017 Toyota Corolla Wagon,USED,Automatic,-,Other,-,-,147801,Silver / Black,"Braeside, VIC",-,Wagon,,,10000-20000 AUD
+Hyundai,2019,I30,Hatchback,2019 Hyundai I30 Active,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,50745,White / -,"Tweed Heads South, NSW",4 cyl,Hatchback, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2014,Juke,SUV,2014 Nissan Juke ST (fwd),USED,Automatic,"4 cyl, 1.6 L",Front,Premium,6.3 L / 100 km,116603,Red / Black Cloth,"Pennant Hills, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2018,BT-50,Ute / Tray,2018 Mazda BT-50 XT (4X2),USED,Manual,"4 cyl, 2.2 L",Rear,Diesel,8 L / 100 km,163565,White / Black,"Penrith, NSW",4 cyl,Ute / Tray, 2 Doors, 3 Seats,10000-20000 AUD
+Honda,2009,Accord,USED Dealer ad,2009 Honda Accord 8th Gen Luxury Sedan 4dr Auto 5sp 2.4i,USED,Automatic,-,Other,-,-,159159,White / -,"Bass Hill, NSW",-,,,,10000-20000 AUD
+Toyota,2010,Hilux,Ute / Tray,2010 Toyota Hilux SR,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,12.1 L / 100 km,252569,White / Grey,"Granville, NSW",6 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Toyota,2009,Estima,Sydney City Traders,2009 Toyota Estima Aeras,USED,Automatic,-,Other,-,-,112418,Silver / Black,"Five Dock, NSW",-,Wagon,,,10000-20000 AUD
+Kia,2013,Sorento,SUV,2013 Kia Sorento SLI (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,7.3 L / 100 km,195013,White / Black,"Minchinbury, NSW",4 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+BMW,2007,X5,SUV,2007 BMW X5 3.0SI,USED,Automatic,"6 cyl, 3 L",4WD,Premium,11.7 L / 100 km,207192,Silver / -,"Campbelltown, NSW",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Toyota,2008,Kluger,SUV,2008 Toyota Kluger KX-S (4X4),USED,Automatic,"6 cyl, 3.5 L",4WD,Unleaded,11 L / 100 km,279105,Black / -,"Braybrook, VIC",6 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+BMW,2011,X1,SUV,2011 BMW X1 Sdrive 20D,USED,Automatic,"4 cyl, 2 L",Rear,Diesel,5.9 L / 100 km,78907,Silver / Black,"Auburn, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Lexus,2011,IS250,Sedan,2011 Lexus IS250 F Sport,USED,Automatic,"6 cyl, 2.5 L",Rear,Premium,9.1 L / 100 km,150679,Grey / Black,"Sutherland, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+BMW,2008,X5,SUV,2008 BMW X5 3.0D,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,8.7 L / 100 km,213322,Grey / -,"Campbellfield, VIC",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Holden,2014,Commodore,Sedan,2014 Holden Commodore SV6,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,9.5 L / 100 km,207234,Black / -,"Minchinbury, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Lexus,2006,RX350,SUV,2006 Lexus RX350 Sports Luxury,USED,Automatic,"6 cyl, 3.5 L",4WD,Unleaded,17.2 L / 100 km,199571,White / -,"Auburn, NSW",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Mitsubishi,2013,Lancer,Sedan,2013 Mitsubishi Lancer LX,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,165306,Grey / Black,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Suzuki,2014,Swift,Hatchback,2014 Suzuki Swift GL,USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,6.2 L / 100 km,226000,White / -,"Archerfield, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Holden,2014,Barina,Hatchback,2014 Holden Barina CD,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,6.6 L / 100 km,119252,Grey / Grey,"West Footscray, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Nissan,2012,Navara,Ute / Tray,2012 Nissan Navara RX (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Diesel,10.5 L / 100 km,288216,White / -,"Minto, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Suzuki,2015,Celerio,Hatchback,2015 Suzuki Celerio,USED,Automatic,"3 cyl, 1 L",Front,Unleaded,4.8 L / 100 km,23316,Blue / -,"Blacktown, NSW",3 cyl,Hatchback, 5 Doors, 4 Seats,10000-20000 AUD
+Nissan,2003,Patrol,SUV,2003 Nissan Patrol ST (4X4),USED,Manual,"4 cyl, 3 L",4WD,Diesel,0 L / 100 km,332861,Gold / Grey,"Minchinbury, NSW",4 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Nissan,2014,Navara,Ute / Tray,2014 Nissan Navara ST (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.8 L / 100 km,172899,White / Black,"Wangara, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Mitsubishi,2010,Lancer,Hatchback,2010 Mitsubishi Lancer ES Sportback,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.3 L / 100 km,107135,Black / -,"Minchinbury, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Nissan,2016,Navara,Ute / Tray,2016 Nissan Navara RX (4X4),USED,Manual,"4 cyl, 2.3 L",4WD,Diesel,6.6 L / 100 km,223020,Silver / -,"Five Dock, NSW",4 cyl,Ute / Tray, 2 Doors, 2 Seats,10000-20000 AUD
+Ford,2011,Territory,SUV,2011 Ford Territory TS (rwd),USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,12.8 L / 100 km,107752,Silver / Black,"Leichhardt, NSW",6 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Mazda,2012,BT-50,Ute / Tray,2012 Mazda BT-50 XTR (4X2),USED,Manual,"5 cyl, 3.2 L",Rear,Diesel,8.4 L / 100 km,180950,White / -,"Smithfield, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Mitsubishi,2011,Triton,Ute / Tray,2011 Mitsubishi Triton GLX (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,9.1 L / 100 km,225536,White / -,"Camden, NSW",4 cyl,Ute / Tray, 2 Doors, 3 Seats,10000-20000 AUD
+Mitsubishi,2014,Mirage,Hatchback,2014 Mitsubishi Mirage LS,USED,Automatic,"3 cyl, 1.2 L",Front,Unleaded,4.9 L / 100 km,38416,Red / Grey,"Lansvale, NSW",3 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Holden,2014,Cruze,Sedan,2014 Holden Cruze Z-Series,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,65108,Grey / -,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2014,Qashqai,SUV,2014 Nissan Qashqai TI (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.9 L / 100 km,123413,Black / -,"East Maitland, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Ford,2011,Falcon,Sedan,2011 Ford Falcon XR6 Limited Edition,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,9.9 L / 100 km,303453,White / -,"Osborne Park, WA",6 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Hyundai,2013,I30,Hatchback,2013 Hyundai I30 Active,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,6.9 L / 100 km,91365,Grey / -,"South Tamworth, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mitsubishi,2012,Triton,Ute / Tray,2012 Mitsubishi Triton GL-R (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Diesel,9.9 L / 100 km,213925,Silver / -,"Slacks Creek, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2013,Pulsar,Sedan,2013 Nissan Pulsar TI,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,6.7 L / 100 km,144459,White / Black,"Brown Hill, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Mazda,2012,CX-9,SUV,2012 Mazda CX-9 Luxury (fwd),USED,Automatic,"6 cyl, 3.7 L",Front,Unleaded,11 L / 100 km,163355,White / Black,"Minchinbury, NSW",6 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Ford,2008,Territory,SUV,2008 Ford Territory Ghia (4X4),USED,Automatic,"6 cyl, 4 L",AWD,Unleaded,12.2 L / 100 km,178187,Red / -,"Loganholme, QLD",6 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Suzuki,2016,Swift,Hatchback,2016 Suzuki Swift GL,USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,6.2 L / 100 km,134605,White / Black,"Minchinbury, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Toyota,2012,Corolla,Sedan,2012 Toyota Corolla Ascent,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,112241,Silver / -,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2013,Dualis,SUV,2013 Nissan Dualis +2 TI-L (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.5 L / 100 km,153055,White / Black,"Eagle Farm, QLD",4 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Ford,2017,Mondeo,Wagon,2017 Ford Mondeo Ambiente Tdci,USED,Automatic,"4 cyl, 2 L",Front,Diesel,5.3 L / 100 km,145449,Silver / Black,"Hendra, QLD",4 cyl,Wagon, 4 Doors, 5 Seats,10000-20000 AUD
+Volkswagen,2016,Tiguan,SUV,2016 Volkswagen Tiguan 132 TSI (4X4),USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.8 L / 100 km,80771,Beige / -,"Cardiff, NSW",4 cyl,SUV, 4 Doors, 5 Seats,10000-20000 AUD
+Toyota,2004,Landcruiser,SUV,2004 Toyota Landcruiser GXL (4X4),USED,Automatic,"8 cyl, 4.7 L",4WD,Unleaded,0 L / 100 km,417079,Silver / -,"Cardiff, NSW",8 cyl,SUV, 4 Doors, 8 Seats,10000-20000 AUD
+Holden,2013,Barina,Sedan,2013 Holden Barina CDX,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,6.3 L / 100 km,80423,Silver / Leather,"Epping, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,10000-20000 AUD
+Nissan,2014,X-Trail,SUV,2014 Nissan X-Trail ST-L 7 Seat (fwd),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,164973,White / Grey,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 7 Seats,10000-20000 AUD
+Volkswagen,2015,Polo,Hatchback,2015 Volkswagen Polo 81 TSI Comfortline,USED,Manual,"4 cyl, 1.2 L",Front,Premium,4.9 L / 100 km,84475,Black / -,"Five Dock, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,10000-20000 AUD
+Mazda,2015,BT-50,Ute / Tray,2015 Mazda BT-50 XTR (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,220852,Blue / -,"Mcgraths Hill, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Suzuki,2017,Vitara,SUV,2017 Suzuki Vitara S Turbo (fwd),USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,5.9 L / 100 km,139961,Grey / -,"Campbelltown, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2018,Camry,Sedan,2018 Toyota Camry Ascent,USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.8 L / 100 km,81518,Silver / Black,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2020,Eclipse,SUV,2020 Mitsubishi Eclipse Cross ES (2WD),USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,7.3 L / 100 km,54001,Grey / -,"Victoria Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2018,Corolla,Hatchback,2018 Toyota Corolla Ascent Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,15000,Silver / -,"Bowral, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Subaru,2019,Forester,SUV,2019 Subaru Forester 2.5I-L (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,123557,Blue / -,"Liverpool, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2017,2,Hatchback,2017 Mazda 2 Genki,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,4.9 L / 100 km,47602,Silver / Cloth,"Phillip, ACT",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2016,Corolla,Hatchback,2016 Toyota Corolla Ascent,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,6.1 L / 100 km,68022,White / -,"Liverpool, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Nissan,2021,X-Trail,Freedom Motors,2021 Nissan X-Trail ST,USED,Automatic,-,Other,Unleaded,-,82482,Blue / -,"Parap, NT",-,Wagon,,,20000-30000 AUD
+Mitsubishi,2017,Outlander,SUV,2017 Mitsubishi Outlander ES 7 Seat (2WD),USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,6.8 L / 100 km,108933,White / -,"West End, QLD",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Ford,2018,Ranger,Ute / Tray,2018 Ford Ranger XL 2.2 HI-Rider (4X2) (5 YR),USED,Automatic,"4 cyl, 2.2 L",Rear,Diesel,7.8 L / 100 km,67577,White / Black,"Maddington, WA",4 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Holden,2009,Commodore,Ute / Tray,2009 Holden Commodore SS-V,USED,Manual,"8 cyl, 6 L",Rear,Unleaded,14.5 L / 100 km,164041,Blue / Black,"Camdale, TAS",8 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Volkswagen,2019,Polo,Hatchback,2019 Volkswagen Polo 85 TSI Comfortline,USED,Automatic,"3 cyl, 1 L",Front,Premium,4.9 L / 100 km,28550,Grey / Black,"Artarmon, NSW",3 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2012,Estima,Sydney City Traders,2012 Toyota Estima Hybrid,USED,Automatic,-,Other,-,-,106989,Blue / Black,"Five Dock, NSW",-,Commercial,,,20000-30000 AUD
+Toyota,2020,Camry,USED Dealer ad,2020 Toyota Camry Ascent,USED,Automatic,-,Other,Unleaded,-,60190,White / 2Vfa20,"Coffs Harbour, NSW",-,,,,20000-30000 AUD
+Nissan,2013,Pathfinder,SUV,2013 Nissan Pathfinder TI (4X2),USED,Automatic,"6 cyl, 3.5 L",Front,Premium,9.9 L / 100 km,121963,White / -,"Newtown, VIC",6 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Toyota,2011,FJ,SUV,2011 Toyota FJ Cruiser,USED,Automatic,"6 cyl, 4 L",4WD,Premium,11.4 L / 100 km,242034,White / Black,"Cannington, WA",6 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2019,I30,Hatchback,2019 Hyundai I30 Active,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,56964,Blue / Black,"Gawler South, SA",4 cyl,Hatchback, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2021,Corolla,Hatchback,2021 Toyota Corolla Ascent Sport + TR KIT,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,51897,White / 44Fa20,"Albion Park, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Subaru,2016,XV,SUV,2016 Subaru XV 2.0I,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,7.1 L / 100 km,24499,White / -,"Osborne Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2016,Sorento,SUV,2016 Kia Sorento Platinum (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,7.8 L / 100 km,109900,White / Black,"Hume, ACT",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+MG,2021,HS,SUV,2021 MG HS Core,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,7.3 L / 100 km,25642,White / -,"Browns Plains, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Holden,2012,Colorado,Ute / Tray,2012 Holden Colorado LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9.1 L / 100 km,131412,Black / Grey Cloth,"Burwood, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2015,Yaris,Hatchback,2015 Toyota Yaris SX,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,6.3 L / 100 km,14198,Red / Cloth,"Mulgrave, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Nissan,2020,X-Trail,SUV,2020 Nissan X-Trail ST 7 Seat (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,8.1 L / 100 km,56900,Grey / -,"Hallam, VIC",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Suzuki,2016,Grand,SUV,2016 Suzuki Grand Vitara Navigator (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Unleaded,9.6 L / 100 km,31393,White / -,"Auburn, NSW",4 cyl,SUV, 2 Doors, 4 Seats,20000-30000 AUD
+Volkswagen,2016,Transporter,Commercial,2016 Volkswagen Transporter TDI 340 SWB LOW,USED,Manual,"4 cyl, 2 L",Front,Diesel,7.7 L / 100 km,162928,White / -,"Cardiff, NSW",4 cyl,Commercial, 2 Doors, 2 Seats,20000-30000 AUD
+Hyundai,2014,Santa,SUV,2014 Hyundai Santa FE Highlander Crdi (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,7.3 L / 100 km,158593,White / Black,"Cabramatta, NSW",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Isuzu,2017,D-MAX,Ute / Tray,2017 Isuzu D-MAX SX HI-Ride (4X2),USED,Automatic,"4 cyl, 3 L",Rear,Diesel,7.5 L / 100 km,165473,White / -,"Cannington, WA",4 cyl,Ute / Tray, 2 Doors, 4 Seats,20000-30000 AUD
+Holden,2016,Calais,Wagon,2016 Holden Calais V,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,9.8 L / 100 km,129408,Blue / Beige Cloth,"Phillip, ACT",6 cyl,Wagon, 4 Doors, 5 Seats,20000-30000 AUD
+Ford,2017,Escape,SUV,2017 Ford Escape Trend (fwd),USED,Automatic,"4 cyl, 1.5 L",Front,Premium,7.2 L / 100 km,59133,Silver / -,"Kedron, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2018,3,Sedan,2018 Mazda 3 NEO Sport (5YR),USED,Manual,"4 cyl, 2 L",Front,Unleaded,5.8 L / 100 km,26001,Red / Black,"Ryde, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2016,CX-5,SUV,2016 Mazda CX-5 Maxx Sport (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.4 L / 100 km,80638,White / -,"East Maitland, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2020,Tucson,SUV,2020 Hyundai Tucson Active X (2WD) Black INT,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,48100,Grey / -,"Rockingham, WA",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2018,Cerato,Sedan,2018 Kia Cerato S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,30527,Black / Cloth,"Campbelltown, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Mini,2012,Countryman,SUV,2012 Mini Countryman Cooper S Chilli,USED,Automatic,"4 cyl, 1.6 L",Front,Premium,7.5 L / 100 km,93317,Red / Black,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 4 Seats,20000-30000 AUD
+Kia,2021,Sportage,SUV,2021 Kia Sportage S (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,69586,White / Black,"Rockingham, WA",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2016,2,Hatchback,2016 Mazda 2 Genki,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,4.9 L / 100 km,29220,Grey / Black,"Epping, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2019,Tucson,SUV,2019 Hyundai Tucson GO (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,49864,White / Black,"Southport, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2020,3,Sedan,2020 Mazda 3 G20 Pure,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.1 L / 100 km,18012,Red / -,"Toowoomba, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2014,I30,Hatchback,2014 Hyundai I30 Trophy,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.1 L / 100 km,28771,Blue / Black,"Brighton, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Audi,2015,Q3,SUV,2015 Audi Q3 2.0 TDI Quattro (110KW),USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.2 L / 100 km,132000,Grey / Black,"Sumner, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Nissan,2016,Navara,Ute / Tray,2016 Nissan Navara RX (4X2),USED,Manual,"4 cyl, 2.3 L",Rear,Diesel,6.6 L / 100 km,101628,Silver / Grey,"East Maitland, NSW",4 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Subaru,2017,XV,SUV,2017 Subaru XV 2.0I-L,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,7 L / 100 km,73901,Orange / -,"Port Macquarie, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2017,ASX,SUV,2017 Mitsubishi ASX LS (2WD),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,99995,Silver / Leather,"Phillip, ACT",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2015,Triton,Ute / Tray,2015 Mitsubishi Triton GLX (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Diesel,8.1 L / 100 km,174677,White / -,"Minchinbury, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Holden,2018,Colorado,Ute / Tray,2018 Holden Colorado LS (4X2),USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,8.8 L / 100 km,161456,White / Grey,"Moorebank, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2018,I30,Hatchback,2018 Hyundai I30 Active,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,62719,Silver / Black,"Homebush, NSW",4 cyl,Hatchback, 4 Doors, 5 Seats,20000-30000 AUD
+MG,2021,HS,SUV,2021 MG HS Core,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,7.3 L / 100 km,26138,White / Black,"Elsternwick, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2019,Cerato,Hatchback,2019 Kia Cerato Sport NAV,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,108541,White / -,"Warwick Farm, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Nissan,2015,X-Trail,SUV,2015 Nissan X-Trail ST-L 7 Seat (fwd),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,94239,White / -,"Minchinbury, NSW",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Toyota,2019,C-HR,SUV,2019 Toyota C-HR Koba (2WD),USED,Automatic,"4 cyl, 1.2 L",Front,Premium,5.5 L / 100 km,124167,Silver / Black,"Phillip, ACT",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2019,Cerato,Hatchback,2019 Kia Cerato S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,48543,White / -,"Alexandria, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2014,Hilux,Ute / Tray,2014 Toyota Hilux Workmate,USED,Manual,"4 cyl, 3 L",Rear,Diesel,8.1 L / 100 km,165549,White / -,"Coffs Harbour, NSW",4 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Mazda,2020,2,Hatchback,2020 Mazda 2 G15 Pure,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,5.2 L / 100 km,43550,White / -,"Noosaville, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2012,Landcruiser,SUV,2012 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8.5 L / 100 km,299603,White / -,"Labrador, QLD",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Mazda,2012,BT-50,Ute / Tray,2012 Mazda BT-50 XTR (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,200872,Silver / Black,"East Maitland, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2019,Sportage,SUV,2019 Kia Sportage SI Premium (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,69559,White / -,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Jeep,2016,Grand,SUV,2016 Jeep Grand Cherokee Limited (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.5 L / 100 km,124359,White / Grey Leather,"East Bunbury, WA",6 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+BMW,2015,225I,Hatchback,2015 BMW 225I Active Tourer Luxury Line,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.1 L / 100 km,46232,Blue / Black,"Five Dock, NSW",4 cyl,Hatchback, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2017,BT-50,Ute / Tray,2017 Mazda BT-50 XT (4X2),USED,Manual,"4 cyl, 2.2 L",Rear,Diesel,7.6 L / 100 km,48872,White / -,"Acacia Ridge, QLD",4 cyl,Ute / Tray, 2 Doors, 3 Seats,20000-30000 AUD
+Toyota,2018,Corolla,Hatchback,2018 Toyota Corolla Ascent Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,53421,White / Grey,"Cardiff, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Suzuki,2017,Swift,Hatchback,2017 Suzuki Swift GL Navigator,USED,Automatic,"4 cyl, 1.2 L",Front,Unleaded,4.8 L / 100 km,12100,Grey / Grey,"New Lambton, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Holden,2014,Colorado,SUV,2014 Holden Colorado 7 LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9.4 L / 100 km,138550,- / -,"Wangaratta, VIC",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Ford,2012,Falcon,Sedan,2012 Ford Falcon XR6 Limited Edition,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,9.9 L / 100 km,136868,Silver / Slate,"Fawkner, VIC",6 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2019,ASX,SUV,2019 Mitsubishi ASX ES (2WD),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.6 L / 100 km,47694,Grey / -,"Alexandria, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2020,Outlander,SUV,2020 Mitsubishi Outlander ES 7 Seat (2WD),USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.2 L / 100 km,49659,Silver / -,"Bibra Lake, WA",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Holden,2012,Colorado,Ute / Tray,2012 Holden Colorado LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9.1 L / 100 km,140760,White / -,"Mackay, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Mazda,2017,3,Sedan,2017 Mazda 3 SP25,USED,Manual,"4 cyl, 2.5 L",Front,Unleaded,6.5 L / 100 km,59479,Red / Grey,"Revesby, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Holden,2017,Trax,SUV,2017 Holden Trax LT,USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,6.7 L / 100 km,26786,Blue / Black Leather,"Berwick, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2018,Hilux,Ute / Tray,2018 Toyota Hilux Workmate,USED,Automatic,"4 cyl, 2.7 L",Rear,Unleaded,10.9 L / 100 km,81285,White / -,"Hobart, TAS",4 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Kia,2019,Cerato,Sedan,2019 Kia Cerato S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,48170,Grey / -,"Victoria Park, WA",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Nissan,2015,Pathfinder,SUV,2015 Nissan Pathfinder TI (4X2),USED,Automatic,"6 cyl, 3.5 L",Front,Premium,9.9 L / 100 km,130247,Black / -,"Coburg North, VIC",6 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Hyundai,2017,Tucson,Brisbane City Used Cars T/U: Toowong Automotive,2017 Hyundai Tucson Active X 2WD,USED,Automatic,-,Front,Unleaded,-,92113,Silver / -,"Rocklea, QLD",-,Wagon,,,20000-30000 AUD
+Toyota,2017,Corolla,Autonomos Wyndham,2017 Toyota Corolla Fielder,USED,Automatic,-,Other,-,-,102449,Silver / Black,"Truganina, VIC",-,Wagon,,,20000-30000 AUD
+Mitsubishi,2018,Triton,Ute / Tray,2018 Mitsubishi Triton GLX,USED,Automatic,"4 cyl, 2.4 L",Rear,Diesel,7.5 L / 100 km,101090,White / Grey,"Bunbury, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+MG,2022,HS,SUV,2022 MG HS Core,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,7.3 L / 100 km,27878,Black / Black,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2020,Yaris,Hatchback,2020 Toyota Yaris Ascent Sport,USED,Automatic,"3 cyl, 1.5 L",Front,Unleaded,4.9 L / 100 km,18992,Black / -,"Preston, VIC",3 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2020,Kona,SUV,2020 Hyundai Kona Active (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,57059,White / -,"Morningside, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2014,Imax,Wagon,2014 Hyundai Imax,USED,Automatic,"4 cyl, 2.5 L",Rear,Diesel,9 L / 100 km,150302,White / Black,"Minchinbury, NSW",4 cyl,Wagon, 4 Doors, 8 Seats,20000-30000 AUD
+Skoda,2015,Octavia,Hatchback,2015 Skoda Octavia RS 162 TSI,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.6 L / 100 km,133091,Blue / Grey,"Croydon, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Holden,2015,UTE,Ute / Tray,2015 Holden UTE SV6 Lightning,USED,Manual,"6 cyl, 3.6 L",Rear,Unleaded,9.8 L / 100 km,151993,White / -,"Forbes, NSW",6 cyl,Ute / Tray, 2 Doors, 2 Seats,20000-30000 AUD
+Nissan,2019,Qashqai,SUV,2019 Nissan Qashqai ST,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.9 L / 100 km,71517,Blue / Black,"Edgewater, WA",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2005,Landcruiser,SUV,2005 Toyota Landcruiser Prado Grande (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,12.6 L / 100 km,299451,Black / Grey,"Chipping Norton, NSW",4 cyl,SUV, 4 Doors, 8 Seats,20000-30000 AUD
+Peugeot,2020,308,Wagon,2020 Peugeot 308 Allure Touring,USED,Automatic,"3 cyl, 1.2 L",Front,Unleaded,5 L / 100 km,11906,Grey / Black,"Pinkenba, QLD",3 cyl,Wagon, 5 Doors, 5 Seats,20000-30000 AUD
+Kia,2020,Cerato,Sedan,2020 Kia Cerato S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,52385,White / Black,"Hoppers Crossing, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Land,2016,Rover,SUV,2016 Land Rover Range Rover Evoque TD4 150 SE,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.1 L / 100 km,143911,Black / -,"Five Dock, NSW",4 cyl,SUV, 5 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2019,Outlander,SUV,2019 Mitsubishi Outlander ES 7 Seat (awd),USED,Automatic,"4 cyl, 2.4 L",AWD,Unleaded,7.2 L / 100 km,69503,Grey / -,"South Nowra, NSW",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Hyundai,2020,I30,Hatchback,2020 Hyundai I30 Active,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,50245,Grey / Cloth,"Ingle Farm, SA",4 cyl,Hatchback, 4 Doors, 5 Seats,20000-30000 AUD
+Kia,2020,Cerato,Sedan,2020 Kia Cerato S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.4 L / 100 km,54036,White / Black,"Hoppers Crossing, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2017,Corolla,Sedan,2017 Toyota Corolla Ascent,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,6.6 L / 100 km,48051,White / Black Fabric,"Vermont, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2011,Estima,Topcar Rez,2011 Toyota Estima,USED,Automatic,-,Front,Unleaded,-,97000,Silver / -,"Holland Park West, QLD",-,Wagon, 7 Seats,,20000-30000 AUD
+Ford,2019,Focus,Hatchback,2019 Ford Focus Trend,USED,Automatic,"3 cyl, 1.5 L",Front,Unleaded,6.4 L / 100 km,31753,White / -,"Cannington, WA",3 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Kia,2016,Sportage,SUV,2016 Kia Sportage SLI (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,99301,White / Black One Tone,"Yallah, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2018,Sonata,Sedan,2018 Hyundai Sonata Active,USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,8.3 L / 100 km,86028,White / -,"Pendle Hill, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2000,Hilux,Ute / Tray,2000 Toyota Hilux (4X4),USED,Manual,"4 cyl, 3 L",4WD,Diesel,0 L / 100 km,128896,White / -,"Liverpool, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,20000-30000 AUD
+Ford,2019,Escape,SUV,2019 Ford Escape Ambiente (awd),USED,Automatic,"4 cyl, 1.5 L",AWD,Premium,7.5 L / 100 km,100992,White / -,"North Geelong, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Holden,2015,Commodore,Wagon,2015 Holden Commodore SV6,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,9.8 L / 100 km,142084,White / Grey,"Strathalbyn, SA",6 cyl,Wagon, 4 Doors, 5 Seats,20000-30000 AUD
+Renault,2018,Koleos,SUV,2018 Renault Koleos Intens (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,6.1 L / 100 km,42859,Black / Black,"Hume, ACT",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Toyota,2017,Corolla,"02 **** ****
+",2017 Toyota Corolla Axio Hybrid,USED,-,-,Other,-,-,91667,White / -,"Greenacre, NSW",-,,,,20000-30000 AUD
+Jeep,2013,Grand,SUV,2013 Jeep Grand Cherokee Laredo (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Premium,10.4 L / 100 km,137413,Grey / Grey,"Woodridge, QLD",6 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Honda,2016,CR-V,SUV,2016 Honda CR-V VTI (4X2),USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.8 L / 100 km,76082,Grey / -,"Cairns, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Hyundai,2020,Kona,SUV,2020 Hyundai Kona Active (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,58425,White / Black,"Tweed Heads South, NSW",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Suzuki,2019,Swift,Hatchback,2019 Suzuki Swift GL Navigator,USED,Automatic,"4 cyl, 1.2 L",Front,Unleaded,4.8 L / 100 km,63825,Blue / Black,"Ferntree Gully, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Kia,2018,Cerato,Hatchback,2018 Kia Cerato Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.3 L / 100 km,33681,Grey / Black,"Albion, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2018,Corolla,Hatchback,2018 Toyota Corolla Ascent Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,56202,White / Black,"Moorebank, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Toyota,2021,Corolla,Hatchback,2021 Toyota Corolla Ascent Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,37637,White / Black,"Homebush, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2011,Pajero,SUV,2011 Mitsubishi Pajero RX (4X4),USED,Automatic,"4 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,227714,White / -,"Nailsworth, SA",4 cyl,SUV, 4 Doors, 7 Seats,20000-30000 AUD
+Suzuki,2017,Vitara,SUV,2017 Suzuki Vitara GL+,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,6 L / 100 km,96992,Red / Black  Cloth,"Caboolture, QLD",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Suzuki,2016,Vitara,SUV,2016 Suzuki Vitara S Turbo (fwd),USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,5.9 L / 100 km,132707,White / -,"Bundoora, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Nissan,2018,Qashqai,SUV,2018 Nissan Qashqai N-TEC,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.9 L / 100 km,59800,Grey / Leather,"Berwick, VIC",4 cyl,SUV, 4 Doors, 5 Seats,20000-30000 AUD
+Mitsubishi,2010,Delica,First In Vehicles,2010 Mitsubishi Delica,USED,Automatic,-,Other,Unleaded,-,145776,Silver / Black,"Allenstown, QLD",-,Commercial,,,20000-30000 AUD
+Land,2015,Rover,SUV,2015 Land Rover Discovery Sport SD4 HSE,USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6.1 L / 100 km,107400,Grey / Black,"Kedron, QLD",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2016,Golf,Hatchback,2016 Volkswagen Golf R,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.1 L / 100 km,61731,Blue / Black/Leather,"Bibra Lake, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Toyota,2023,Corolla,Hatchback,2023 Toyota Corolla Ascent Sport + Convenience PK,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,35,White / -,"Raymond Terrace, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Mazda,2017,CX-5,SUV,2017 Mazda CX-5 Maxx Sport (4X2),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.9 L / 100 km,111644,Black / Cloth,"Echuca, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2018,Tiguan,SUV,2018 Volkswagen Tiguan 162 TSI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,58383,Grey / Black,"Wollongong, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2019,C-HR,SUV,2019 Toyota C-HR Koba (2WD),USED,Automatic,"4 cyl, 1.2 L",Front,Premium,6.4 L / 100 km,59750,Silver / Black,"Dudley Park, WA",4 cyl,SUV, 5 Doors, 5 Seats,30000-40000 AUD
+Toyota,2019,Kluger,SUV,2019 Toyota Kluger GX (4X2),USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.1 L / 100 km,75535,Silver / -,"Waterloo, NSW",6 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Mitsubishi,2020,Outlander,SUV,2020 Mitsubishi Outlander LS 7 Seat (awd),USED,Automatic,"4 cyl, 2.3 L",AWD,Diesel,6.2 L / 100 km,50603,Grey / Black,"Nunawading, VIC",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Holden,2019,Colorado,Ute / Tray,2019 Holden Colorado LS (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.6 L / 100 km,94279,White / Black,"Gawler South, SA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Mercedes-Benz,2015,GLA250,SUV,2015 Mercedes-Benz GLA250 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7 L / 100 km,68860,Grey / Black,"New Town, TAS",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2018,Triton,Ute / Tray,2018 Mitsubishi Triton Exceed (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,7.6 L / 100 km,87360,Grey / -,"South Nowra, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2018,Kluger,SUV,2018 Toyota Kluger GX (4X2),USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.1 L / 100 km,122793,Black / Grey,"Brookvale, NSW",6 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Toyota,2020,Corolla,Hatchback,2020 Toyota Corolla Ascent Sport Hybrid,USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4.2 L / 100 km,50338,Red / -,"Adelaide, SA",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Mazda,2016,BT-50,Ute / Tray,2016 Mazda BT-50 XTR (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,205245,Silver / -,"Shepparton, VIC",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2018,Hilux,Ute / Tray,2018 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,140937,White / Black Fabric,"Bunbury, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2022,XV,Carlin and Gazzard,2022 Subaru XV 2.0i Lineartronic AWD,USED,Automatic,-,Other,Unleaded,-,16132,Silver / Black,"Mount Gambier, SA",-,Wagon,,,30000-40000 AUD
+Holden,2016,Colorado,Ute / Tray,2016 Holden Colorado LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9.1 L / 100 km,107190,Red / -,"Labrador, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Renault,2022,Koleos,SUV,2022 Renault Koleos Intens (4X2),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,8.1 L / 100 km,6530,White / Black,"Castle Hill, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Lexus,2016,CT200H,Hatchback,2016 Lexus CT200H F Sport,USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4.1 L / 100 km,87500,White / Black,"Hendra, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2019,Tiguan,SUV,2019 Volkswagen Tiguan 162 TSI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,84665,Black / Black,"Blacktown, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2019,Forester,SUV,2019 Subaru Forester 2.5I-L (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,73894,Blue / Black,"HEIDELBERG, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Holden,2017,Trailblazer,SUV,2017 Holden Trailblazer LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.6 L / 100 km,76214,White / Black,"Totness, SA",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Mitsubishi,2018,Triton,Ute / Tray,2018 Mitsubishi Triton GLX Plus (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,7.6 L / 100 km,99214,White / Cloth,"Echuca, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2019,Pajero,SUV,2019 Mitsubishi Pajero Sport GLS (4X4) 7 Seat,USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8 L / 100 km,53477,White / -,"Alexandria, NSW",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Hyundai,2021,Kona,SUV,2021 Hyundai Kona Active (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.2 L / 100 km,23130,White / Black,"Rockingham, WA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2020,Outlander,SUV,2020 Mitsubishi Outlander ES 5 Seat (awd),USED,Automatic,"4 cyl, 2.4 L",AWD,Unleaded,7.2 L / 100 km,40361,Red / Black,"Southport, QLD",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Kia,2019,Carnival,Wagon,2019 Kia Carnival S,USED,Automatic,"6 cyl, 3.3 L",Front,Unleaded,10.8 L / 100 km,84549,Silver / Black Cloth,"Blacktown, NSW",6 cyl,Wagon, 4 Doors, 8 Seats,30000-40000 AUD
+Ford,2016,Ranger,Ute / Tray,2016 Ford Ranger XL 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.8 L / 100 km,131953,White / Black,"Lismore, NSW",5 cyl,Ute / Tray, 2 Doors, 2 Seats,30000-40000 AUD
+Mitsubishi,2019,Triton,Ute / Tray,2019 Mitsubishi Triton GLS (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8.6 L / 100 km,73698,Grey / -,"Alphington, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2021,X-Trail,SUV,2021 Nissan X-Trail ST-L (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,20218,Red / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2017,Amarok,Ute / Tray,2017 Volkswagen Amarok V6 TDI 550 Ultimate,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.8 L / 100 km,151400,Grey / Black,"Cheltenham, VIC",6 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2020,X-Trail,SUV,2020 Nissan X-Trail TI (4WD) (5YR),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,8.3 L / 100 km,52858,Grey / Black,"Sebastopol, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2018,XV,SUV,2018 Subaru XV 2.0I-S,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,7 L / 100 km,48244,Grey / Black,"Seymour, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2020,Corolla,Hatchback,2020 Toyota Corolla Ascent Sport Hybrid,USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4.2 L / 100 km,49250,White / Black,"CAMBERWELL, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2018,Tiguan,SUV,2018 Volkswagen Tiguan Allspace 110 TDI Comfortline,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,6.1 L / 100 km,37388,White / Black,"Penrith, NSW",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Volkswagen,2017,Golf,Hatchback,2017 Volkswagen Golf GTI,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.7 L / 100 km,58586,White / -,"Molendinar, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2018,Outlander,SUV,2018 Mitsubishi Outlander Exceed (hybrid),USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,1.7 L / 100 km,36824,White / Black,"Hendra, QLD",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Isuzu,2019,MU-X,SUV,2019 Isuzu MU-X LS-U (4X2),USED,Automatic,"4 cyl, 3 L",Front,Diesel,8.1 L / 100 km,102941,White / -,"Launceston, TAS",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Isuzu,2021,D-MAX,Ute / Tray,2021 Isuzu D-MAX SX (4X2) High-Ride,USED,Automatic,"4 cyl, 1.9 L",Front,Diesel,7 L / 100 km,3212,White / Black,"Cannington, WA",4 cyl,Ute / Tray, 2 Doors, 2 Seats,30000-40000 AUD
+MG,2021,ZS,SUV,2021 MG ZS EV Essence,USED,Automatic,0 L,Front,Electric,0 L / 100 km,94589,Blue / Black,"Hoppers Crossing, VIC",0 L,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Land,2015,Rover,Prospect Motor Company,2015 Land Rover Range Rover Evoque Dynamic,USED,Automatic,-,Other,Diesel,-,91000,White / Black Leather Seats,"Prospect, SA",-,Hatchback,,,30000-40000 AUD
+LDV,2021,G10,Commercial,2021 LDV G10 Barn Door,USED,Automatic,"4 cyl, 1.9 L",Rear,Diesel,8.6 L / 100 km,5300,White / 2021/06,"Dandenong South, VIC",4 cyl,Commercial, 4 Doors, 2 Seats,30000-40000 AUD
+Isuzu,2015,MU-X,SUV,2015 Isuzu MU-X LS-U (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8.4 L / 100 km,120365,Black / Black,"Echuca, VIC",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Subaru,2020,Forester,SUV,2020 Subaru Forester 2.5I (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,57341,Blue / Black,"Melville, WA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mazda,2019,CX-3,SUV,2019 Mazda CX-3 Akari LE (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.3 L / 100 km,38179,White / -,"Stanmore, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Kia,2018,Carnival,Wagon,2018 Kia Carnival S,USED,Automatic,"6 cyl, 3.3 L",Front,Unleaded,11.6 L / 100 km,76213,White / Grey,"Victoria Park, WA",6 cyl,Wagon, 4 Doors, 8 Seats,30000-40000 AUD
+Audi,2016,A4,Sedan,2016 Audi A4 2.0 TDI Quattro S Tronic Sport,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,4.6 L / 100 km,92045,- / -,"Fyshwick, ACT",4 cyl,Sedan, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2018,Triton,Ute / Tray,2018 Mitsubishi Triton GLS (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,7.6 L / 100 km,105161,White / Black,"Hendra, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2019,Camry,Sedan,2019 Toyota Camry Ascent,USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.8 L / 100 km,50216,Blue / -,"Wodonga, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,30000-40000 AUD
+Mazda,2020,CX-3,SUV,2020 Mazda CX-3 Maxx Sport (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.3 L / 100 km,40900,Blue / -,"Warragul, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2018,Outback,SUV,2018 Subaru Outback 2.5I Premium,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.3 L / 100 km,66805,Grey / -,"Blacktown, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mazda,2021,CX-30,SUV,2021 Mazda CX-30 G20 Evolve (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.5 L / 100 km,28052,Black / Black,"Rocklea, QLD",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Jeep,2015,Wrangler,SUV,2015 Jeep Wrangler Unlimited Renegade Sport (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,11.7 L / 100 km,152274,Blue / -,"Granville, NSW",6 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Honda,2018,Vezel,"03 **** ****
+",2018 Honda Vezel RS HYBRID 1.5L 5 SEATER,USED,-,-,Other,-,-,65133,Blue / -,"Moorabbin, VIC",-,,,,30000-40000 AUD
+Mercedes-Benz,2015,C-CLASS,USED Dealer ad,2015 Mercedes-Benz C-CLASS,USED,Automatic,-,Rear,Unleaded,-,94153,White / -,"Slacks Creek, QLD",-,,,,30000-40000 AUD
+Mercedes-Benz,2015,E200,Coupe,2015 Mercedes-Benz E200,USED,Automatic,"4 cyl, 2 L",Rear,Premium,6 L / 100 km,88507,Grey / Black,"Artarmon, NSW",4 cyl,Coupe, 2 Doors, 4 Seats,30000-40000 AUD
+Honda,2021,HR-V,SUV,2021 Honda HR-V VTI-S,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,6.9 L / 100 km,17500,Grey / 2021/07,"Thornbury, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+BMW,2016,X5,SUV,2016 BMW X5 Xdrive 25D,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,6 L / 100 km,180013,Grey / Black,"Mount Druitt, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2019,Pathfinder,SUV,2019 Nissan Pathfinder ST (2WD),USED,Automatic,"6 cyl, 3.5 L",Front,Premium,9.9 L / 100 km,65641,White / Black,"Moorebank, NSW",6 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Nissan,2003,Patrol,SUV,2003 Nissan Patrol ST (4X4),USED,Manual,"4 cyl, 3 L",4WD,Diesel,0 L / 100 km,135460,Grey / Grey,"West Footscray, VIC",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Subaru,2019,Forester,SUV,2019 Subaru Forester 2.5I-S (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,54277,Red / Black,"Gawler South, SA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Hyundai,2021,I30,Hatchback,2021 Hyundai I30 N Line,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,7.1 L / 100 km,22030,Grey / Grey,"Edgewater, WA",4 cyl,Hatchback, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2021,X-Trail,SUV,2021 Nissan X-Trail ST-L (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,12577,White / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2020,Outlander,SUV,2020 Mitsubishi Outlander ES 7 Seat (2WD),USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.2 L / 100 km,50383,White / -,"South Nowra, NSW",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Holden,2019,Acadia,SUV,2019 Holden Acadia LTZ (2WD),USED,Automatic,"6 cyl, 3.6 L",Front,Unleaded,8.9 L / 100 km,63730,Red / Black,"Southport, QLD",6 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Subaru,2018,Outback,SUV,2018 Subaru Outback 2.5I Premium,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.3 L / 100 km,96160,Grey / Black,"Mount Gambier, SA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Kia,2019,Seltos,SUV,2019 Kia Seltos GT Line (awd) (two-Tone),USED,Automatic,"4 cyl, 1.6 L",AWD,Unleaded,7.6 L / 100 km,28216,Yellow / -,"Adelaide, SA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2019,Navara,Ute / Tray,2019 Nissan Navara ST (4X4),USED,Manual,"4 cyl, 2.3 L",4WD,Diesel,6.5 L / 100 km,68419,White / Black,"Stuart Park, NT",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+HSV,1996,Maloo,Ute / Tray,1996 HSV Maloo,USED,Automatic,"8 cyl, 5 L",Rear,Unleaded,0 L / 100 km,196528,Black / Black,"Wangara, WA",8 cyl,Ute / Tray, 2 Doors, 3 Seats,30000-40000 AUD
+Hyundai,2018,Santa,SUV,2018 Hyundai Santa FE Active Crdi (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,7.5 L / 100 km,92291,White / -,"Crookwell, NSW",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Volvo,2016,Xc,Automobile Gallery,2016 Volvo Xc 90 L Series D5 Inscription Wagon 7st 5dr Geartronic 8sp 4x4 2.0,USED,Automatic,-,Other,Diesel,-,164371,Silver / -,"Granville, NSW",-,Wagon,,,30000-40000 AUD
+Mercedes-Benz,2014,A45,Hatchback,2014 Mercedes-Benz A45 AMG,USED,Automatic,"4 cyl, 2 L",AWD,Premium,6.9 L / 100 km,103571,Grey / Black,"Oakleigh, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2019,Tiguan,SUV,2019 Volkswagen Tiguan Allspace 132 TSI Comfortline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.5 L / 100 km,45313,White / Grey,"Myaree, WA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Kia,2020,Carnival,Wagon,2020 Kia Carnival S,USED,Automatic,"6 cyl, 3.3 L",Front,Unleaded,10.8 L / 100 km,50151,White / -,"Victoria Park, WA",6 cyl,Wagon, 4 Doors, 8 Seats,30000-40000 AUD
+Land,2016,Rover,SUV,2016 Land Rover Discovery Sport TD4 HSE,USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6 L / 100 km,131621,Grey / Black,"Totness, SA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Ford,2018,Ranger,Ute / Tray,2018 Ford Ranger XLT 3.2 HI-Rider (4X2),USED,Automatic,"5 cyl, 3.2 L",Rear,Diesel,8.2 L / 100 km,152807,Red / -,"Granville, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2020,Outlander,SUV,2020 Mitsubishi Outlander ES 7 Seat (2WD),USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.2 L / 100 km,43642,White / Black,"Albion Park, NSW",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Mazda,2018,CX-5,SUV,2018 Mazda CX-5 Akera (4X4),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.5 L / 100 km,55224,White / Leather,"Kedron, QLD",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Holden,2016,Colorado,Ute / Tray,2016 Holden Colorado LS (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9 L / 100 km,91448,White / Black Cloth,"Berwick, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2018,Forester,SUV,2018 Subaru Forester 2.5I-L,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,8.1 L / 100 km,39824,Brown / -,"Taree, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2017,Triton,Ute / Tray,2017 Mitsubishi Triton GLS (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,7.6 L / 100 km,129614,White / -,"Granville, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2019,Corolla,Hatchback,2019 Toyota Corolla ZR (hybrid),USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4.2 L / 100 km,92445,Red / -,"Mandurah, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2016,Pajero,SUV,2016 Mitsubishi Pajero Sport Exceed (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8 L / 100 km,65430,White / 2016/08,"Thornbury, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Ford,2017,Ranger,Ute / Tray,2017 Ford Ranger XLS 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,137227,White / Grey,"Singleton, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Mazda,2016,BT-50,Ute / Tray,2016 Mazda BT-50 XTR (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9.2 L / 100 km,118000,White / -,"Underwood, QLD",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Ford,2018,Ranger,Ute / Tray,2018 Ford Ranger XLS 3.2 (4X4) (5 YR),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.7 L / 100 km,138989,White / Black,"Rockingham, WA",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Suzuki,2020,Jimny,SUV,2020 Suzuki Jimny,USED,Manual,"4 cyl, 1.5 L",4WD,Unleaded,6.4 L / 100 km,21896,Green / -,"Lavington, NSW",4 cyl,SUV, 2 Doors, 4 Seats,30000-40000 AUD
+Mercedes-Benz,2015,CLS250,Sedan,2015 Mercedes-Benz CLS250 D,USED,Automatic,"4 cyl, 2.1 L",Rear,Diesel,5.4 L / 100 km,89170,Silver / -,"Mansfield, QLD",4 cyl,Sedan, 4 Doors, 4 Seats,30000-40000 AUD
+Mitsubishi,2018,Triton,Adelaide Vehicle Centre Hills,2018 Mitsubishi Triton GLX,USED,Manual,-,Other,Diesel,-,53906,White / Grey,"Strathalbyn, SA",-,Ute / Tray,,,30000-40000 AUD
+Toyota,2015,Kluger,SUV,2015 Toyota Kluger GX (4X2),USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,10.2 L / 100 km,77450,- / -,"Pakenham, VIC",6 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Ford,2016,Ranger,Ute / Tray,2016 Ford Ranger XL 2.2 HI-Rider (4X2),USED,Automatic,"4 cyl, 2.2 L",Rear,Diesel,7.5 L / 100 km,168954,White / -,"Saint Marys, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2021,X-Trail,SUV,2021 Nissan X-Trail ST (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,41719,Grey / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Hyundai,2021,Kona,SUV,2021 Hyundai Kona Active (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6.2 L / 100 km,23460,Blue / -,"Alexandria, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Volkswagen,2018,Golf,Hatchback,2018 Volkswagen Golf 110 TDI Highline,USED,Automatic,"4 cyl, 2 L",Front,Diesel,4.9 L / 100 km,77957,Grey / Black,"Hoppers Crossing, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2019,Triton,Ute / Tray,2019 Mitsubishi Triton GLX Adas,USED,Automatic,"4 cyl, 2.4 L",Rear,Diesel,7.5 L / 100 km,87740,White / -,"Sylvania, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Mazda,2017,CX-9,SUV,2017 Mazda CX-9 Azami (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,8.8 L / 100 km,93228,Red / Black,"Essendon Fields, VIC",4 cyl,SUV, 4 Doors, 7 Seats,30000-40000 AUD
+Ford,2021,Puma,SUV,2021 Ford Puma,USED,Automatic,"3 cyl, 1 L",Front,Premium,5.3 L / 100 km,11393,Silver / -,"Ferntree Gully, VIC",3 cyl,SUV, 5 Doors, 5 Seats,30000-40000 AUD
+Mazda,2017,CX-5,SUV,2017 Mazda CX-5 Akera (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,5.7 L / 100 km,27154,Blue / Stnd,"Tweed Heads South, NSW",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2021,Corolla,Hatchback,2021 Toyota Corolla Ascent Sport Hybrid,USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4.2 L / 100 km,81567,White / Black Fabric,"Maddington, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+Toyota,2018,C-HR,USED Dealer ad,2018 Toyota C-HR KOBA 2WD 1.2L PETROL AUTO CVT WAGON,USED,-,-,Other,-,-,18475,White / -,"Chatswood, NSW",-,Wagon,,,30000-40000 AUD
+Toyota,2012,Hilux,Ute / Tray,2012 Toyota Hilux SR5 (4X4),USED,Manual,"4 cyl, 3 L",4WD,Diesel,8.3 L / 100 km,226164,White / -,"Capalaba, QLD",4 cyl,Ute / Tray, 2 Doors, 4 Seats,30000-40000 AUD
+Isuzu,2018,D-MAX,Ute / Tray,2018 Isuzu D-MAX LS-U HI-Ride (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.9 L / 100 km,207661,Grey / Black,"Caringbah, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Toyota,2018,RAV4,SUV,2018 Toyota RAV4 GXL (4X4),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,8.5 L / 100 km,67458,Blue / -,"Coburg North, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Nissan,2020,X-Trail,SUV,2020 Nissan X-Trail ST-L (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.9 L / 100 km,15398,White / Black,"Pooraka, SA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Mitsubishi,2020,ASX,SUV,2020 Mitsubishi ASX Exceed (2WD),USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.9 L / 100 km,34039,Orange / Leather,"Mornington, VIC",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Ford,2022,Escape,SUV,2022 Ford Escape ST-Line (fwd),USED,Automatic,"4 cyl, 2 L",Front,Premium,8.6 L / 100 km,6641,Blue / Black,"Myaree, WA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Audi,2018,A3,Hatchback,2018 Audi A3 1.4 Tfsi Sportback COD,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,5 L / 100 km,39972,Silver / Black,"Chatswood, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,30000-40000 AUD
+GWM,2021,UTE,Ute / Tray,2021 GWM UTE Cannon (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,9.4 L / 100 km,43482,Silver / -,"Noosaville, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Kia,2019,Carnival,Wagon,2019 Kia Carnival S,USED,Automatic,"4 cyl, 2.2 L",Front,Diesel,7.7 L / 100 km,46586,White / Beige,"SOUTH MELBOURNE, VIC",4 cyl,Wagon, 4 Doors, 8 Seats,30000-40000 AUD
+Mazda,2017,MX-5,Convertible,2017 Mazda MX-5 Roadster GT,USED,Manual,"4 cyl, 2 L",Rear,Premium,6.9 L / 100 km,31214,White / Leather,"Wollongong, NSW",4 cyl,Convertible, 2 Doors, 2 Seats,30000-40000 AUD
+Ford,2014,Ranger,Ute / Tray,2014 Ford Ranger XLT 3.2 (4X4),USED,Manual,"5 cyl, 3.2 L",4WD,Diesel,9.4 L / 100 km,190304,Grey / Cloth,"Elderslie, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,30000-40000 AUD
+Subaru,2021,Forester,SUV,2021 Subaru Forester 2.5I (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.4 L / 100 km,60100,Silver / -,"Bentley, WA",4 cyl,SUV, 4 Doors, 5 Seats,30000-40000 AUD
+Hyundai,2021,Santa,SUV,2021 Hyundai Santa FE Crdi (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6.1 L / 100 km,45360,White / -,"Rockingham, WA",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Lexus,2015,NX200T,SUV,2015 Lexus NX200T Sports Luxury (awd),USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.9 L / 100 km,65905,Grey / Black,"Berwick, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2019,Pajero,Freedom Motors,2019 Mitsubishi Pajero,USED,Automatic,-,Other,Diesel,-,104063,White / -,"Parap, NT",-,Wagon,,,40000-50000 AUD
+Jeep,2018,Grand,SUV,2018 Jeep Grand Cherokee Overland (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.5 L / 100 km,69885,Grey / Black,"Blacktown, NSW",6 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Skoda,2019,Octavia,Wagon,2019 Skoda Octavia RS 245,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.5 L / 100 km,32448,White / Alcantara,"Southport, QLD",4 cyl,Wagon, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2019,Ranger,Ute / Tray,2019 Ford Ranger XLT 3.2 (4X4),USED,Manual,"5 cyl, 3.2 L",4WD,Diesel,8.4 L / 100 km,28074,White / Black,"Pinkenba, QLD",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,85732,White / Black Fabric,"Bassendean, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Volkswagen,2019,Tiguan,SUV,2019 Volkswagen Tiguan 162 TSI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,69349,White / Cloth,"Phillip, ACT",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Audi,2017,A5,Coupe,2017 Audi A5 2.0 Tfsi S Tronic Sport,USED,Automatic,"4 cyl, 2 L",Front,Premium,5.5 L / 100 km,52943,Black / Black,"South Melbourne, VIC",4 cyl,Coupe, 2 Doors, 4 Seats,40000-50000 AUD
+LDV,2023,Deliver,Werribee Jeep,2023 LDV Deliver 9 High Roof LWB,USED,Automatic,-,Rear,Diesel,-,770,White / -,"Hoppers Crossing, VIC",-,Commercial,,,40000-50000 AUD
+Nissan,2022,X-Trail,SUV,2022 Nissan X-Trail TI (4WD),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,8.3 L / 100 km,16736,Black / -,"Osborne Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2016,Everest,SUV,2016 Ford Everest Titanium,USED,Automatic,"5 cyl, 3.2 L",AWD,Diesel,8.5 L / 100 km,84301,Black / Leather,"Warwick Farm, NSW",5 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Ford,2020,Ranger,Ute / Tray,2020 Ford Ranger XLT 3.2 HI-Rider (4X2),USED,Automatic,"5 cyl, 3.2 L",Rear,Diesel,8.2 L / 100 km,91873,White / Black,"Gawler South, SA",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2023,RAV4,SUV,2023 Toyota RAV4 GX (2WD),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,1090,White / -,"Cardiff, NSW",4 cyl,SUV, 5 Doors, 5 Seats,40000-50000 AUD
+Toyota,2004,Landcruiser,Ute / Tray,2004 Toyota Landcruiser (4X4),USED,Manual,"6 cyl, 4.2 L",4WD,Diesel,0 L / 100 km,342898,White / -,"Mudgeeraba, QLD",6 cyl,Ute / Tray, 2 Doors, 3 Seats,40000-50000 AUD
+Ford,2022,Escape,SUV,2022 Ford Escape Vignale (awd),USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.6 L / 100 km,10533,Red / Grey,"Warwick Farm, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2018,Ranger,Ute / Tray,2018 Ford Ranger XLT 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.7 L / 100 km,95328,Blue / -,"Springwood, QLD",5 cyl,Ute / Tray, 4 Doors, 4 Seats,40000-50000 AUD
+Volkswagen,2019,Tiguan,SUV,2019 Volkswagen Tiguan 162 TSI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,30000,Silver / 2019/12,"Thornbury, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Kia,2020,Sorento,SUV,2020 Kia Sorento S 7 Seat,USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.7 L / 100 km,54748,White / Black,"Albion Park Rail, NSW",6 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Volkswagen,2020,Tiguan,SUV,2020 Volkswagen Tiguan 162 TSI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,30738,White / -,"Mosman, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Honda,2019,Odyssey,Wagon,2019 Honda Odyssey VTI-L,USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,7.8 L / 100 km,39840,White / Black,"Vermont, VIC",4 cyl,Wagon, 4 Doors, 7 Seats,40000-50000 AUD
+Jeep,2022,Compass,SUV,2022 Jeep Compass S-Limited (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Unleaded,7.9 L / 100 km,7632,Blue / Black,"Pinkenba, QLD",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2018,GLA250,SUV,2018 Mercedes-Benz GLA250 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7 L / 100 km,28937,Grey / -,"Mansfield, QLD",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Volkswagen,2020,Crafter,Greg Watts Motors - Car City Minchinbury,2020 Volkswagen Crafter 35 High Roof LWB FWD TDI410,USED,Automatic,-,Front,Diesel,-,288071,White / Black,"Minchinbury, NSW",-,Commercial,,,40000-50000 AUD
+Volkswagen,2018,Tiguan,SUV,2018 Volkswagen Tiguan Allspace 140 TDI Highline,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,6 L / 100 km,41413,White / Black,"Wodonga, VIC",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Ford,2017,Ranger,Ute / Tray,2017 Ford Ranger FX4 Special Edition,USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,146199,Black / -,"Clarkson, WA",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+MG,2022,HS,SUV,2022 MG HS Phev Essence,USED,Automatic,"4 cyl, 1.5 L",Front,Hybrid,1.7 L / 100 km,16333,Silver / -,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Mazda,2020,BT-50,Ute / Tray,2020 Mazda BT-50 XT (4X4) (5YR),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,10 L / 100 km,75980,White / Black,"Myaree, WA",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Kia,2021,Carnival,Wagon,2021 Kia Carnival S,USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.6 L / 100 km,45427,Blue / -,"Pakenham, VIC",6 cyl,Wagon, 4 Doors, 8 Seats,40000-50000 AUD
+Nissan,2021,Navara,Ute / Tray,2021 Nissan Navara SL (4X4),USED,Automatic,"4 cyl, 2.3 L",4WD,Diesel,7.9 L / 100 km,44161,White / Black,"HEIDELBERG, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+BMW,2017,X3,SUV,2017 BMW X3 Xdrive 30I,USED,Automatic,"4 cyl, 2 L",4WD,Premium,7.6 L / 100 km,70069,Grey / -,"Eagle Farm, QLD",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Hyundai,2021,Santa,SUV,2021 Hyundai Santa FE Active Crdi (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6.1 L / 100 km,24007,Grey / Black,"Moorooka, QLD",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Toyota,2022,Corolla,Hatchback,2022 Toyota Corolla SX Hybrid,USED,Automatic,"4 cyl, 1.8 L",Front,Hybrid,4 L / 100 km,1967,White / Black,"East Maitland, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Ford,2017,Ranger,Ute / Tray,2017 Ford Ranger Wildtrak 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,99884,Black / Black,"Pinkenba, QLD",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Audi,2022,A3,Sedan,2022 Audi A3 35 Tfsi Mhev,USED,Automatic,"4 cyl, 1.5 L",Front,Premium,4.9 L / 100 km,4142,White / Black,"Zetland, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2018,A200,Hatchback,2018 Mercedes-Benz A200,USED,Automatic,"4 cyl, 1.3 L",Front,Premium,5.7 L / 100 km,18507,Silver / Red,"Bentleigh, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Ford,2017,Ranger,Ute / Tray,2017 Ford Ranger Wildtrak 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,88001,Silver / -,"Mayfield West, NSW",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mazda,2021,6,Sedan,2021 Mazda 6 Atenza,USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.6 L / 100 km,10799,Grey / -,"Toowoomba, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2023,Camry,USED Dealer ad,2023 Toyota Camry Ascent,USED,Automatic,-,Other,Other,-,125,Brown / 2Zfa20,"Coffs Harbour, NSW",-,,,,40000-50000 AUD
+BMW,2018,420I,Hatchback,2018 BMW 420I Gran Coupe,USED,Automatic,"4 cyl, 2 L",Rear,Premium,6.1 L / 100 km,37350,Blue / -,"Burswood, WA",4 cyl,Hatchback, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2018,GLC250,SUV,2018 Mercedes-Benz GLC250,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.2 L / 100 km,72819,White / Black,"Castle Hill, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Jeep,2019,Grand,SUV,2019 Jeep Grand Cherokee Limited (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.5 L / 100 km,105717,White / -,"Osborne Park, WA",6 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Subaru,2021,Forester,SUV,2021 Subaru Forester Hybrid L (awd),USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,6.7 L / 100 km,56295,White / -,"Coburg North, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2017,Hilux,Ute / Tray,2017 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,111382,White / -,"Granville, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2019,RAV4,SUV,2019 Toyota RAV4 Edge AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.3 L / 100 km,89234,Black / -,"Alexandria, NSW",4 cyl,SUV, 5 Doors, 5 Seats,40000-50000 AUD
+Lexus,2017,RC,Motor One Garage,2017 Lexus RC RC350 F Sport,USED,Automatic,-,Rear,Premium,-,87809,Red / Red Leather,"Minchinbury, NSW",-,Coupe,,,40000-50000 AUD
+Toyota,2020,Hilux,Ute / Tray,2020 Toyota Hilux SR (4X4),USED,Manual,"4 cyl, 2.8 L",4WD,Diesel,7.8 L / 100 km,61549,White / -,"Hobart, TAS",4 cyl,Ute / Tray, 2 Doors, 2 Seats,40000-50000 AUD
+Audi,2017,Q5,SUV,2017 Audi Q5 2.0 TDI Quattro Sport,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.4 L / 100 km,60153,Black / -,"Launceston, TAS",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Isuzu,2017,MU-X,SUV,2017 Isuzu MU-X LS-T (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.9 L / 100 km,98716,Silver / -,"Victoria Park, WA",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Ford,2022,Escape,SUV,2022 Ford Escape ST-Line (fwd),USED,Automatic,"4 cyl, 2 L",Front,Premium,8.6 L / 100 km,13467,White / -,"Tuggerah, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2016,GLC250,SUV,2016 Mercedes-Benz GLC250,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.2 L / 100 km,85525,Grey / Black,"Albion, QLD",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+BMW,2021,118I,Hatchback,2021 BMW 118I M Sport,USED,Automatic,"3 cyl, 1.5 L",Front,Premium,5.9 L / 100 km,9090,White / Black,"Oakleigh, VIC",3 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Holden,2018,Colorado,Ute / Tray,2018 Holden Colorado LTZ (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.7 L / 100 km,70967,White / Grey,"Kelso, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Audi,2022,A1,Hatchback,2022 Audi A1 35 Tfsi,USED,Automatic,"4 cyl, 1.5 L",Front,Premium,5.8 L / 100 km,11788,White / -,"Alexandria, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2022,Outlander,SUV,2022 Mitsubishi Outlander Aspire 7 Seat (2WD),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,7.7 L / 100 km,13516,Silver / Black,"Elsternwick, VIC",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Mini,2020,Countryman,SUV,2020 Mini Countryman Cooper,USED,Automatic,"3 cyl, 1.5 L",Front,Premium,6.1 L / 100 km,57743,White / Black,"Hoppers Crossing, VIC",3 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Porsche,2014,Macan,SUV,2014 Porsche Macan S Diesel,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,6.1 L / 100 km,142300,White / Black Leather,"Loxton, SA",6 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Isuzu,2018,D-MAX,Ute / Tray,2018 Isuzu D-MAX LS-Terrain HI-Ride (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.9 L / 100 km,87014,White / -,"Bibra Lake, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Honda,2021,Accord,USED Dealer ad,2021 Honda Accord VTi-LX,USED,Automatic,-,Front,Unleaded,-,60761,White / Black,"Fawkner, VIC",-,,,,40000-50000 AUD
+Kia,2022,Sorento,SUV,2022 Kia Sorento S 7 Seat,USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.7 L / 100 km,1473,White / Black,"Launceston, TAS",6 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Kia,2020,Stinger,Sedan,2020 Kia Stinger 330S (aeb),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,80485,Red / -,"Noosaville, QLD",6 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Subaru,2015,WRX,Sedan,2015 Subaru WRX STI Premium,USED,Manual,"4 cyl, 2.5 L",AWD,Premium,10.4 L / 100 km,75222,Red / Grey,"Brookvale, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Land,2018,Rover,SUV,2018 Land Rover Discovery Sport TD4 (110KW) SE 5 Seat,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.3 L / 100 km,63725,White / Black,"Dudley Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,79940,White / -,"Jandakot, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Kia,2017,Stinger,Sedan,2017 Kia Stinger GT (black Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,66586,White / Red,"Chatswood, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 GX (awd) Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,59813,Blue / Black,"Para Hills West, SA",4 cyl,SUV, 5 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2018,Pajero,SUV,2018 Mitsubishi Pajero Sport GLS (4X4) 5 Seat,USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8 L / 100 km,70300,White / -,"Rockingham, WA",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Isuzu,2018,MU-X,SUV,2018 Isuzu MU-X LS-T (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.9 L / 100 km,91995,White / -,"Hallam, VIC",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Toyota,2017,Landcruiser,SUV,2017 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,218851,White / Black,"Castle Hill, NSW",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Nissan,2021,Navara,Ute / Tray,2021 Nissan Navara SL (4X4),USED,Automatic,"4 cyl, 2.3 L",4WD,Diesel,7.9 L / 100 km,44501,Grey / -,"Mackay, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Renault,2017,Master,Ferntree Gully Automotive,2017 Renault Master Mid Roof LWB AMT,USED,Automatic,-,Front,Diesel,-,119181,White / Black,"Ferntree Gully, VIC",-,Commercial,,,40000-50000 AUD
+HSV,2010,Clubsport,Sedan,2010 HSV Clubsport R8,USED,Manual,"8 cyl, 6.2 L",Rear,Premium,15.2 L / 100 km,64000,Grey / -,"Orange, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2014,Landcruiser,SUV,2014 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8.5 L / 100 km,232241,Grey / Grey,"Emerald, QLD",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+GWM,2022,UTE,Ute / Tray,2022 GWM UTE Cannon-L (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,9.4 L / 100 km,3440,White / Black,"West Gladstone, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2017,Ranger,Ute / Tray,2017 Ford Ranger Wildtrak 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,96954,Black / Black,"Hoppers Crossing, VIC",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Nissan,2021,X-Trail,SUV,2021 Nissan X-Trail TI (4WD),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,8.3 L / 100 km,38120,Grey / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2017,Hilux,Ute / Tray,2017 Toyota Hilux SR5 (4X4),USED,Manual,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,176520,Grey / Black,"East Maitland, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2016,Ranger,Ute / Tray,2016 Ford Ranger Wildtrak 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,98772,Grey / -,"Winnellie, NT",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Audi,2022,Q2,SUV,2022 Audi Q2 35 Tfsi,USED,Automatic,"4 cyl, 1.5 L",Front,Premium,5.2 L / 100 km,3191,Silver / Black,"Zetland, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Honda,2022,CR-V,SUV,2022 Honda CR-V VTI L7 (2WD) 7 Seats,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,7.3 L / 100 km,12305,Blue / -,"Osborne Park, WA",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Toyota,2008,Landcruiser,SUV,2008 Toyota Landcruiser GXL (4X4),USED,Automatic,"8 cyl, 4.7 L",4WD,Unleaded,14.5 L / 100 km,223778,Black / -,"Coffs Harbour, NSW",8 cyl,SUV, 4 Doors, 8 Seats,40000-50000 AUD
+BMW,2017,X4,SUV,2017 BMW X4 Xdrive 35I,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.3 L / 100 km,93692,Black / -,"Bundoora, VIC",6 cyl,SUV, 5 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2019,Triton,Ute / Tray,2019 Mitsubishi Triton GLS (4X4) Premium,USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,7.6 L / 100 km,73611,Grey / Black,"Lilydale, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2013,CLA45,Sedan,2013 Mercedes-Benz CLA45 AMG,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7 L / 100 km,128568,Grey / Black,"Totness, SA",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2018,A200,Hatchback,2018 Mercedes-Benz A200,USED,Automatic,"4 cyl, 1.3 L",Front,Premium,5.7 L / 100 km,13152,White / Black,"Geelong, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2004,Lancer,USED Dealer ad,2004 Mitsubishi Lancer Evolution VIII MR,USED,Manual,-,Other,Premium,-,148735,Grey / Black,"Cabramatta, NSW",-,,,,40000-50000 AUD
+Mitsubishi,2023,Triton,Ute / Tray,2023 Mitsubishi Triton GLX (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8.6 L / 100 km,55,White / -,"Ryde, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Volkswagen,2017,Amarok,Ute / Tray,2017 Volkswagen Amarok V6 TDI 550 Highline,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.8 L / 100 km,117156,Grey / -,"Welshpool, WA",6 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+BMW,2021,118I,Hatchback,2021 BMW 118I M Sport,USED,Automatic,"3 cyl, 1.5 L",Front,Premium,5.9 L / 100 km,23956,White / Dakota Leather,"Lavington, NSW",3 cyl,Hatchback, 5 Doors, 5 Seats,40000-50000 AUD
+Kia,2020,Stinger,Sedan,2020 Kia Stinger GT-Line (black Leather),USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,8.8 L / 100 km,88742,Blue / -,"Liverpool, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Porsche,2013,Cayenne,SUV,2013 Porsche Cayenne Diesel,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.4 L / 100 km,114153,Grey / Black,"Nedlands, WA",6 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2020,Hilux,Ute / Tray,2020 Toyota Hilux SR HI-Rider,USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,7.5 L / 100 km,33243,White / Black,"Cranbourne, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Kia,2019,Stinger,Sedan,2019 Kia Stinger GT (black Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,94151,Blue / Black,"Albion Park Rail, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Ford,2019,Ranger,Ute / Tray,2019 Ford Ranger XLS 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.9 L / 100 km,90344,White / Black,"Mornington, VIC",5 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2020,Triton,Ute / Tray,2020 Mitsubishi Triton GSR (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8.6 L / 100 km,112797,Black / -,"Kedron, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mercedes-Benz,2015,GLA45,SUV,2015 Mercedes-Benz GLA45 AMG 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.5 L / 100 km,66205,Silver / Leather,"Greenway, ACT",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Subaru,2015,WRX,Sedan,2015 Subaru WRX STI Premium,USED,Manual,"4 cyl, 2.5 L",AWD,Premium,10.4 L / 100 km,87096,Blue / -,"Homebush, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Mazda,2018,CX-9,SUV,2018 Mazda CX-9 Azami (fwd),USED,Automatic,"4 cyl, 2.5 L",Front,Unleaded,8.4 L / 100 km,50148,Grey / -,"Wendouree, VIC",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Hyundai,2021,Kona,SUV,2021 Hyundai Kona N Line Premium SRF (awd),USED,Automatic,"4 cyl, 1.6 L",AWD,Unleaded,6.9 L / 100 km,15715,White / Black,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+Suzuki,2023,Jimny,SUV,2023 Suzuki Jimny Heritage Limited Edition,USED,Manual,"4 cyl, 1.5 L",AWD,-,6.4 L / 100 km,15,Green / Black,"North Wollongong, NSW",4 cyl,SUV, 2 Doors, 4 Seats,40000-50000 AUD
+Toyota,2013,Landcruiser,SUV,2013 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8.5 L / 100 km,125640,Silver / Black,"Bega, NSW",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Toyota,2016,Hilux,Ute / Tray,2016 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,191634,Blue / -,"Slacks Creek, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2017,Outlander,SUV,2017 Mitsubishi Outlander Exceed Phev (hybrid),USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,1.7 L / 100 km,32228,White / -,"Alexandria, NSW",4 cyl,SUV, 4 Doors, 5 Seats,40000-50000 AUD
+BMW,2017,330I,Sedan,2017 BMW 330I Sport Line,USED,Automatic,"4 cyl, 2 L",Rear,Premium,5.8 L / 100 km,59740,Black / -,"Bentley, WA",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Holden,2004,Monaro,Coupe,2004 Holden Monaro CV8,USED,Manual,"8 cyl, 5.7 L",Rear,Premium,13 L / 100 km,186815,Blue / Blue,"Pinkenba, QLD",8 cyl,Coupe, 2 Doors, 4 Seats,40000-50000 AUD
+Isuzu,2017,D-MAX,Ute / Tray,2017 Isuzu D-MAX LS-M HI-Ride (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.7 L / 100 km,71050,Silver / -,"Yamanto, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,40000-50000 AUD
+Mitsubishi,2016,Pajero,SUV,2016 Mitsubishi Pajero GLS LWB (4X4),USED,Automatic,"4 cyl, 3.2 L",4WD,Diesel,9 L / 100 km,95996,White / Black,"Morley, WA",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Mitsubishi,2016,Pajero,Trinity Earlville Used Cars,2016 Mitsubishi Pajero Sport Exceed,USED,Automatic,-,Other,Diesel,-,73697,Grey / -,"Earlville, QLD",-,Wagon,,,40000-50000 AUD
+Toyota,2017,Hilux,Ute / Tray,2017 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,9 L / 100 km,146328,White / Grey,"Kenwick, WA",4 cyl,Ute / Tray, 2 Doors, 2 Seats,40000-50000 AUD
+Holden,2017,Trailblazer,SUV,2017 Holden Trailblazer LT (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.6 L / 100 km,51435,Grey / Black,"Vermont, VIC",4 cyl,SUV, 4 Doors, 7 Seats,40000-50000 AUD
+Mitsubishi,2008,Lancer,USED Dealer ad,2008 Mitsubishi Lancer Evolution,USED,Automatic,-,Other,Premium,-,131500,Silver / Black,"Braeside, VIC",-,,,,40000-50000 AUD
+Mercedes-Benz,2013,E250,Sedan,2013 Mercedes-Benz E250,USED,Automatic,"4 cyl, 2 L",Rear,Premium,6.4 L / 100 km,25858,Silver / Black,"Lilydale, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,40000-50000 AUD
+Toyota,2017,Kluger,Central Star Autohaus- Waverley,2017 Toyota Kluger Grande AWD,USED,Automatic,-,Other,Unleaded,-,45342,White / Grey & Black,"Mulgrave, VIC",-,Wagon,,,50000-60000 AUD
+Ford,2021,Ranger,Ute / Tray,2021 Ford Ranger XLT 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.4 L / 100 km,15310,White / Charcoal,"Currumbin Waters, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Holden,2016,Commodore,Sedan,2016 Holden Commodore SS-V,USED,Manual,"8 cyl, 6.2 L",Rear,Premium,11.5 L / 100 km,48639,Red / -,"Brookvale, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Jeep,2014,Grand,SUV,2014 Jeep Grand Cherokee SRT 8 (4X4),USED,Automatic,"8 cyl, 6.4 L",4WD,Premium,14 L / 100 km,118687,White / -,"Hallam, VIC",8 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,HiAce,Carbarn,2020 Toyota HiAce DX,USED,Automatic,-,Other,Diesel,-,38093,White / -,"Lidcombe, NSW",-,Commercial,,,50000-60000 AUD
+Volvo,2018,XC90,SUV,2018 Volvo XC90 D5 Inscription,USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.9 L / 100 km,86055,White / Black,"Southport, QLD",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Ford,2018,Everest,SUV,2018 Ford Everest Titanium (4WD),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.5 L / 100 km,69860,Grey / Black Leather,"Lilydale, VIC",5 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Ford,2020,Everest,SUV,2020 Ford Everest Sport (4WD 7 Seat),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.5 L / 100 km,105078,Silver / Black,"Port Augusta, SA",5 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 GXL AWD Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,18723,Silver / Embossed Pattern Black Fabric,"Christies Beach, SA",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Kia,2019,Stinger,Sedan,2019 Kia Stinger GT (black Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,87355,Black / Black,"Robina, QLD",6 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Lexus,2017,RX450H,SUV,2017 Lexus RX450H Luxury Hybrid,USED,Automatic,"6 cyl, 3.5 L",AWD,Hybrid,5.7 L / 100 km,102649,Black / Black,"Elsternwick, VIC",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Mitsubishi,2022,Eclipse,SUV,2022 Mitsubishi Eclipse Cross Exceed Phev,USED,Automatic,"4 cyl, 2.4 L",AWD,-,1.9 L / 100 km,11606,Red / Leather,"Nunawading, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,RAV4,SUV,2021 Toyota RAV4 Edge (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,7.5 L / 100 km,28785,Blue / -,"Rozelle, NSW",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Ford,2020,Ranger,Ute / Tray,2020 Ford Ranger XLT 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.7 L / 100 km,66204,Blue / Grey  Cloth,"Warwick Farm, NSW",5 cyl,Ute / Tray, 4 Doors, 4 Seats,50000-60000 AUD
+Mercedes-Benz,2015,GLE350,SUV,2015 Mercedes-Benz GLE350 D,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,6.6 L / 100 km,96622,Grey / -,"Keilor East, VIC",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Nissan,2021,Navara,Zoopers Devonport,2021 Nissan Navara ST-X,USED,Automatic,-,Other,Diesel,-,26000,Silver / Black,"Devonport, TAS",-,Ute / Tray,,,50000-60000 AUD
+Mitsubishi,2021,Triton,Ute / Tray,2021 Mitsubishi Triton Glx+ (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8.6 L / 100 km,17778,Blue / -,"Bibra Lake, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Mazda,2022,BT-50,Ute / Tray,2022 Mazda BT-50 XT (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,48843,Grey / Cloth,"Cairns City, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Kia,2022,Carnival,Wagon,2022 Kia Carnival SI,USED,Automatic,"4 cyl, 2.2 L",Front,Diesel,6.5 L / 100 km,15096,Black / 2022/09,"Dandenong South, VIC",4 cyl,Wagon, 4 Doors, 8 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 Cruiser AWD Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,40800,Silver / -,"Belmore, NSW",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Audi,2017,SQ5,SUV,2017 Audi SQ5 3.0 Tfsi Quattro,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.7 L / 100 km,74929,Grey / Black,"Hobart, TAS",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Ford,2018,Everest,SUV,2018 Ford Everest Trend (4WD),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.5 L / 100 km,81566,Grey / Grey,"Berwick, VIC",5 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Toyota,2021,RAV4,SUV,2021 Toyota RAV4 Edge (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,6.7 L / 100 km,29898,Red / Black,"Toowoomba City, QLD",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Hyundai,2022,I30,Sedan,2022 Hyundai I30 N Premium With Sunroof,USED,Automatic,"4 cyl, 2 L",Front,Premium,8.2 L / 100 km,14350,White / -,"Liverpool, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+HSV,2012,Clubsport,Sedan,2012 HSV Clubsport R8,USED,Automatic,"8 cyl, 6.2 L",Rear,Premium,13.9 L / 100 km,68528,Grey / Black,"Liverpool, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 Cruiser AWD Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,23541,Silver / -,"Capalaba, QLD",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Mazda,2020,CX-9,SUV,2020 Mazda CX-9 Azami (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,8.8 L / 100 km,37942,Red / Brown Leather,"Berwick, VIC",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Nissan,2022,X-Trail,SUV,2022 Nissan X-Trail TI-L (4WD),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,7.8 L / 100 km,13045,Blue / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Mercedes-Benz,2019,GLC200,SUV,2019 Mercedes-Benz GLC200,USED,Automatic,"4 cyl, 2 L",Rear,Premium,7.8 L / 100 km,50680,Silver / Leather,"Bundoora, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Skoda,2022,Superb,Wagon,2022 Skoda Superb Style,USED,Automatic,"4 cyl, 2 L",Front,Premium,7.2 L / 100 km,17284,White / Black,"Nunawading, VIC",4 cyl,Wagon, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 Cruiser AWD Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,38573,White / -,"Bentley, WA",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Mercedes-Benz,2015,S-Class,"02 **** ****
+",2015 Mercedes-Benz S-Class,USED,-,-,Other,Unleaded,-,107572,Black / -,"Smeaton Grange, NSW",-,,,,50000-60000 AUD
+Nissan,2020,Navara,Ute / Tray,2020 Nissan Navara ST-X (4X2),USED,Automatic,"4 cyl, 2.3 L",Front,Diesel,6.8 L / 100 km,18618,Black / -,"East Maitland, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2022,Hilux,Ute / Tray,2022 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,29512,White / Black,"Fyshwick, ACT",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Hyundai,2022,I30,Hatchback,2022 Hyundai I30 N Drive-N Limited Edition,USED,Manual,"4 cyl, 2 L",Front,Premium,8.5 L / 100 km,2453,Black / Black,"North Wollongong, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,50000-60000 AUD
+Toyota,2023,Camry,Sedan,2023 Toyota Camry Ascent Sport Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.5 L / 100 km,112,Grey / -,"Pennant Hills, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Honda,2017,Civic,Hatchback,2017 Honda Civic Type R,USED,Manual,"4 cyl, 2 L",Front,Premium,8.8 L / 100 km,31685,White / Black & Red Cloth,"Golden Square, VIC",4 cyl,Hatchback, 5 Doors, 4 Seats,50000-60000 AUD
+Audi,2021,A4,Sedan,2021 Audi A4 35 Tfsi S Line Mhev,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.1 L / 100 km,43883,White / Black/Black,"Tullamarine, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Ford,2018,Ranger,Ute / Tray,2018 Ford Ranger Wildtrak 3.2 (4X4),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.9 L / 100 km,80630,Orange / Black,"Maddington, WA",5 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Land,2018,Rover,USED Dealer ad,2018 Land Rover Range Rover Velar,USED,-,-,Other,-,-,127162,Black / -,"Rozelle, NSW",-,Wagon,,,50000-60000 AUD
+Mazda,2021,CX-9,SUV,2021 Mazda CX-9 GT SP (awd),USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,8.8 L / 100 km,13402,Black / Burgundy,"Hume, ACT",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Volkswagen,2020,Golf,Hatchback,2020 Volkswagen Golf R Final Edition,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.2 L / 100 km,48685,Blue / -,"Cardiff, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,50000-60000 AUD
+Toyota,2017,Hilux,Ute / Tray,2017 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,59401,White / -,"Alexandria, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+BMW,2018,X3,SUV,2018 BMW X3 Xdrive 30I,USED,Automatic,"4 cyl, 2 L",4WD,Premium,7.6 L / 100 km,59830,Grey / Leather Vernasca Design Perforated Cognac,"Mulgrave, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Jeep,2021,Wrangler,SUV,2021 Jeep Wrangler Sport S (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,9.6 L / 100 km,29345,White / Black,"Strathpine, QLD",6 cyl,SUV, 2 Doors, 4 Seats,50000-60000 AUD
+Mazda,2020,CX-8,SUV,2020 Mazda CX-8 GT (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6 L / 100 km,70270,White / Black,"Sunbury, VIC",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Nissan,2019,Navara,Ute / Tray,2019 Nissan Navara ST-X (4X4) (leather Trim),USED,Automatic,"4 cyl, 2.3 L",4WD,Diesel,7 L / 100 km,83500,Grey / Black,"Robina, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Audi,2018,S3,Hatchback,2018 Audi S3 Sportback 2.0 Tfsi Quattro,USED,Automatic,"4 cyl, 2 L",AWD,Premium,6.6 L / 100 km,46956,Grey / Black,"Smeaton Grange, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,Granvia,Wagon,2021 Toyota Granvia Standard (6 Seats),USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,8 L / 100 km,65325,White / Black,"Castle Hill, NSW",4 cyl,Wagon, 4 Doors, 6 Seats,50000-60000 AUD
+Porsche,2016,Macan,SUV,2016 Porsche Macan S,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.7 L / 100 km,114202,Gold / -,"Penrith, NSW",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Land,2014,Rover,SUV,2014 Land Rover Range Rover Sport 3.0 V6 SC HSE,USED,Automatic,"6 cyl, 3 L",AWD,Premium,11.3 L / 100 km,79053,Grey / -,"Mansfield, QLD",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Isuzu,2022,MU-X,SUV,2022 Isuzu MU-X LS-M (4X2),USED,Automatic,"4 cyl, 3 L",Front,Diesel,7.8 L / 100 km,22248,White / Black,"Hobart, TAS",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Jaguar,2018,F-Pace,Southern Classic Cars Northside,2018 Jaguar F-Pace R-Sport,USED,Automatic,-,Other,Diesel,-,69939,White / Ebony Ebony/Ebony Light Oyster 'R-Sport',"Wollongong, NSW",-,Wagon,,,50000-60000 AUD
+Audi,2022,A3,Sedan,2022 Audi A3 40 Tfsi Quattro S Line,USED,Automatic,"4 cyl, 2 L",AWD,Premium,6.6 L / 100 km,8401,Red / Black,"Zetland, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Lexus,2018,RX350,SUV,2018 Lexus RX350 Luxury,USED,Automatic,"6 cyl, 3.5 L",AWD,Premium,9.6 L / 100 km,61556,Blue / Black,"Elsternwick, VIC",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Mercedes-Benz,2016,Sprinter,Tradie's Heaven,2016 Mercedes-Benz Sprinter 316CDI High Roof XLWB 7G-Tronic,USED,Automatic,-,Other,-,-,238561,White / -,"Oakleigh, VIC",-,Commercial,,,50000-60000 AUD
+Jeep,2017,Wrangler,SUV,2017 Jeep Wrangler Unlimited Sport (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,11.7 L / 100 km,114870,Black / Black,"Deer Park, VIC",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Ford,2022,Everest,SUV,2022 Ford Everest Trend (4WD),USED,Automatic,"5 cyl, 3.2 L",4WD,Diesel,8.5 L / 100 km,20401,White / Ebony Leather,"Ryde, NSW",5 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Skoda,2022,Kodiaq,SUV,2022 Skoda Kodiaq Style (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Premium,8.2 L / 100 km,9059,Blue / -,"West End, QLD",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+BMW,2010,M3,Sedan,2010 BMW M3,USED,Automatic,"8 cyl, 4 L",Rear,Premium,11.9 L / 100 km,119345,White / -,"Seaford, VIC",8 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,RAV4,SUV,2021 Toyota RAV4 Cruiser (awd) Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,68606,Red / -,"Hamilton East, NSW",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Audi,2017,Q5,SUV,2017 Audi Q5 2.0 Tfsi Quattro Sport,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.3 L / 100 km,28491,Black / Black,"Geelong, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+BMW,2015,X5,SUV,2015 BMW X5 Xdrive 50I,USED,Automatic,"8 cyl, 4.4 L",AWD,Premium,10.5 L / 100 km,92412,Black / Leather,"Liverpool, NSW",8 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Renault,2017,Master,East Coast Commercials Gold Coast,2017 Renault Master LWB,USED,Automatic,-,Other,-,-,101109,White / -,"Robina, QLD",-,Ute / Tray,,,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 GXL 2WD Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,57695,Blue / Black,"East Maitland, NSW",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Kia,2018,Stinger,Sedan,2018 Kia Stinger GT (black Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,62500,Silver / -,"Wendouree, VIC",6 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Volvo,2022,XC40,SUV,2022 Volvo XC40 T4 Momentum (fwd),USED,Automatic,"4 cyl, 2 L",Front,Premium,7.9 L / 100 km,4137,Grey / Black,"Lindfield, NSW",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Lexus,2019,NX,Max Ouzas Prestige Cars,2019 Lexus NX NX300 2WD F Sport,USED,Automatic,-,Front,Premium,-,46807,Grey / -,"Balwyn, VIC",-,Wagon,,,50000-60000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,70802,White / -,"Bentley, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,Hilux,Ute / Tray,2021 Toyota Hilux SR HI-Rider,USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,7.5 L / 100 km,34359,White / Black,"Cranbourne, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,Hilux,Ute / Tray,2020 Toyota Hilux SR5 (4X4),USED,Manual,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,93954,White / Grey,"Loftville, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Audi,2017,Q5,SUV,2017 Audi Q5 2.0 Tfsi Quattro Sport,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.3 L / 100 km,40225,White / Black,"Tullamarine, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Audi,2020,Q3,SUV,2020 Audi Q3 40 Tfsi Quattro S Line,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.3 L / 100 km,34996,Grey / Black,"Chatswood, NSW",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Honda,2017,Civic,Hatchback,2017 Honda Civic Type R,USED,Manual,"4 cyl, 2 L",Front,Premium,8.8 L / 100 km,49860,White / -,"Valley View, SA",4 cyl,Hatchback, 5 Doors, 4 Seats,50000-60000 AUD
+Toyota,2023,Corolla,Chatswood Toyota,2023 Toyota Corolla ZR Hybrid,USED,Automatic,-,Front,Other,-,45,White / -,"Chatswood, NSW",-,Hatchback,,,50000-60000 AUD
+Toyota,2022,RAV4,SUV,2022 Toyota RAV4 Cruiser (2WD),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,6 L / 100 km,11277,Blue / Black,"Pakenham, VIC",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Lexus,2018,NX300,SUV,2018 Lexus NX300 Sports Luxury (awd),USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.9 L / 100 km,37980,Grey / Black Leather,"Brookvale, NSW",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+BMW,2015,X6,SUV,2015 BMW X6 Xdrive 30D,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,6 L / 100 km,67850,White / -,"East Maitland, NSW",6 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Hyundai,2021,I30,Hatchback,2021 Hyundai I30 N,USED,Manual,"4 cyl, 2 L",Front,Premium,8.5 L / 100 km,8939,Blue / Black,"Greenacre, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,50000-60000 AUD
+Ford,2022,Ranger,Ute / Tray,2022 Ford Ranger XLS 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.6 L / 100 km,8526,Silver / -,"Elizabeth, SA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Audi,2018,Q5,SUV,2018 Audi Q5 2.0 Tfsi Quattro Sport,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.3 L / 100 km,30911,Silver / Black,"Southport, QLD",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2018,Kluger,SUV,2018 Toyota Kluger Grande (4X4),USED,Automatic,"6 cyl, 3.5 L",AWD,Unleaded,9.5 L / 100 km,73536,Grey / -,"Hobart, TAS",6 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Isuzu,2017,MU-X,SUV,2017 Isuzu MU-X LS-T (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.9 L / 100 km,46480,White / -,"Bentley, WA",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+Mini,2022,3D,Hatchback,2022 Mini 3D Hatch Cooper SE Classic,USED,Automatic,0 L,Front,Electric,0 L / 100 km,6200,Red / Carbon Black Leatherette,"Darlinghurst, NSW",0 L,Hatchback, 3 Doors, 4 Seats,50000-60000 AUD
+Kia,2021,Sportage,SUV,2021 Kia Sportage GT-Line (awd),USED,Automatic,"4 cyl, 1.6 L",AWD,Unleaded,7.2 L / 100 km,19845,Grey / Black,"Reynella, SA",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Land,2018,Rover,Perth City Prestige,2018 Land Rover Range Rover Evoque TD4 132kW SE Dynamic,USED,Automatic,-,Other,Diesel,-,96000,White / Black,"Victoria Park, WA",-,Wagon,,,50000-60000 AUD
+FPV,2010,F6,Sedan,2010 FPV F6,USED,Automatic,"6 cyl, 4 L",Rear,Premium,12.1 L / 100 km,157266,Black / -,"Liverpool, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2017,Hilux,Ute / Tray,2017 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,138873,Black / -,"Darwin, NT",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Mercedes-Benz,2014,ML63,SUV,2014 Mercedes-Benz ML63 AMG (4X4),USED,Automatic,"8 cyl, 5.5 L",AWD,Premium,11.8 L / 100 km,130352,Silver / Black Leather,"Minchinbury, NSW",8 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2023,Corolla,SUV,2023 Toyota Corolla Cross GXL AWD Hybrid,USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,4.4 L / 100 km,32,Green / Black,"Oakleigh, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,RAV4,SUV,2021 Toyota RAV4 Cruiser (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,35430,White / Black,"Hendra, QLD",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Toyota,2022,RAV4,SUV,2022 Toyota RAV4 GX (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,124,White / 2022/07,"Dandenong South, VIC",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Toyota,2022,Hilux,Ute / Tray,2022 Toyota Hilux SR HI-Rider (4X2),USED,Manual,"4 cyl, 2.8 L",Rear,Diesel,7.1 L / 100 km,10128,White / Black,"Kedron, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+BMW,2018,X5,SUV,2018 BMW X5 Sdrive 25D M Sport,USED,Automatic,"4 cyl, 2 L",Rear,Diesel,5.5 L / 100 km,51526,White / -,"Mansfield, QLD",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 Cruiser (awd) Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,76487,White / -,"Preston, VIC",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Hyundai,2022,Tucson,SUV,2022 Hyundai Tucson Highlander (awd),USED,Automatic,"4 cyl, 2 L",AWD,Diesel,6.3 L / 100 km,25291,White / Black,"Camdale, TAS",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Mitsubishi,2022,Triton,Ute / Tray,2022 Mitsubishi Triton GLS (4X4),USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8.6 L / 100 km,13732,White / Cloth,"Nundah, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Mercedes-Benz,2019,GLC200,SUV,2019 Mercedes-Benz GLC200,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.2 L / 100 km,32883,Grey / -,"Rozelle, NSW",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Ford,2017,Mustang,USED Dealer ad,2017 Ford Mustang GT Fastback SelectShift,USED,Automatic,-,Rear,Premium,-,44283,Blue / -,"Welshpool, WA",-,,,,50000-60000 AUD
+Mitsubishi,2020,Pajero,SUV,2020 Mitsubishi Pajero Sport Exceed (4X4) 7 Seat,USED,Automatic,"4 cyl, 2.4 L",4WD,Diesel,8 L / 100 km,57775,White / Black,"Rockingham, WA",4 cyl,SUV, 4 Doors, 7 Seats,50000-60000 AUD
+BMW,2018,X3,SUV,2018 BMW X3 Xdrive 30I,USED,Automatic,"4 cyl, 2 L",4WD,Premium,7.6 L / 100 km,75000,Black / Leather Vernasca Bla,"Sylvania, NSW",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Hyundai,2021,Kona,SUV,2021 Hyundai Kona Elite Electric EXT Range,USED,Automatic,0 L,Front,Electric,0 L / 100 km,26582,Blue / Black,"Brooklyn, VIC",0 L,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Kia,2022,Niro,SUV,2022 Kia Niro HEV GT-Line BLK C Pillar (hyb),USED,Automatic,"4 cyl, 1.6 L",Front,Hybrid,4 L / 100 km,3085,Grey / Grey,"Ferntree Gully, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Nissan,2022,X-Trail,SUV,2022 Nissan X-Trail TI (4WD),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,7.8 L / 100 km,10844,White / Grey,"Hoppers Crossing, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2020,RAV4,SUV,2020 Toyota RAV4 Cruiser 2WD Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,28050,Blue / -,"Bentley, WA",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Lexus,2018,RX,LEXUS OF TOOWOOMBA,2018 Lexus RX Crafted Edition,USED,Automatic,-,AWD,Unleaded,-,76800,White / Black / Leather,"Toowoomba, QLD",-,Wagon,,,50000-60000 AUD
+Lexus,2018,NX300,SUV,2018 Lexus NX300 F Sport (awd),USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.9 L / 100 km,45584,Grey / Leather,"Bundoora, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Isuzu,2021,D-MAX,Ute / Tray,2021 Isuzu D-MAX LS-U (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,16799,Blue / Cloth,"Liverpool, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2021,Camry,Sedan,2021 Toyota Camry SX Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,14269,White / Leather,"Keysborough, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2018,Landcruiser,SUV,2018 Toyota Landcruiser Prado GX (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,98338,White / -,"Frankston, VIC",4 cyl,SUV, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,85112,Silver / -,"Waitara, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,50000-60000 AUD
+Toyota,2022,RAV4,SUV,2022 Toyota RAV4 GX (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,124,White / 2022/07,"Dandenong South, VIC",4 cyl,SUV, 5 Doors, 5 Seats,50000-60000 AUD
+Ford,2022,Ranger,Ute / Tray,2022 Ford Ranger Wildtrak 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.4 L / 100 km,19500,White / Black,"Moonah, TAS",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2020,Landcruiser,SUV,2020 Toyota Landcruiser Prado GXL Flat Tailgate,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,50901,White / -,"Elsternwick, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2020,Landcruiser,SUV,2020 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,59475,White / Black,"Hendra, QLD",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Nissan,2023,Pathfinder,SUV,2023 Nissan Pathfinder TI (2WD),USED,Automatic,"6 cyl, 3.5 L",Front,Premium,10 L / 100 km,4950,Grey / -,"Cannington, WA",6 cyl,SUV, 4 Doors, 8 Seats,60000-70000 AUD
+Maserati,2017,Ghibli,Sedan,2017 Maserati Ghibli,USED,Automatic,"6 cyl, 3 L",Rear,Premium,8.9 L / 100 km,45963,Black / -,"Rozelle, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2023,RAV4,SUV,2023 Toyota RAV4 Cruiser (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.8 L / 100 km,34,Blue / -,"Rockingham, WA",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,RAV4,SUV,2021 Toyota RAV4 Cruiser (awd) Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,17408,White / -,"Jandakot, WA",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,Land,Pacific Toyota City Used Cars,2021 Toyota Land Cruiser Prado GXL,USED,Automatic,-,Other,-,-,59095,White / -,"Parramatta Park, QLD",-,Wagon,,,60000-70000 AUD
+Toyota,2020,Landcruiser,SUV,2020 Toyota Landcruiser Prado GXL,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,68369,White / -,"Rockingham, WA",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Ram,2017,1500,Highlands Garage,2017 Ram 1500 Laramie Crew Cab SWB RamBox,USED,Automatic,-,Other,Unleaded,-,230119,- / Brown,"Mittagong, NSW",-,Ute / Tray,,,60000-70000 AUD
+Jeep,2021,Wrangler,SUV,2021 Jeep Wrangler Unlimited Overland (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,9.7 L / 100 km,10831,Grey / Black,"Alexandria, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Hyundai,2023,I30,Hatchback,2023 Hyundai I30 N Premium With Sunroof,USED,Automatic,"4 cyl, 2 L",Front,Premium,8.5 L / 100 km,19,Black / Black,"Blacktown, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,60000-70000 AUD
+Jeep,2020,Grand,SUV,2020 Jeep Grand Cherokee Overland (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7 L / 100 km,69696,Grey / Black,"Burswood, WA",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2017,E300,Sedan,2017 Mercedes-Benz E300,USED,Automatic,"4 cyl, 2 L",Rear,Premium,7.1 L / 100 km,33145,Grey / Black,"Epping, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2020,C300,Sedan,2020 Mercedes-Benz C300,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,7 L / 100 km,47938,Black / Black,"Sylvania, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,Fortuner,SUV,2021 Toyota Fortuner GXL,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,16768,White / -,"Ballarat, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2017,Landcruiser,SUV,2017 Toyota Landcruiser LC200 Altitude Special Edition,USED,Automatic,"8 cyl, 4.5 L",4WD,Diesel,9.5 L / 100 km,250251,White / -,"Penrith, NSW",8 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2018,Landcruiser,SUV,2018 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,77072,Silver / Black,"Berrimah, NT",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+BMW,2016,M2,Coupe,2016 BMW M2,USED,Automatic,"6 cyl, 3 L",Rear,Premium,7.9 L / 100 km,66943,Grey / -,"Oakleigh, VIC",6 cyl,Coupe, 2 Doors, 4 Seats,60000-70000 AUD
+Toyota,2019,Landcruiser,SUV,2019 Toyota Landcruiser Prado GXL (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,75987,White / Grey Fabric,"Midland, WA",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Nissan,2021,Navara,Ute / Tray,2021 Nissan Navara PRO-4X Warrior (4X4),USED,Automatic,"4 cyl, 2.3 L",4WD,Diesel,8.1 L / 100 km,43275,Grey / Black,"Mount Gambier, SA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Isuzu,2021,MU-X,SUV,2021 Isuzu MU-X LS-U (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8.3 L / 100 km,18067,Red / Black,"Lavington, NSW",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2021,Hilux,Ute / Tray,2021 Toyota Hilux Rogue (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.4 L / 100 km,56417,Grey / 2Lle21,"Albion Park, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Land,2018,Rover,SUV,2018 Land Rover Discovery SD4 SE (177KW),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.5 L / 100 km,74458,Grey / Black,"Brookvale, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Tesla,2020,Model,Sedan,2020 Tesla Model 3 Long Range AWD,USED,Automatic,0 L,Rear,Electric,0 L / 100 km,51547,White / Black,"Jamisontown, NSW",0 L,Sedan, 5 Doors, 5 Seats,60000-70000 AUD
+Kia,2021,Sorento,SUV,2021 Kia Sorento GT-Line 7 Seat,USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.7 L / 100 km,16446,Blue / Leather,"Mornington, VIC",6 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Mercedes-Benz,2022,CLA,Sedan,2022 Mercedes-Benz CLA 200,USED,Automatic,"4 cyl, 1.3 L",Front,Premium,5.7 L / 100 km,23548,White / Black,"Osborne Park, WA",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Mazda,2021,BT-50,Ute / Tray,2021 Mazda BT-50 GT (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,34850,Black / Brown,"Auburn, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2023,RAV4,SUV,2023 Toyota RAV4 XSE (2WD) Hybrid Premium Paint,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.8 L / 100 km,31,White / Black,"Smeaton Grange, NSW",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Mini,2021,3D,Hatchback,2021 Mini 3D Hatch JCW Mini Yours,USED,Automatic,"4 cyl, 2 L",Front,Premium,6.3 L / 100 km,22800,Black / Mini Yours Leather Lounge Carbon Black,"Darlinghurst, NSW",4 cyl,Hatchback, 3 Doors, 4 Seats,60000-70000 AUD
+Audi,2022,Q3,SUV,2022 Audi Q3 35 Tfsi,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,7.2 L / 100 km,20,Black / Black,"Pennant Hills, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2019,C200,Coupe,2019 Mercedes-Benz C200,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,7 L / 100 km,31359,Silver / Black Artico,"Epping, VIC",4 cyl,Coupe, 2 Doors, 4 Seats,60000-70000 AUD
+Ford,2022,Mustang,Hatchback,2022 Ford Mustang GT 5.0 V8,USED,Automatic,"8 cyl, 5 L",Rear,Premium,12.7 L / 100 km,3958,White / -,"Victoria Park, WA",8 cyl,Hatchback, 2 Doors, 4 Seats,60000-70000 AUD
+Toyota,2021,Kluger,SUV,2021 Toyota Kluger GXL Hybrid AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,5.6 L / 100 km,62178,White / Black,"Albion Park Rail, NSW",4 cyl,SUV, 5 Doors, 7 Seats,60000-70000 AUD
+Toyota,2022,Rav,Chadstone Toyota,2022 Toyota Rav 4,USED,Automatic,-,Other,-,-,12187,Blue / -,"Oakleigh, VIC",-,Wagon,,,60000-70000 AUD
+Ford,2021,Everest,SUV,2021 Ford Everest Titanium (4WD),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7 L / 100 km,63761,Red / Leather,"Robina, QLD",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Mercedes-Benz,2022,A250,Hatchback,2022 Mercedes-Benz A250 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,6.8 L / 100 km,2189,Yellow / Black,"Epping, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,60000-70000 AUD
+Ford,2019,Ranger,Ute / Tray,2019 Ford Ranger Raptor 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,8.2 L / 100 km,114956,Blue / -,"Campbelltown, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+BMW,2021,330I,Sedan,2021 BMW 330I M Sport,USED,Automatic,"4 cyl, 2 L",Rear,Premium,6.4 L / 100 km,29972,Orange / -,"Rozelle, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,1993,Supra,Hatchback,1993 Toyota Supra,USED,Manual,"6 cyl, 3 L",Rear,-,-,223931,Black / Black,"Chipping Norton, NSW",6 cyl,Hatchback, 2 Doors,,60000-70000 AUD
+Lexus,2022,ES250,Sedan,2022 Lexus ES250 F Sport,USED,Automatic,"4 cyl, 2.5 L",Front,Premium,6.8 L / 100 km,21166,Grey / F Sport Black/Hadori Aluminium,"Waterloo, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2018,HiAce,"02 **** ****
+",2018 Toyota HiAce S-GL Dark Prime Edition Widebody 4WD Dark Prime Edition,USED,-,-,Other,Unleaded,-,78019,Black / Grey,"West Ryde, NSW",-,,,,60000-70000 AUD
+Ford,2019,Ranger,Ute / Tray,2019 Ford Ranger Raptor 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,8.2 L / 100 km,75908,Black / Black,"Frankston, VIC",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2023,Rav,USED Dealer ad,2023 Toyota Rav 4,USED,-,-,Other,-,-,104,White / -,"Windsor, NSW",-,Wagon,,,60000-70000 AUD
+BMW,2021,330I,Sedan,2021 BMW 330I M Sport,USED,Automatic,"4 cyl, 2 L",Rear,Premium,6.4 L / 100 km,23332,Black / -,"Sylvania, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Land,2014,Rover,SUV,2014 Land Rover Range Rover Sport 3.0 SDV6 SE,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.5 L / 100 km,138373,White / -,"Deer Park, VIC",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Ford,2022,Ranger,Ute / Tray,2022 Ford Ranger XLT 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.6 L / 100 km,15010,Black / Black,"Singleton, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2021,GLC,SUV,2021 Mercedes-Benz GLC 200,USED,Automatic,"4 cyl, 2 L",Rear,Premium,7.8 L / 100 km,23721,Grey / Black,"Mulgrave, VIC",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Mazda,2021,BT-50,Ute / Tray,2021 Mazda BT-50 GT (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,29212,White / -,"Rockingham, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Tesla,2021,Model,"02 **** ****
+",2021 Tesla Model 3,USED,-,-,Other,-,-,25413,White / -,"Rozelle, NSW",-,,,,60000-70000 AUD
+Mazda,2022,BT-50,Ute / Tray,2022 Mazda BT-50 SP (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,8417,Black / -,"Jandakot, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2023,RAV4,SUV,2023 Toyota RAV4 Cruiser (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.8 L / 100 km,17,Red / Black,"Pennant Hills, NSW",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Toyota,2023,RAV4,SUV,2023 Toyota RAV4 GXL (awd) Hybrid,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,4.8 L / 100 km,18,Blue / Black,"Ringwood, VIC",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,94659,White / -,"Winnellie, NT",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Cupra,2022,Formentor,SUV,2022 Cupra Formentor VZX,USED,Automatic,"4 cyl, 2 L",4WD,Premium,7.7 L / 100 km,1000,Grey / Petrol Blue,"Chatswood, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2004,Landcruiser,SUV,2004 Toyota Landcruiser Sahara (4X4),USED,Automatic,"6 cyl, 4.2 L",4WD,Diesel,0 L / 100 km,350999,Black / -,"Roselands, NSW",6 cyl,SUV, 4 Doors, 8 Seats,60000-70000 AUD
+Toyota,2020,Hilux,Ute / Tray,2020 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,28388,Silver / -,"Kedron, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Ford,2018,Mustang,USED Dealer ad,2018 Ford Mustang GT,USED,Automatic,-,Rear,Premium,-,26000,Grey / Black Leather,"Berwick, VIC",-,,,,60000-70000 AUD
+Land,2019,Rover,SUV,2019 Land Rover Discovery Sport D150 R-Dynamic S (110KW),USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.7 L / 100 km,43621,Grey / -,"Balwyn, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+BMW,2016,M4,Coupe,2016 BMW M4,USED,Automatic,"6 cyl, 3 L",Rear,Premium,8.3 L / 100 km,99978,Silver / Black,"Carlton, NSW",6 cyl,Coupe, 2 Doors, 4 Seats,60000-70000 AUD
+Toyota,2021,Kluger,SUV,2021 Toyota Kluger GXL Hybrid AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,5.6 L / 100 km,11653,White / -,"Warwick Farm, NSW",4 cyl,SUV, 5 Doors, 7 Seats,60000-70000 AUD
+Toyota,2017,Landcruiser,Ute / Tray,2017 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,157570,White / -,"Granville, NSW",8 cyl,Ute / Tray, 2 Doors, 3 Seats,60000-70000 AUD
+Jaguar,2017,F-Pace,SUV,2017 Jaguar F-Pace 35T R-Sport,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.9 L / 100 km,73840,Red / Black,"North Strathfield, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Lexus,2020,IS350,Sedan,2020 Lexus IS350 F Sport,USED,Automatic,"6 cyl, 3.5 L",Rear,Premium,9.7 L / 100 km,29222,White / Black,"Maddington, WA",6 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux Rugged X (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,25246,White / -,"Milperra, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Kia,2022,Stinger,Sedan,2022 Kia Stinger GT (black Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,30874,Red / -,"Port Macquarie, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+BMW,2020,X3,SUV,2020 BMW X3 Sdrive20I M Sport,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,7.4 L / 100 km,65821,Black / Vernasca Black Leather & Decor Stitching,"Bentleigh, VIC",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2019,Landcruiser,SUV,2019 Toyota Landcruiser Prado GX (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,23785,White / Grey,"Padstow, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Mini,2023,3D,Hatchback,2023 Mini 3D Hatch Cooper SE Mini Yours,USED,Automatic,0 L,Front,Electric,0 L / 100 km,1653,Black / Mini Yours Leather Lounge Carbon Black,"Bentleigh, VIC",0 L,Hatchback, 3 Doors, 4 Seats,60000-70000 AUD
+BMW,2013,M3,Lorbek Luxury Cars Melbourne,2013 BMW M3,USED,Automatic,-,Rear,Premium,-,104391,White / -,"Port Melbourne, VIC",-,Convertible,,,60000-70000 AUD
+Toyota,2019,Hilux,Ute / Tray,2019 Toyota Hilux Rogue (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,40440,White / -,"Mount Gravatt, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2012,Landcruiser,SUV,2012 Toyota Landcruiser Sahara (4X4),USED,Automatic,"8 cyl, 4.5 L",4WD,Diesel,10.3 L / 100 km,300000,White / -,"Underwood, QLD",8 cyl,SUV, 4 Doors, 8 Seats,60000-70000 AUD
+Holden,2017,UTE,Ute / Tray,2017 Holden UTE SS-V Redline,USED,Automatic,"8 cyl, 6.2 L",Rear,Unleaded,12.4 L / 100 km,54608,Silver / Dark Grey,"Hamilton, NSW",8 cyl,Ute / Tray, 2 Doors, 2 Seats,60000-70000 AUD
+Jeep,2020,Wrangler,SUV,2020 Jeep Wrangler Unlimited Overland (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,9.7 L / 100 km,49673,Silver / Black,"Tweed Heads South, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Kia,2021,Sportage,SUV,2021 Kia Sportage GT-Line (awd),USED,Automatic,"4 cyl, 2 L",AWD,Diesel,6.3 L / 100 km,17121,Blue / Black,"Berwick, VIC",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2012,Landcruiser,Ute / Tray,2012 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,11.9 L / 100 km,155410,White / -,"Mount Barker, SA",8 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Porsche,2016,Macan,SUV,2016 Porsche Macan S,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.7 L / 100 km,70209,White / -,"Glebe, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2022,Hilux,Ute / Tray,2022 Toyota Hilux SR5 + Premium Interior (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.4 L / 100 km,11794,White / Black,"Fyshwick, ACT",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Audi,2021,A5,Mornington Hyundai & MG Used Cars,2021 Audi A5 45 Tfsi Quattro S Line Mhev,USED,-,"4 cyl, 2 L",AWD,Hybrid,7.1 L / 100 km,37305,Black / Black,"Mornington, VIC",4 cyl,Coupe, 2 Doors, 4 Seats,60000-70000 AUD
+Mercedes-Benz,2016,E350,Sedan,2016 Mercedes-Benz E350 D,USED,Automatic,"6 cyl, 3 L",Rear,Diesel,5.6 L / 100 km,55983,Grey / Black Artico,"Berwick, VIC",6 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2019,GLC300,SUV,2019 Mercedes-Benz GLC300 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,71997,Black / Black,"Artarmon, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,Fortuner,SUV,2021 Toyota Fortuner Crusade,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,32875,White / -,"Preston, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Ford,2015,Falcon,Sedan,2015 Ford Falcon XR8,USED,Manual,"8 cyl, 5 L",Rear,Unleaded,13.6 L / 100 km,61809,White / -,"Rozelle, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Audi,2018,A5,Motorama Mitsubishi Moorooka Used,2018 Audi A5 45 TFSI S Tronic Quattro Sport,USED,Automatic,-,Other,Premium,-,26356,White / -,"Moorooka, QLD",-,Convertible,,,60000-70000 AUD
+Mercedes-Benz,2019,GLC43,SUV,2019 Mercedes-Benz GLC43,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.8 L / 100 km,112808,Grey / -,"Glebe, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Isuzu,2022,D-MAX,Ute / Tray,2022 Isuzu D-MAX LS-U+ (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,282,White / Black,"Derwent Park, TAS",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Mercedes-Benz,2019,C300,Coupe,2019 Mercedes-Benz C300,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,7 L / 100 km,30855,Blue / -,"Bentley, WA",4 cyl,Coupe, 2 Doors, 4 Seats,60000-70000 AUD
+Subaru,2006,Impreza,"02 **** ****
+",2006 Subaru Impreza,USED,-,-,Other,Unleaded,-,121433,Black / Recaro,"Smeaton Grange, NSW",-,,,,60000-70000 AUD
+Isuzu,2022,D-MAX,Ute / Tray,2022 Isuzu D-MAX X-Terrain (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,7.7 L / 100 km,11550,White / -,"KINGSLEY, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Ford,2022,Mustang,Convertible,2022 Ford Mustang 2.3 Gtdi,USED,Automatic,"4 cyl, 2.3 L",Rear,Unleaded,9.5 L / 100 km,1550,White / Black,"Geelong, VIC",4 cyl,Convertible, 2 Doors, 4 Seats,60000-70000 AUD
+Kia,2021,Stinger,Sedan,2021 Kia Stinger GT (red Leather),USED,Automatic,"6 cyl, 3.3 L",Rear,Unleaded,10.2 L / 100 km,23930,Black / Black,"North Narrabeen, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Land,2016,Rover,SUV,2016 Land Rover Range Rover Sport 3.0 TDV6 S,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.3 L / 100 km,89153,White / -,"Rozelle, NSW",6 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+BMW,2018,X3,Nick's Motors,2018 BMW X3 M40i Steptronic,USED,Automatic,-,Other,Premium,-,79921,White / Black Leather,"Minchinbury, NSW",-,Wagon,,,60000-70000 AUD
+Toyota,2015,Landcruiser,Ute / Tray,2015 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,11.5 L / 100 km,154213,White / Grey,"Pakenham, VIC",8 cyl,Ute / Tray, 2 Doors, 3 Seats,60000-70000 AUD
+Kia,2022,Stinger,USED Dealer ad,2022 Kia Stinger GT Fastback,USED,Automatic,-,Rear,Unleaded,-,9625,White / Red,"Moss Vale, NSW",-,,,,60000-70000 AUD
+Toyota,2021,Fortuner,SUV,2021 Toyota Fortuner Crusade,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,26129,White / Leather,"Greenway, ACT",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2015,Alphard,Sun Auto Group Five Dock,2015 Toyota Alphard SC PACKAGE,USED,Automatic,-,Other,Unleaded,-,59672,Black / Black,"Five Dock, NSW",-,Wagon,,,60000-70000 AUD
+Audi,2022,Q5,SUV,2022 Audi Q5 40 TDI Quattro Mhev,USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,5.4 L / 100 km,8270,White / Black,"Smeaton Grange, NSW",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Ford,2019,Everest,SUV,2019 Ford Everest Sport (4WD 7 Seat),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7 L / 100 km,29889,Silver / Black Leather,"Berwick, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+HSV,2015,Clubsport,Sedan,2015 HSV Clubsport R8,USED,Automatic,"8 cyl, 6.2 L",Rear,Premium,12.9 L / 100 km,110807,Black / -,"Rutherford, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2020,Hilux,Ute / Tray,2020 Toyota Hilux Rugged X (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8.5 L / 100 km,61496,Black / Grey & Black Fabric,"Kunda Park, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Audi,2022,SQ2,SUV,2022 Audi SQ2 2.0 Tfsi Quattro,USED,Automatic,"4 cyl, 2 L",AWD,Premium,7.7 L / 100 km,9513,Grey / Black,"Greenway, ACT",4 cyl,SUV, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,Kluger,SUV,2021 Toyota Kluger GX Hybrid AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,5.6 L / 100 km,14957,White / Grey,"Waitara, NSW",4 cyl,SUV, 5 Doors, 7 Seats,60000-70000 AUD
+Toyota,2022,RAV4,SUV,2022 Toyota RAV4 XSE (2WD) Hybrid,USED,Automatic,"4 cyl, 2.5 L",Front,Hybrid,4.7 L / 100 km,14921,White / Black Softex W,"Reynella, SA",4 cyl,SUV, 5 Doors, 5 Seats,60000-70000 AUD
+Ford,2022,Everest,SUV,2022 Ford Everest Titanium (4WD),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7 L / 100 km,13413,Grey / -,"Bibra Lake, WA",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2021,HiAce,Commercial,2021 Toyota HiAce Slwb,USED,Automatic,"4 cyl, 2.8 L",Rear,Diesel,8.4 L / 100 km,59893,White / Grey,"Homebush West, NSW",4 cyl,Commercial, 5 Doors, 2 Seats,60000-70000 AUD
+Mitsubishi,2020,Pajero,SUV,2020 Mitsubishi Pajero Exceeed (4X4) 7 Seat,USED,Automatic,"4 cyl, 3.2 L",4WD,Diesel,9.1 L / 100 km,38478,White / -,"Bentley, WA",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2023,Hilux,Ute / Tray,2023 Toyota Hilux SR (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,20,White / -,"Bentley, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2020,Fortuner,SUV,2020 Toyota Fortuner Crusade,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.6 L / 100 km,45619,White / -,"Mornington, VIC",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Hyundai,2022,Santa,SUV,2022 Hyundai Santa FE Highlander Crdi (awd),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,6.1 L / 100 km,6715,White / Black,"Kedron, QLD",4 cyl,SUV, 4 Doors, 7 Seats,60000-70000 AUD
+Toyota,2021,Hilux,Ute / Tray,2021 Toyota Hilux SR5 (4X4),USED,Manual,"4 cyl, 2.8 L",4WD,Diesel,7.4 L / 100 km,29484,Blue / Black,"Moruya, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Toyota,2021,Hilux,Ute / Tray,2021 Toyota Hilux SR5 (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,56826,White / -,"Blacktown, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,60000-70000 AUD
+Mazda,2006,BT-50,Ute / Tray,2006 Mazda BT-50 B2500 DX,USED,Manual,"4 cyl, 2.5 L",Rear,Diesel,8.3 L / 100 km,314025,Silver / Grey  Cloth,"Campbellfield, VIC",4 cyl,Ute / Tray, 2 Doors, 3 Seats,less than 10000 AUD
+Mercedes-Benz,2011,B180,Hatchback,2011 Mercedes-Benz B180,USED,Automatic,"4 cyl, 1.7 L",Front,Premium,7.6 L / 100 km,111501,Grey / Black,"Bunbury, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Kia,2009,Sportage,SUV,2009 Kia Sportage LX (fwd),USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.2 L / 100 km,217103,Grey / -,"Kenwick, WA",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2015,Ecosport,SUV,2015 Ford Ecosport Titanium 1.0,USED,Manual,"3 cyl, 1 L",Front,Premium,5.7 L / 100 km,165417,Black / Black Leather,"Elderslie, NSW",3 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2010,Fiesta,Hatchback,2010 Ford Fiesta LX,USED,Manual,"4 cyl, 1.6 L",Front,Diesel,4.4 L / 100 km,129853,Blue / Grey,"Coffs Harbour, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2008,Commodore,Ute / Tray,2008 Holden Commodore Omega,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,11.3 L / 100 km,239342,White / -,"Shepparton, VIC",6 cyl,Ute / Tray, 2 Doors, 2 Seats,less than 10000 AUD
+Subaru,2011,Outback,SUV,2011 Subaru Outback 2.0D Premium (sat-Nav),USED,Manual,"4 cyl, 2 L",AWD,Diesel,6.4 L / 100 km,238850,White / -,"Five Dock, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2007,Commodore,Sedan,2007 Holden Commodore SV6,USED,Manual,"6 cyl, 3.6 L",Rear,Unleaded,11 L / 100 km,290437,Red / Grey,"Minchinbury, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Honda,2005,Accord,USED Dealer ad,2005 Honda Accord 30th Anniversary,USED,Automatic,-,Front,Unleaded,-,343048,Black / Beige  Leather,"BAYSWATER NORTH, VIC",-,,,,less than 10000 AUD
+Toyota,2007,Corolla,Automotive Consultants,2007 Toyota Corolla ZRE152R Ascent Hatchback 5dr Auto 4sp 1.8i,USED,Automatic,-,Front,Unleaded,-,242073,Red / -,"Albion, QLD",-,Hatchback,,,less than 10000 AUD
+Ford,2006,Fiesta,Alphamotive,2006 Ford Fiesta LX,USED,Automatic,-,Front,Unleaded,-,225536,Red / Grey,"BAYSWATER NORTH, VIC",-,Hatchback,,,less than 10000 AUD
+Hyundai,2007,Tucson,SUV,2007 Hyundai Tucson City SX,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,9.2 L / 100 km,239417,Black / -,"Werribee, VIC",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2007,Captiva,SUV,2007 Holden Captiva LX (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,8.7 L / 100 km,220454,Black / -,"Arundel, QLD",4 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Holden,2012,Captiva,SUV,2012 Holden Captiva 7 CX (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,8.1 L / 100 km,188000,White / Black,"Wangara, WA",4 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Holden,2011,Cruze,Sedan,2011 Holden Cruze SRI,USED,Manual,"4 cyl, 1.4 L",Front,Unleaded,6.4 L / 100 km,161091,Blue / Dark Grey & Blue,"EPPING, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Volkswagen,2004,Touareg,SUV,2004 Volkswagen Touareg V6,USED,Automatic,"6 cyl, 3.2 L",4WD,Premium,19.1 L / 100 km,221822,Silver / -,"Point Cook, VIC",6 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2009,Falcon,Sedan,2009 Ford Falcon G6,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,10.5 L / 100 km,243175,Red / -,"Winnellie, NT",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Subaru,2006,Forester,SUV,2006 Subaru Forester X Luxury,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,9.7 L / 100 km,155068,Blue / Leather,"Minto, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2004,Rodeo,Ute / Tray,2004 Holden Rodeo DX,USED,Manual,"4 cyl, 2.4 L",Rear,Unleaded,0 L / 100 km,108283,White / -,"Coopers Plains, QLD",4 cyl,Ute / Tray, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2007,Aurion,Sedan,2007 Toyota Aurion AT-X,USED,Automatic,"6 cyl, 3.5 L",Front,Unleaded,9.9 L / 100 km,207299,Silver / -,"Rocklea, QLD",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2005,Caprice,Sedan,2005 Holden Caprice,USED,Automatic,"8 cyl, 5.7 L",Rear,Unleaded,13.5 L / 100 km,231786,White / Grey,"Lisarow, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Mitsubishi,2009,Lancer,Hatchback,2009 Mitsubishi Lancer ES Sportback,USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,224034,Red / Black,"Eagle Farm, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2007,Barina,Hatchback,2007 Holden Barina,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,7.8 L / 100 km,177223,- / -,"Blair Athol, SA",4 cyl,Hatchback, 3 Doors, 5 Seats,less than 10000 AUD
+Holden,2012,Cruze,Sedan,2012 Holden Cruze CD,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,159317,Red / -,"Point Cook, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2004,Rodeo,3MT True Value Auto,2004 Holden Rodeo 2004 HOLDEN RODEO LX RA MANUAL 4X4,USED,Manual,-,Other,-,-,332466,White / -,"Victoria Park, WA",-,Ute / Tray,,,less than 10000 AUD
+Toyota,2002,Corolla,Hatchback,2002 Toyota Corolla Conquest Seca,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.8 L / 100 km,248291,Blue / Black,"Castle Hill, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Hyundai,2008,Elantra,Sedan,2008 Hyundai Elantra Elite S,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.8 L / 100 km,225901,Black / -,"Leumeah, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2013,Trax,SUV,2013 Holden Trax LS,USED,Manual,"4 cyl, 1.8 L",Front,Unleaded,7 L / 100 km,133259,Silver / -,"Osborne Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Nissan,2006,X-Trail,SUV,2006 Nissan X-Trail TI (4X4),USED,Manual,"4 cyl, 2.5 L",4WD,Unleaded,9.5 L / 100 km,216577,Silver / Grey,"Islington, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Mitsubishi,2008,Lancer,Hatchback,2008 Mitsubishi Lancer ES Sportback,USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.9 L / 100 km,152072,Silver / Black,"Mordialloc, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Toyota,2005,Camry,Sedan,2005 Toyota Camry Ateva,USED,Automatic,"6 cyl, 3 L",Front,Unleaded,11.2 L / 100 km,228299,White / Gray,"Mile End, SA",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2003,RAV4,SUV,2003 Toyota RAV4 Edge (4X4),USED,Manual,"4 cyl, 2 L",4WD,Unleaded,9 L / 100 km,231686,Silver / Black,"Minchinbury, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Hyundai,2012,Accent,Hatchback,2012 Hyundai Accent Active Crdi,USED,Automatic,"4 cyl, 1.6 L",Front,Diesel,5.6 L / 100 km,162000,Silver / -,"Acacia Ridge, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+BMW,2009,320I,Sedan,2009 BMW 320I Executive,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,8 L / 100 km,225869,Black / Black,"South Melbourne, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2001,Corolla,Sedan,2001 Toyota Corolla Ascent,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.8 L / 100 km,156238,White / -,"Minto, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Kia,2008,RIO,Hatchback,2008 Kia RIO EX,USED,Manual,"4 cyl, 1.6 L",Front,Unleaded,6.9 L / 100 km,255250,Blue / -,"Kellyville, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Nissan,2008,Tiida,Hatchback,2008 Nissan Tiida ST,USED,Manual,"4 cyl, 1.8 L",Front,Unleaded,7.6 L / 100 km,128791,White / -,"Kedron, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Volkswagen,2005,Golf,Hatchback,2005 Volkswagen Golf GTI,USED,Manual,"4 cyl, 2 L",Front,Premium,8.1 L / 100 km,241792,Red / -,"Wangara, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Ford,2001,Courier,Ute / Tray,2001 Ford Courier XL,USED,Manual,"4 cyl, 2.6 L",Rear,Unleaded,13 L / 100 km,180818,Blue / -,"Braybrook, VIC",4 cyl,Ute / Tray, 2 Doors, 4 Seats,less than 10000 AUD
+Holden,2012,Cruze,Hatchback,2012 Holden Cruze CD Equipe,USED,Manual,"4 cyl, 1.8 L",Front,Unleaded,7 L / 100 km,144613,Blue / -,"Lansvale, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Toyota,2000,Avalon,Sedan,2000 Toyota Avalon VXI,USED,Automatic,"6 cyl, 3 L",Front,Unleaded,11.5 L / 100 km,209702,Green / Grey,"Ringwood, VIC",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Hyundai,2005,Tucson,SUV,2005 Hyundai Tucson Elite,USED,Automatic,"6 cyl, 2.7 L",AWD,Unleaded,11 L / 100 km,204000,Blue / Beige,"Wangara, WA",6 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2003,Echo,Sedan,2003 Toyota Echo,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,6.6 L / 100 km,61435,Silver / -,"Maryville, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Mercedes-Benz,2007,B200,Hatchback,2007 Mercedes-Benz B200,USED,Automatic,"4 cyl, 2 L",Front,Premium,9.3 L / 100 km,141256,Black / -,"Coburg North, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2012,Barina,Hatchback,2012 Holden Barina CD,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,6.7 L / 100 km,117974,Blue / Black,"Woodridge, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Suzuki,2006,APV,Commercial,2006 Suzuki APV,USED,Manual,"4 cyl, 1.6 L",Rear,Unleaded,8 L / 100 km,307806,White / -,"Wacol, QLD",4 cyl,Commercial, 4 Doors, 2 Seats,less than 10000 AUD
+Honda,2007,Accord,Sedan,2007 Honda Accord VTI,USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,9.3 L / 100 km,210012,White / -,"Lansvale, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2002,RAV4,SUV,2002 Toyota RAV4 Cruiser (4X4),USED,Manual,"4 cyl, 2 L",4WD,Unleaded,9 L / 100 km,260535,Silver / -,"Mansfield, QLD",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Nissan,2001,Navara,Ute / Tray,2001 Nissan Navara ST-R (4X4),USED,Manual,"6 cyl, 3 L",4WD,Unleaded,0 L / 100 km,235256,White / Grey,"Edgeworth, NSW",6 cyl,Ute / Tray, 4 Doors, 5 Seats,less than 10000 AUD
+Subaru,2007,Forester,SUV,2007 Subaru Forester XS Luxury,USED,Automatic,"4 cyl, 2.5 L",AWD,Unleaded,9.7 L / 100 km,222000,- / -,"Campsie, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Suzuki,2007,SX4,Hatchback,2007 Suzuki SX4 4X4,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,9.5 L / 100 km,285211,Silver / Grey Cloth,"Stanthorpe, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2012,Captiva,SUV,2012 Holden Captiva 7 LX (4X4),USED,Automatic,"6 cyl, 3 L",AWD,Unleaded,11.3 L / 100 km,121948,Gold / Black Leather,"Elderslie, NSW",6 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Skoda,2010,Octavia,Wagon,2010 Skoda Octavia 118 TSI,USED,Automatic,"4 cyl, 1.8 L",Front,Premium,6.7 L / 100 km,212994,- / -,"Bells Creek, QLD",4 cyl,Wagon, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2009,Commodore,Wagon,2009 Holden Commodore Omega,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,10.7 L / 100 km,275950,Blue / -,"Fairfield East, NSW",6 cyl,Wagon, 4 Doors, 5 Seats,less than 10000 AUD
+Mitsubishi,2008,Lancer,Sedan,2008 Mitsubishi Lancer VR-X,USED,Manual,"4 cyl, 2 L",Front,Unleaded,8.5 L / 100 km,158449,Gold / -,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2008,Astra,Hatchback,2008 Holden Astra CD,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,8.2 L / 100 km,100996,Silver / Grey,"Croydon, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Chery,2011,J11,SUV,2011 Chery J11 (FWD),USED,Manual,"4 cyl, 2 L",Front,Unleaded,8.9 L / 100 km,157000,Silver / -,"Klemzig, SA",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+GWM,2012,X200,Gamers Autos,2012 GWM X200 K2 Wagon 4dr Auto 5sp 4WD 2.0DT,USED,Automatic,-,Other,Diesel,-,205000,Silver / -,"Hamilton Hill, WA",-,Wagon,,,less than 10000 AUD
+Honda,2010,City,Sedan,2010 Honda City VTI,USED,Automatic,"4 cyl, 1.5 L",Front,Unleaded,6.6 L / 100 km,146445,Black / -,"Kogarah, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Mercedes-Benz,2005,E240,Sedan,2005 Mercedes-Benz E240 Classic,USED,Automatic,"6 cyl, 2.6 L",Rear,Unleaded,11 L / 100 km,207619,Silver / Black Leather,"Elderslie, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Hyundai,2009,I30,Hatchback,2009 Hyundai I30 SX,USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.2 L / 100 km,137149,White / Grey,"Nambour, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Nissan,2005,X-Trail,SUV,2005 Nissan X-Trail ST (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,10 L / 100 km,179514,White / Grey,"Kurri Kurri, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Nissan,2007,Tiida,Hatchback,2007 Nissan Tiida ST,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.8 L / 100 km,98453,Silver / -,"Lambton, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2007,Astra,Hatchback,2007 Holden Astra CD,USED,Manual,"4 cyl, 1.8 L",Front,Unleaded,7.8 L / 100 km,227082,- / -,"Pooraka, SA",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Ford,2010,Fiesta,3MT True Value Auto,2010 Ford Fiesta 2010 FORD FIESTA ZETEC WS MANUAL,USED,Manual,-,Other,-,-,183412,White / -,"Victoria Park, WA",-,Hatchback,,,less than 10000 AUD
+Mazda,2001,MPV,Wagon,2001 Mazda MPV,USED,Automatic,"6 cyl, 2.5 L",Front,Unleaded,12.5 L / 100 km,160757,Green / Grey,"Ravenhall, VIC",6 cyl,Wagon, 4 Doors, 7 Seats,less than 10000 AUD
+Kia,2008,Carnival,Wagon,2008 Kia Carnival EX,USED,Automatic,"6 cyl, 2.7 L",Front,Unleaded,11 L / 100 km,167293,- / -,"Cabramatta, NSW",6 cyl,Wagon, 4 Doors, 8 Seats,less than 10000 AUD
+Mazda,2010,3,Sedan,2010 Mazda 3 NEO,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8.2 L / 100 km,146000,- / -,"Greenslopes, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2010,Yaris,Hatchback,2010 Toyota Yaris YR,USED,Automatic,"4 cyl, 1.3 L",Front,Unleaded,6.5 L / 100 km,193500,Blue / -,"Mount Lawley, WA",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2009,Commodore,Sedan,2009 Holden Commodore International,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,10.6 L / 100 km,279100,Gold / Block,"Waratah, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2012,Barina,Hatchback,2012 Holden Barina Classic,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,7.6 L / 100 km,156871,Red / -,"Lambton, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Subaru,2008,Forester,SUV,2008 Subaru Forester XS,USED,Manual,"4 cyl, 2.5 L",AWD,Unleaded,9.3 L / 100 km,220235,Black / Black,"Minchinbury, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Subaru,2007,Liberty,Sedan,2007 Subaru Liberty 2.5I,USED,Manual,"4 cyl, 2.5 L",AWD,Unleaded,9 L / 100 km,188094,Silver / -,"Harrington, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Mitsubishi,2012,Lancer,Hatchback,2012 Mitsubishi Lancer ES Sportback,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,7.3 L / 100 km,145800,Red / Black,"Coorparoo, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Hyundai,2005,Terracan,SUV,2005 Hyundai Terracan Crdi,USED,Manual,"4 cyl, 2.9 L",4WD,Diesel,10.1 L / 100 km,194090,Beige / -,"West Perth, WA",4 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Renault,2013,Koleos,SUV,2013 Renault Koleos Dynamique (4X2),USED,Automatic,"4 cyl, 2.5 L",Front,Premium,9.3 L / 100 km,222021,Bronze / -,"Moffat Beach, QLD",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2009,Fiesta,Hatchback,2009 Ford Fiesta Zetec,USED,Manual,"4 cyl, 1.6 L",Front,Unleaded,6.1 L / 100 km,178309,Yellow / -,"Campbelltown, NSW",4 cyl,Hatchback, 3 Doors, 5 Seats,less than 10000 AUD
+Holden,2012,Captiva,SUV,2012 Holden Captiva 7 LX (4X4),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,8.3 L / 100 km,166758,Grey / -,"Saint Marys, NSW",4 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Volkswagen,2010,Golf,Wagon,2010 Volkswagen Golf 118 TSI Comfortline,USED,Automatic,"4 cyl, 1.4 L",Front,Premium,6.3 L / 100 km,84000,Grey / Leather,"Elderslie, NSW",4 cyl,Wagon, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2006,Corolla,Hatchback,2006 Toyota Corolla Ascent Seca,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,238016,Silver / Black,"Kurri Kurri, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Mitsubishi,2010,Outlander,SUV,2010 Mitsubishi Outlander Activ,USED,Automatic,"4 cyl, 2.4 L",4WD,Unleaded,9.3 L / 100 km,216368,Grey / Black,"Five Dock, NSW",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Kia,2011,RIO,Hatchback,2011 Kia RIO S,USED,Manual,"4 cyl, 1.4 L",Front,Unleaded,5.7 L / 100 km,164458,White / -,"Epsom, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Subaru,2013,Impreza,Hatchback,2013 Subaru Impreza 2.0I (awd),USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,6.8 L / 100 km,150000,- / -,"Liverpool, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2014,Cruze,Wagon,2014 Holden Cruze CD,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.4 L / 100 km,232847,White / Black,"Minchinbury, NSW",4 cyl,Wagon, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2002,Celica,Hatchback,2002 Toyota Celica SX,USED,Manual,"4 cyl, 1.8 L",Front,Premium,9 L / 100 km,273640,Silver / Black,"Penrith, NSW",4 cyl,Hatchback, 2 Doors, 4 Seats,less than 10000 AUD
+Holden,2010,Colorado,Ute / Tray,2010 Holden Colorado LX (4X2),USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,12.8 L / 100 km,333480,- / -,"Blair Athol, SA",6 cyl,Ute / Tray, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2008,Focus,Hatchback,2008 Ford Focus LX,USED,Manual,"4 cyl, 2 L",Front,Unleaded,7.1 L / 100 km,202495,Silver / Black,"Altona North, VIC",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Toyota,2000,RAV4,SUV,2000 Toyota RAV4 Edge (4X4),USED,Manual,"4 cyl, 2 L",4WD,Unleaded,9 L / 100 km,287500,Silver / -,"Mount Lawley, WA",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2006,Hilux,Redline Motor Group PTY LTD,2006 Toyota Hilux GGN15R SR Utility Xtra Cab 2dr Auto 5sp 4.0i,USED,Automatic,-,Rear,Unleaded,-,286272,White / -,"Minchinbury, NSW",-,Ute / Tray,,,less than 10000 AUD
+Mercedes-Benz,1999,C200,Sedan,1999 Mercedes-Benz C200 Elegance,USED,Automatic,"4 cyl, 2 L",Rear,Unleaded,10 L / 100 km,205440,Gold / Beige,"Five Dock, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Volvo,2010,S40,Sedan,2010 Volvo S40 S,USED,Automatic,"5 cyl, 2.4 L",Front,Unleaded,9.1 L / 100 km,226442,Black / -,"Regents Park, NSW",5 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2001,Falcon,USED Dealer ad,2001 Ford Falcon 2001 FORD FALCON FORTE AU II AUTO,USED,Automatic,-,Other,-,-,216236,Silver / -,"Victoria Park, WA",-,,,,less than 10000 AUD
+Ford,2011,Territory,SUV,2011 Ford Territory TX (rwd),USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,10.6 L / 100 km,281393,Black / -,"Regents Park, NSW",6 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2010,Captiva,SUV,2010 Holden Captiva LX (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,8.7 L / 100 km,140785,Black / Black,"Altona North, VIC",4 cyl,SUV, 4 Doors, 7 Seats,less than 10000 AUD
+Nissan,1998,Pulsar,Tony's Car Sales,1998 Nissan Pulsar LX,USED,Manual,-,Front,Unleaded,-,214234,White / -,"Laverton North, VIC",-,Hatchback,,,less than 10000 AUD
+Ford,2009,Fiesta,Hatchback,2009 Ford Fiesta CL,USED,Automatic,"4 cyl, 1.4 L",Front,Unleaded,6.9 L / 100 km,208002,Silver / Grey,"Phillip, ACT",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2004,Commodore,Sedan,2004 Holden Commodore Equipe,USED,Automatic,"6 cyl, 3.8 L",Rear,Unleaded,11 L / 100 km,242058,- / -,"Avondale Heights, VIC",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Chrysler,2009,Sebring,USED Dealer ad,2009 Chrysler Sebring JS Limited Sedan 4dr Spts Auto 6sp 2.7i,USED,Automatic,-,Other,-,-,152721,Blue / -,"Mount Druitt, NSW",-,,,,less than 10000 AUD
+Ford,2010,Falcon,Sedan,2010 Ford Falcon G6E,USED,Automatic,"6 cyl, 4 L",Rear,Unleaded,10.1 L / 100 km,521771,Silver / Black Leather,"Minchinbury, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Honda,2007,Civic,Sedan,2007 Honda Civic Sport,USED,Automatic,"4 cyl, 2 L",Front,Unleaded,8 L / 100 km,213192,White / -,"Coburg North, VIC",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Suzuki,2010,Alto,Hatchback,2010 Suzuki Alto GLX,USED,Manual,"3 cyl, 1 L",Front,Premium,4.8 L / 100 km,114350,White / -,"Morphett Vale, SA",3 cyl,Hatchback, 5 Doors, 4 Seats,less than 10000 AUD
+Hyundai,2001,Elantra,Sedan,2001 Hyundai Elantra GL,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,9 L / 100 km,216332,Green / -,"Nerang, QLD",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Subaru,2007,Impreza,Hatchback,2007 Subaru Impreza RS (awd),USED,Manual,"4 cyl, 2 L",AWD,Premium,8.9 L / 100 km,165664,Silver / Black,"Maryville, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Nissan,2009,X-Trail,SUV,2009 Nissan X-Trail ST (4X4),USED,Automatic,"4 cyl, 2.5 L",4WD,Unleaded,9.3 L / 100 km,242589,Silver / -,"Coburg North, VIC",4 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Holden,2008,Combo,Commercial,2008 Holden Combo,USED,Manual,"4 cyl, 1.4 L",Front,Unleaded,6.3 L / 100 km,166977,Silver / -,"Pooraka, SA",4 cyl,Commercial, 2 Doors, 2 Seats,less than 10000 AUD
+Holden,2008,Commodore,Sedan,2008 Holden Commodore Omega,USED,Automatic,"6 cyl, 3.6 L",Rear,Unleaded,11 L / 100 km,123000,Black / -,"Clontarf, QLD",6 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2013,Fiesta,Hatchback,2013 Ford Fiesta CL,USED,Automatic,"4 cyl, 1.6 L",Front,Unleaded,6.1 L / 100 km,237961,White / Cloth,"Nundah, QLD",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Holden,2007,Astra,Convertible,2007 Holden Astra Twin TOP,USED,Automatic,"4 cyl, 2.2 L",Front,Unleaded,9.7 L / 100 km,175600,Silver / Black,"Cheltenham, VIC",4 cyl,Convertible, 2 Doors, 4 Seats,less than 10000 AUD
+Toyota,2006,Camry,Sedan,2006 Toyota Camry Sportivo,USED,Automatic,"4 cyl, 2.4 L",Front,Unleaded,9.9 L / 100 km,177268,White / -,"Minchinbury, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,less than 10000 AUD
+Toyota,2007,Corolla,Hatchback,2007 Toyota Corolla Ascent,USED,Automatic,"4 cyl, 1.8 L",Front,Unleaded,7.7 L / 100 km,304699,White / Black,"Minchinbury, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Mazda,2005,Tribute,SUV,2005 Mazda Tribute Limited Sport,USED,Automatic,"6 cyl, 3 L",4WD,Unleaded,12.2 L / 100 km,185256,Green / Grey,"Toowoomba City, QLD",6 cyl,SUV, 4 Doors, 5 Seats,less than 10000 AUD
+Ford,2013,Fiesta,Hatchback,2013 Ford Fiesta Trend,USED,Manual,"4 cyl, 1.5 L",Front,Unleaded,5.8 L / 100 km,214002,Blue / -,"Cardiff, NSW",4 cyl,Hatchback, 5 Doors, 5 Seats,less than 10000 AUD
+Ford,2022,Ranger,Ute / Tray,2022 Ford Ranger Wildtrak 2.0 (4X4),USED,Automatic,"4 cyl, 2 L",4WD,Diesel,7.6 L / 100 km,14646,White / Car,"Kirrawee, NSW",4 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Porsche,2014,Panamera,Sedan,2014 Porsche Panamera Diesel,USED,Automatic,"6 cyl, 3 L",Rear,Diesel,6.5 L / 100 km,78200,"White / Partial Leather Interior, Black","Nedlands, WA",6 cyl,Sedan, 4 Doors, 4 Seats,more than 70000 AUD
+Porsche,1978,911,Convertible,1978 Porsche 911 SC,USED,Manual,"6 cyl, 3 L",Rear,Leaded,0 L / 100 km,145600,Blue / -,"Medlow Bath, NSW",6 cyl,Convertible, 2 Doors, 4 Seats,more than 70000 AUD
+Nissan,2023,Z,Coupe,2023 Nissan Z,USED,Automatic,"6 cyl, 3 L",Rear,Premium,9.8 L / 100 km,1126,Grey / Black,"Carlton, NSW",6 cyl,Coupe, 2 Doors, 2 Seats,more than 70000 AUD
+Jeep,2020,Wrangler,SUV,2020 Jeep Wrangler Unlimited Rubicon (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,10.3 L / 100 km,19173,Blue / Black,"Morley, WA",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Alfa,2019,Romeo,SUV,2019 Alfa Romeo Stelvio Quadrifoglio,USED,Automatic,"6 cyl, 2.9 L",AWD,Premium,10.2 L / 100 km,63319,Blue / Black,"Nunawading, VIC",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2017,Landcruiser,Ute / Tray,2017 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,107970,White / -,"Acacia Ridge, QLD",8 cyl,Ute / Tray, 2 Doors, 3 Seats,more than 70000 AUD
+Toyota,2021,Landcruiser,SUV,2021 Toyota Landcruiser Prado GXL Flat Tailgate,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,53425,White / -,"South Morang, VIC",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Mercedes-Benz,2018,AMG,Coupe,2018 Mercedes-Benz AMG GT,USED,Automatic,"8 cyl, 4 L",Rear,Premium,9.4 L / 100 km,54601,Grey / Black,"Auburn, NSW",8 cyl,Coupe, 2 Doors, 2 Seats,more than 70000 AUD
+Land,2021,Rover,SUV,2021 Land Rover Range Rover Evoque P200 R-Dynamic S (147KW),USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,18027,White / -,"Mansfield, QLD",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2015,Landcruiser,SUV,2015 Toyota Landcruiser Sahara (4X4),USED,Automatic,"8 cyl, 4.5 L",4WD,Diesel,10.3 L / 100 km,111568,Grey / -,"Chatswood, NSW",8 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Land,2018,Rover,SUV,2018 Land Rover Range Rover Autobiography SDV8 LWB,USED,Automatic,"8 cyl, 4.4 L",AWD,Diesel,8.4 L / 100 km,93127,Black / Red,"Glebe, NSW",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Jeep,2019,Grand,SUV,2019 Jeep Grand Cherokee SRT (4X4),USED,Automatic,"8 cyl, 6.4 L",4WD,Premium,14 L / 100 km,56452,Black / -,"Thebarton, SA",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2019,Alphard,USED Dealer ad,2019 Toyota Alphard EXECUTIVE LOUNGE HYBRID 2.5L AWD 7 SEATER,USED,-,-,Other,-,-,38593,White / -,"Moorabbin, VIC",-,Wagon,,,more than 70000 AUD
+Lexus,2022,LX500D,SUV,2022 Lexus LX500D Sports Luxury,USED,Automatic,"6 cyl, 3.3 L",AWD,Diesel,8.9 L / 100 km,618,- / -,"Belmore, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Lexus,2020,RC,Coupe,2020 Lexus RC F,USED,Automatic,"8 cyl, 5 L",Rear,Premium,11.2 L / 100 km,51418,Red / Black,"Berwick, VIC",8 cyl,Coupe, 2 Doors, 4 Seats,more than 70000 AUD
+Toyota,2022,Landcruiser,SUV,2022 Toyota Landcruiser Prado Kakadu,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,19289,White / -,"Mosman, NSW",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Lexus,2020,RX350,SUV,2020 Lexus RX350 Luxury + Enhancement Pack,USED,Automatic,"6 cyl, 3.5 L",AWD,Premium,9.6 L / 100 km,44694,Gold / -,"Mulgrave, VIC",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Jeep,2022,Gladiator,Ute / Tray,2022 Jeep Gladiator Night Eagle (4X4),USED,Automatic,"6 cyl, 3.6 L",4WD,Unleaded,12.4 L / 100 km,11980,Green / Black,"Bundoora, VIC",6 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2021,Land,Pacific Toyota Used,2021 Toyota Land Cruiser Prado VX 2.8L T DIESEL AUTOMATIC WAGON,USED,Automatic,-,Other,-,-,88908,White / -,"Bungalow, QLD",-,Wagon,,,more than 70000 AUD
+Toyota,2019,Land,Orange Toyota (Used),2019 Toyota Land Cruiser VX,USED,Automatic,-,Other,Diesel,-,102621,White / Leather,"Orange, NSW",-,Wagon,,,more than 70000 AUD
+Mercedes-Benz,2016,GLE43,SUV,2016 Mercedes-Benz GLE43 4Matic,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.7 L / 100 km,76499,White / -,"Canning Vale, WA",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2017,E300,Convertible,2017 Mercedes-Benz E300,USED,Automatic,"4 cyl, 2 L",Rear,Premium,7.4 L / 100 km,47756,White / Black,"Mulgrave, VIC",4 cyl,Convertible, 2 Doors, 4 Seats,more than 70000 AUD
+Audi,2018,RS3,Sedan,2018 Audi RS3 Quattro,USED,Automatic,"5 cyl, 2.5 L",AWD,Premium,8.4 L / 100 km,60000,Black / -,"Ryde, NSW",5 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2023,GR,Hatchback,2023 Toyota GR Corolla GTS,USED,Manual,"3 cyl, 1.6 L",AWD,-,8.4 L / 100 km,1321,White / -,"Hamilton, NSW",3 cyl,Hatchback, 5 Doors, 5 Seats,more than 70000 AUD
+Toyota,2023,Landcruiser,SUV,2023 Toyota Landcruiser LC300 Sahara ZX (4X4),USED,Automatic,"6 cyl, 3.3 L",4WD,Diesel,8.9 L / 100 km,750,White / Black Leather Accented,"Maddington, WA",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Nissan,2020,Patrol,SUV,2020 Nissan Patrol TI (4X4),USED,Automatic,"8 cyl, 5.6 L",4WD,Premium,14.4 L / 100 km,98450,White / -,"Cannington, WA",8 cyl,SUV, 4 Doors, 8 Seats,more than 70000 AUD
+Audi,2021,Q5,SUV,2021 Audi Q5 45 Tfsi Quattro Mhev,USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,8 L / 100 km,69304,White / Black,"Kirrawee, NSW",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Holden,1984,HDT,Sedan,1984 Holden HDT Commodore SS Group III,USED,Manual,"8 cyl, 5 L",Rear,Leaded,0 L / 100 km,204733,White / Blue,"Chipping Norton, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2014,Rover,SUV,2014 Land Rover Range Rover Vogue SE SDV8,USED,Automatic,"8 cyl, 4.4 L",AWD,Diesel,8.7 L / 100 km,118684,Red / Black,"Nedlands, WA",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Genesis,2022,GV80,SUV,2022 Genesis GV80 3.5T AWD 7 Seat,USED,Automatic,"6 cyl, 3.5 L",AWD,Premium,11.7 L / 100 km,31328,White / Black,"Mcgraths Hill, NSW",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+BMW,2023,X5,SUV,2023 BMW X5 M50I,USED,Automatic,"8 cyl, 4.4 L",AWD,Premium,11.5 L / 100 km,158,White / Black,"Carlton, NSW",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2022,Landcruiser,SUV,2022 Toyota Landcruiser LC300 Sahara (4X4),USED,Automatic,"6 cyl, 3.3 L",4WD,Diesel,8.9 L / 100 km,12213,Brown / Black,"Myaree, WA",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+BMW,2016,M5,Sedan,2016 BMW M5,USED,Automatic,"8 cyl, 4.4 L",Rear,Premium,9.9 L / 100 km,81663,Black / -,"Kirrawee, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Porsche,2020,Cayenne,Porsche Centre Perth used,2020 Porsche Cayenne GTS Coupe Tiptronic,USED,Automatic,-,Other,Premium,-,18300,"White / Extended Partial Leather Interior, Seat Centres In Fabric, Black","Nedlands, WA",-,Wagon,,,more than 70000 AUD
+Audi,2019,Q8,SUV,2019 Audi Q8 55 Tfsi Quattro (hybrid),USED,Automatic,"6 cyl, 3 L",AWD,Hybrid,9.2 L / 100 km,70847,Grey / Black,"Hallam, VIC",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Volkswagen,2022,Amarok,Ute / Tray,2022 Volkswagen Amarok TDI580 W580 4Motion,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,9.5 L / 100 km,13384,White / Black,"Burwood, VIC",6 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2014,Rover,Lorbek Luxury Cars Melbourne,2014 Land Rover Range Rover Autobiography SDV8,USED,Automatic,-,AWD,Diesel,-,148452,Black / -,"Port Melbourne, VIC",-,Wagon,,,more than 70000 AUD
+Tesla,2022,Model,USED Dealer ad,2022 Tesla Model Y Rear-Wheel Drive,USED,-,-,Rear,Electric,-,1637,Blue / -,"Moorabbin, VIC",-,Wagon,,,more than 70000 AUD
+Land,2019,Rover,SUV,2019 Land Rover Range Rover Sport SDV6 SE (183KW),USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.8 L / 100 km,48995,Blue / Ebony Seats/Ebony Interior/Ebony Headlining,"Geelong, VIC",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Lexus,2021,NX350,SUV,2021 Lexus NX350 F Sport + EP1 AWD,USED,Automatic,"4 cyl, 2.4 L",AWD,Premium,8.1 L / 100 km,8309,Grey / -,"Osborne Park, WA",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+HSV,2013,Clubsport,Sedan,2013 HSV Clubsport R8,USED,Automatic,"8 cyl, 6.2 L",Rear,Premium,13.9 L / 100 km,95066,Black / Black,"Wangara, WA",8 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2018,E400,Coupe,2018 Mercedes-Benz E400 4Matic,USED,Automatic,"6 cyl, 3 L",AWD,Premium,8.5 L / 100 km,33000,White / -,"Molendinar, QLD",6 cyl,Coupe, 2 Doors, 4 Seats,more than 70000 AUD
+Ram,2019,1500,Ute / Tray,2019 Ram 1500 Laramie (4X4) FD3.9 W/Ramboxes,USED,Automatic,"8 cyl, 5.7 L",4WD,Unleaded,12.2 L / 100 km,59797,Grey / Black,"Biloela, QLD",8 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2019,Rover,SUV,2019 Land Rover Range Rover Velar P550 SV A/B Dynamic (405KW),USED,Automatic,"8 cyl, 5 L",AWD,Premium,11.7 L / 100 km,57967,White / Black,"Concord, NSW",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Aston,2022,Martin,TCB Bespoke,2022 Aston Martin Vantage,USED,Automatic,-,Rear,Premium,-,98,White / -,"Laverton North, VIC",-,Coupe,,,more than 70000 AUD
+Toyota,2020,Land,USED Dealer ad,2020 Toyota Land Cruiser Prado,USED,-,-,Other,Diesel,-,65018,White / Black,"Osborne Park, WA",-,Wagon,,,more than 70000 AUD
+Toyota,2022,Kluger,SUV,2022 Toyota Kluger Grande Hybrid AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Hybrid,5.6 L / 100 km,5546,Red / -,"Alexandria, NSW",4 cyl,SUV, 5 Doors, 7 Seats,more than 70000 AUD
+Land,2014,Rover,Newcastle Vehicle Exchange,2014 Land Rover Range Rover Sport SDV8 HSE Dynamic,USED,Automatic,-,Other,Diesel,-,77759,Red / Black,"New Lambton, NSW",-,Wagon,,,more than 70000 AUD
+Mercedes-Benz,2020,GLE,SUV,2020 Mercedes-Benz GLE 450 4Matic (hybrid),USED,Automatic,"6 cyl, 3 L",AWD,Hybrid,9.1 L / 100 km,28870,Black / Black,"Nedlands, WA",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2017,E300,Coupe,2017 Mercedes-Benz E300,USED,Automatic,"4 cyl, 2 L",Rear,Premium,7.1 L / 100 km,35200,Black / Black,"Chatswood, NSW",4 cyl,Coupe, 2 Doors, 4 Seats,more than 70000 AUD
+Toyota,2018,Landcruiser,Ute / Tray,2018 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,128000,White / -,"Mill Park, VIC",8 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2021,Marco,Wagon,2021 Mercedes-Benz Marco Polo Activity 220D RWD,USED,Automatic,"4 cyl, 2.1 L",Rear,Diesel,6.9 L / 100 km,20156,Black / -,"Moruya, NSW",4 cyl,Wagon, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2022,Landcruiser,SUV,2022 Toyota Landcruiser LC300 GXL (4X4),USED,Automatic,"6 cyl, 3.3 L",4WD,Diesel,8.9 L / 100 km,18112,White / Grey,"Myaree, WA",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Toyota,2019,Landcruiser,Ute / Tray,2019 Toyota Landcruiser GXL (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,48930,White / Grey,"Vermont, VIC",8 cyl,Ute / Tray, 2 Doors, 2 Seats,more than 70000 AUD
+Tesla,2016,Model,SUV,2016 Tesla Model X 90D,USED,Automatic,0 L,4WD,Electric,0 L / 100 km,74005,White / Black,"Liverpool, NSW",0 L,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2022,Hilux,Windsor Toyota Used,2022 Toyota Hilux,USED,Automatic,-,Other,-,-,7154,Black / -,"Windsor, NSW",-,Ute / Tray,,,more than 70000 AUD
+Mercedes-Benz,2007,S65,Sedan,2007 Mercedes-Benz S65 L AMG,USED,Automatic,"12 cyl, 6 L",Rear,Premium,14.9 L / 100 km,76050,Silver / Black Leather,"Rydalmere, NSW",12 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Ford,2022,Ranger,Ute / Tray,2022 Ford Ranger Wildtrak 3.0 (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,8.4 L / 100 km,15488,Grey / Ebony Leathe,"Kedron, QLD",6 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Ram,2020,1500,Commercial,2020 Ram 1500 Express (4X4) BLK PAK W/Rboxes,USED,Automatic,"8 cyl, 5.7 L",4WD,Unleaded,12.2 L / 100 km,93393,White / Black,"Bundoora, VIC",8 cyl,Commercial, 4 Doors, 5 Seats,more than 70000 AUD
+Mazda,2023,BT-50,Ute / Tray,2023 Mazda BT-50 XTR (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,1830,Silver / -,"Bentley, WA",4 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2023,Rover,SUV,2023 Land Rover Range Rover Sport D350 HSE Dynamic (258KW),USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.2 L / 100 km,1309,Grey / -,"Rushcutters Bay, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Audi,2022,SQ5,SUV,2022 Audi SQ5 3.0 TDI Quattro Mhev,USED,Automatic,"6 cyl, 3 L",AWD,Hybrid,7.1 L / 100 km,1867,White / Black-Black-Rock Gray,"Tullamarine, VIC",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2022,Landcruiser,SUV,2022 Toyota Landcruiser LC300 GXL (4X4),USED,Automatic,"6 cyl, 3.3 L",4WD,Diesel,8.9 L / 100 km,17629,Grey / Black Fabric,"Midland, WA",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Mercedes-Benz,2018,E53,Sedan,2018 Mercedes-Benz E53 4Matic+ EQ (hybrid),USED,Automatic,"6 cyl, 3 L",AWD,Hybrid,8.7 L / 100 km,43769,Silver / Black,"Albion, QLD",6 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2016,Landcruiser,Ute / Tray,2016 Toyota Landcruiser GXL (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,129438,White / -,"Bentley, WA",8 cyl,Ute / Tray, 2 Doors, 2 Seats,more than 70000 AUD
+BMW,2022,2,Kloster BMW and MINI Garage - used,2022 BMW 2 SERIES 230i Steptronic M Sport,USED,Automatic,-,Rear,Premium,-,4140,Purple / Black Leather,"Newcastle West, NSW",-,Coupe,,,more than 70000 AUD
+Holden,2016,Commodore,Sedan,2016 Holden Commodore SS-V Redline,USED,Automatic,"8 cyl, 6.2 L",Rear,Premium,11.8 L / 100 km,10000,Red / -,"Rockingham, WA",8 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2018,GLE63,SUV,2018 Mercedes-Benz GLE63 S 4Matic,USED,Automatic,"8 cyl, 5.5 L",AWD,Premium,11.9 L / 100 km,46214,Blue / Blue,"Berwick, VIC",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Nissan,1989,Skyline,USED Dealer ad,1989 Nissan Skyline,USED,Manual,-,Other,Premium,-,41489,Grey / Black,"Smeaton Grange, NSW",-,,,,more than 70000 AUD
+Land,2014,Rover,SUV,2014 Land Rover Range Rover HSE TDV6,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.5 L / 100 km,113018,Green / Beige,"Petersham, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Mercedes-Benz,2018,S450,Sedan,2018 Mercedes-Benz S450 L,USED,Automatic,"8 cyl, 3 L",Rear,Premium,8.4 L / 100 km,37175,Blue / Black,"Five Dock, NSW",8 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Genesis,2022,GV70,SUV,2022 Genesis GV70 2.5T AWD,USED,Automatic,"4 cyl, 2.5 L",AWD,Premium,10.3 L / 100 km,19945,Grey / Black,"Carlton, NSW",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2018,Landcruiser,SUV,2018 Toyota Landcruiser VX (4X4),USED,Automatic,"8 cyl, 4.5 L",4WD,Diesel,9.5 L / 100 km,135018,White / Black,"Mackay, QLD",8 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Toyota,2020,Landcruiser,Ute / Tray,2020 Toyota Landcruiser 70 Series GXL,USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,59987,Grey / -,"Jandakot, WA",8 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2018,Rover,SUV,2018 Land Rover Range Rover Vogue SDV6 (202KW),USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.9 L / 100 km,85523,White / Beige,"Wollongong, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2018,Landcruiser,SUV,2018 Toyota Landcruiser Prado Kakadu (4X4),USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,8 L / 100 km,108660,Silver / Black,"Goulburn, NSW",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Toyota,2019,Landcruiser,Ute / Tray,2019 Toyota Landcruiser GXL (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,49529,Grey / -,"Bentley, WA",8 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Maserati,2015,Granturismo,Lorbek Luxury Cars Melbourne,2015 Maserati Granturismo Sport,USED,Automatic,-,Rear,Premium,-,60394,Black / -,"Port Melbourne, VIC",-,Coupe,,,more than 70000 AUD
+Porsche,2016,Cayman,Coupe,2016 Porsche Cayman GT4,USED,Manual,"6 cyl, 3.8 L",Rear,Premium,10.3 L / 100 km,23481,White / Black,"Blacktown, NSW",6 cyl,Coupe, 2 Doors, 2 Seats,more than 70000 AUD
+Jeep,2019,Grand,Knox Ford & Jeep,2019 Jeep Grand Cherokee Summit,USED,Automatic,-,Other,Diesel,-,28537,Black / -,"Ferntree Gully, VIC",-,Wagon,,,more than 70000 AUD
+Ford,2023,Everest,Maddington Hyundai,2023 Ford Everest Sport,USED,Automatic,-,Other,Diesel,-,100,Blue / -,"Maddington, WA",-,SUV,,,more than 70000 AUD
+BMW,2021,X4,SUV,2021 BMW X4 Xdrive30I M Sport,USED,Automatic,"4 cyl, 2 L",AWD,Unleaded,7.4 L / 100 km,20000,White / -,"Ryde, NSW",4 cyl,SUV, 5 Doors, 5 Seats,more than 70000 AUD
+Audi,2021,Q7,SUV,2021 Audi Q7 45 TDI Quattro Mhev,USED,Automatic,"6 cyl, 3 L",AWD,Hybrid,7 L / 100 km,50174,Silver / -,"Rozelle, NSW",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Land,2019,Rover,SUV,2019 Land Rover Range Rover Evoque D180 R-Dynamic S (132KW),USED,Automatic,"4 cyl, 2 L",AWD,Diesel,5.8 L / 100 km,59793,Silver / Silicon Silver,"Mulgrave, VIC",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Volvo,2022,XC90,SUV,2022 Volvo XC90 Ultimate B6 Dark Mhev,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.2 L / 100 km,12043,Blue / Black,"Geelong, VIC",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+BMW,2015,740I,Sedan,2015 BMW 740I,USED,Automatic,"6 cyl, 3 L",Rear,Premium,7 L / 100 km,68597,Blue / Black,"Waterloo, NSW",6 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2023,Landcruiser,SUV,2023 Toyota Landcruiser Prado VX Flat Tailgate,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,92,Black / Grey Leather,"Windsor, QLD",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Land,2017,Rover,SUV,2017 Land Rover Range Rover Sport SDV6 HSE,USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7 L / 100 km,78872,Black / Ebony,"Concord, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2022,Landcruiser,SUV,2022 Toyota Landcruiser Prado VX,USED,Automatic,"4 cyl, 2.8 L",4WD,Diesel,7.9 L / 100 km,19569,Brown / -,"Pinelands, NT",4 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Hyundai,2022,Palisade,SUV,2022 Hyundai Palisade Highlander (8 Seat),USED,Automatic,"4 cyl, 2.2 L",AWD,Diesel,7.3 L / 100 km,10008,Brown / -,"Preston, VIC",4 cyl,SUV, 4 Doors, 8 Seats,more than 70000 AUD
+Audi,2019,RS4,Wagon,2019 Audi RS4 Avant 2.9 Tfsi Tiptronic,USED,Automatic,"6 cyl, 2.9 L",AWD,Premium,8.9 L / 100 km,34660,Blue / Black,"Nunawading, VIC",6 cyl,Wagon, 4 Doors, 5 Seats,more than 70000 AUD
+Lexus,2020,RX450HL,SUV,2020 Lexus RX450HL Sport Luxury Hybrid (awd),USED,Automatic,"6 cyl, 3.5 L",AWD,Hybrid,6 L / 100 km,24884,Silver / Black,"MELBOURNE, VIC",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Land,2017,Rover,SUV,2017 Land Rover Discovery TD6 HSE,USED,Automatic,"6 cyl, 3 L",4WD,Diesel,7.2 L / 100 km,92365,Orange / Black,"Wollongong, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Audi,2022,Q5,SUV,2022 Audi Q5 40 TDI Quattro Sport Mhev,USED,Automatic,"4 cyl, 2 L",AWD,Hybrid,5.4 L / 100 km,4595,Grey / Black,"Zetland, NSW",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2021,Landcruiser,SUV,2021 Toyota Landcruiser LC300 VX (4X4),USED,Automatic,"6 cyl, 3.3 L",4WD,Diesel,8.9 L / 100 km,21799,Black / Black Synthetic Leather,"Midland, WA",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Subaru,2020,WRX,Sedan,2020 Subaru WRX STI Spec R (wing) (awd),USED,Manual,"4 cyl, 2.5 L",AWD,Premium,11.2 L / 100 km,28714,Black / Cloth,"Blacktown, NSW",4 cyl,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Land,2015,Rover,SUV,2015 Land Rover Range Rover Autobiography SDV8,USED,Automatic,"8 cyl, 4.4 L",AWD,Diesel,8.7 L / 100 km,187402,Black / -,"Minchinbury, NSW",8 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Ford,2022,Everest,SUV,2022 Ford Everest Sport (4X4),USED,Automatic,"6 cyl, 3 L",4WD,Diesel,8.5 L / 100 km,2413,Blue / -,"Cardiff, NSW",6 cyl,SUV, 4 Doors, 7 Seats,more than 70000 AUD
+Isuzu,2022,D-MAX,Ute / Tray,2022 Isuzu D-MAX X-Terrain (4X4),USED,Automatic,"4 cyl, 3 L",4WD,Diesel,8 L / 100 km,4100,Orange / Black,"Derwent Park, TAS",4 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Ferrari,2019,GTC4,Coupe,2019 Ferrari GTC4 Lusso (awd),USED,Automatic,"12 cyl, 6.3 L",AWD,Premium,15.3 L / 100 km,11480,Blue / Black,"Auburn, NSW",12 cyl,Coupe, 2 Doors, 4 Seats,more than 70000 AUD
+Tesla,2023,Model,SUV,2023 Tesla Model Y Performance,USED,Automatic,0 L,AWD,Electric,0 L / 100 km,160,Black / Standard Trim,"Maddington, WA",0 L,SUV, 5 Doors, 5 Seats,more than 70000 AUD
+Land,2019,Rover,SUV,2019 Land Rover Range Rover Sport SDV6 SE (183KW),USED,Automatic,"6 cyl, 3 L",AWD,Diesel,7.8 L / 100 km,87700,Silver / Beige,"Wollongong, NSW",6 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Ford,2013,F,USED Dealer ad,2013 Ford F 150,USED,-,-,Other,Unleaded,-,121828,Silver / Black,"Eagle Farm, QLD",-,Ute / Tray,,,more than 70000 AUD
+Mercedes-Benz,2016,C63,Coupe,2016 Mercedes-Benz C63 S,USED,Automatic,"8 cyl, 4 L",Rear,Premium,8.7 L / 100 km,98438,White / -,"Homebush, NSW",8 cyl,Coupe, 2 Doors, 4 Seats,more than 70000 AUD
+Mercedes-Benz,2021,GLC,SUV,2021 Mercedes-Benz GLC 300 4Matic,USED,Automatic,"4 cyl, 2 L",AWD,Premium,8.1 L / 100 km,16210,Black / Black,"Chatswood, NSW",4 cyl,SUV, 4 Doors, 5 Seats,more than 70000 AUD
+Toyota,2019,Landcruiser,Ute / Tray,2019 Toyota Landcruiser Workmate (4X4),USED,Manual,"8 cyl, 4.5 L",4WD,Diesel,10.7 L / 100 km,99062,White / -,"Bentley, WA",8 cyl,Ute / Tray, 4 Doors, 5 Seats,more than 70000 AUD
+Ram,2019,1500,Parramatta Motor Group (Thomson Ford) - Used,2019 Ram 1500 Laramie Crew Cab SWB,USED,Automatic,-,Other,Diesel,-,35742,White / Leather,"Granville, NSW",-,Ute / Tray,,,more than 70000 AUD
+BMW,2022,I4,Sedan,2022 BMW I4 Edrive40 M Sport Gran Coupe,USED,Automatic,0 L,Rear,Electric,0 L / 100 km,9143,White / Beige Leather,"Port Macquarie, NSW",0 L,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Tesla,2022,Model,Sedan,2022 Tesla Model 3 Performance,USED,Automatic,0 L,AWD,Electric,0 L / 100 km,6704,Silver / Silver,"Osborne Park, WA",0 L,Sedan, 4 Doors, 5 Seats,more than 70000 AUD
+Ram,2018,1500,Commercial,2018 Ram 1500 Express (4X4),USED,Automatic,"8 cyl, 5.7 L",4WD,Unleaded,12.2 L / 100 km,91411,Blue / -,"Kirrawee, NSW",8 cyl,Commercial, 4 Doors, 5 Seats,more than 70000 AUD
+Nissan,1998,Skyline,OC Automotive,1998 Nissan Skyline GT-R V-Spec,USED,Manual,-,Other,-,-,48239,White / Grey,"Chipping Norton, NSW",-,Coupe,,,more than 70000 AUD

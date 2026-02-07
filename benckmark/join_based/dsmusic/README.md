@@ -1,34 +1,35 @@
 ## Overview
 
-**Discogs and Spotify Music（short for DSMusic）** 是一个面向 Data Lake(House) 场景下弱关联（Join关系）的表格数据集。该数据集聚焦于音乐场景，包含两张弱关联的表格，分别为任务表（Discogs数据库）和辅助表（Spotify曲目）。任务表（Discogs_music.csv）包含Discogs公开存档的音乐信息，共计11000条数据；辅助表（Spotify_music.csv）包含存在于Spotify音乐平台的音乐信息，共计11000条数据。本数据集的任务为预测音乐类别（单标签多分类任务）。  
+**Discogs and Spotify Music (DSMusic)** is a tabular dataset designed for weakly related (Join-based) table scenarios in Data Lake(House) settings. The dataset focuses on music tracks and comprises two weakly related tables: a task table (Discogs database) and an auxiliary table (Spotify tracks). The task table (Discogs_music.csv) contains 11,000 music track records from the publicly archived Discogs database, while the auxiliary table (Spotify_music.csv) contains 11,000 music track records from the Spotify music platform. The objective of this dataset is to predict music genres (a single-label multi-class classification task).
 
-两张表之间存在弱关联（Join）关系，可以利用辅助表中的信息提升任务表的机器学习效果，以实现更精准的关联分析。
+The two tables exhibit a weak association (Join relationship), where information from the auxiliary table can be leveraged to enhance machine learning performance on the task table, thereby enabling more accurate relational analysis.
 
 ## Data Processing
 
-DSMuscic数据集包含两张弱关联的数据表（任务表与辅助表），数据来源为Discogs数据库和Spotify在线音乐平台。以下为数据处理步骤的详细说明：
+The DSMusic dataset consists of two weakly related tables (a task table and an auxiliary table), derived from the Discogs database and the Spotify online music platform. The detailed data processing steps are described below:
 
-**任务表：** Discogs数据库中的音乐（Discogs_music.csv）  
-- **数据来源：**[Discogs_music](https://www.kaggle.com/datasets/fleshmetal/records-a-comprehensive-music-metadata-dataset)  
-- **数据清洗：**
-删去表中styles列（可能对预测音乐genres造成干扰）。
-- **数据筛选：**
-根据genres列，提取出其中的单标签类别，从得到的每个单标签类别中随机抽取1000个样本作为任务表数据，共11个类别。
+**Task Table:** Music from Discogs Database (Discogs_music.csv)
+- **Data Source:** [Discogs_music](https://www.kaggle.com/datasets/fleshmetal/records-a-comprehensive-music-metadata-dataset)
+- **Data Cleaning:**
+The styles column was removed from the table (as it could potentially interfere with genre prediction).
+- **Data Filtering:**
+Single-label categories were extracted based on the genres column. A total of 1,000 samples were randomly drawn from each single-label category to form the task table, yielding 11 categories.
 
-**辅助表：** Spotify音乐数据集（Spotify_music.csv）    
-- **数据来源：**[Spotify_music](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)  
-- **数据筛选：**
-根据任务表进行1NN匹配，保留任务表匹配到的样本。
+**Auxiliary Table:** Spotify Music Dataset (Spotify_music.csv)
+- **Data Source:** [Spotify_music](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
+- **Data Filtering:**
+1NN matching was performed based on the task table, retaining only samples that were matched to the task table.
 
 ## Dataset Composition
 
-- **Discogs_music.csv** :该文件包含11000条Discogs数据库中的音乐曲目信息，清洗后具有 5 个特征，共有 11 种音乐类别。 
+- **Discogs_music.csv**: This file contains 11,000 music track records from the Discogs database, with 5 features after cleaning, covering 11 music genre categories.
 
-- **Spotify_music.csv** :该文件包含11000条音乐曲目信息，具有20个特征。 
+- **Spotify_music.csv**: This file contains 11,000 music track records with 20 features.
 
-- **map.csv** :该文件包含我们根据音乐名采取1NN匹配得到的映射关系，可利用其进行join操作，从而利用Spotify_music.csv提供特征增量，共三列，结构为：(T1_index, T2_index, cosine_similarity)。 
+- **map.csv**: This file contains the mapping relationships obtained through 1NN matching based on track names, which can be used for join operations to leverage feature augmentation from Spotify_music.csv. It has a three-column structure: (T1_index, T2_index, cosine_similarity).
+
 <p>
 
-- **mask.pt** :该文件为任务表Discogs_music.csv的train/val/test 划分，因数据集各类别样本平衡，我们将各类别样本随机以70%/10%/20%的比例划分入train/val/test。mask.pt 文件存储了一个字典，其中包含 train_mask、val_mask 和 test_mask 三个键，每个键对应一个与样本总数(11000)相同长度的布尔张量，分别用于标识样本属于训练集、验证集或测试集。
+- **mask.pt**: This file provides the train/validation/test split for the task table (Discogs_music.csv). Since the dataset is class-balanced, samples within each category are randomly partitioned into train/validation/test sets at a ratio of 70%/10%/20%, respectively. The mask.pt file stores a dictionary containing three keys — train_mask, val_mask, and test_mask — each corresponding to a Boolean tensor of the same length as the total number of samples (11,000), indicating whether each sample belongs to the training, validation, or test set.
 
 ## References
