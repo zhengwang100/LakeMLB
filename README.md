@@ -119,8 +119,7 @@ All baseline experiment code resides in the **`baseline/`** directory. The follo
 |----------|--------|--------|
 | **Tree-based models** | XGBoost, CatBoost, LightGBM | `tree_models.py` |
 | **Tabular neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `tnns_test.py` |
-| **Transfer learning** | TransTab (single / transfer / contrastive) | `transtab_single.py`, `transtab_transfer.py`, `transtab_transfer_cl.py` |
-| **Graph-based** | CARTE (single / joint) | `carte_single.py`, `carte_joint.py` |
+| **Transfer learning** | TransTab (single / transfer / contrastive) CARTE (single / joint) | `transtab_single.py`, `transtab_transfer.py`, `transtab_transfer_cl.py` `carte_single.py`, `carte_joint.py` |
 | **Foundation models** | TabPFN v2, TabICL | `tabpfnv2.py`, `tabicl_clf.py` |
 
 ---
