@@ -1,19 +1,27 @@
-# LakeMLB
+# LakeMLB: Data Lake Machine Learning Benchmark
 
-**LakeMLB** (Data Lake / Lakehouse Machine Learning Benchmark) is a standardized benchmark suite designed to evaluate the performance and scalability of machine learning models operating over weakly-associated tabular data in data lake and lakehouse environments.
+[![arXiv](https://img.shields.io/badge/arXiv-2602.10441-b31b1b.svg)](https://arxiv.org/abs/2602.10441)
 
-> **Status:** Work in Progress
+**Official implementation of the LakeMLB benchmark**
+
+> **LakeMLB: Data Lake Machine Learning Benchmark**  
+> Feiyu Pan, Tianbin Zhang, Aoqian Zhang, Yu Sun, Zheng Wang, Lixing Chen, Li Pan, Jianhua Li  
+> *arXiv preprint arXiv:2602.10441, 2026*  
+> [[Paper](https://arxiv.org/abs/2602.10441)]
 
 ---
 
-## Overview
+## About
 
-Modern data lakes and lakehouses often store heterogeneous tables that exhibit weak associations — either through approximate joins or schema-compatible unions. Effectively leveraging such cross-table relationships is critical for improving downstream ML performance, yet no established benchmark exists to systematically evaluate this capability. **LakeMLB** addresses this gap by providing:
+**LakeMLB** is a standardized benchmark for evaluating machine learning methods on multi-table scenarios in data lake environments. It addresses the critical challenge of leveraging weakly-associated heterogeneous tables to improve downstream ML performance.
 
-- A curated collection of real-world tabular datasets with explicit **join-based** and **union-based** weak associations.
-- Standardized train / validation / test splits for reproducible evaluation.
-- Baseline implementations spanning tree-based models, tabular neural networks, transfer learning frameworks, and tabular foundation models.
-- Auxiliary data produced by **Feature Augmentation (FA)** and **Data Augmentation (DA)** strategies discussed in the accompanying paper.
+### Key Features
+
+- **Real-world datasets**: Six curated datasets covering finance, government, and e-commerce domains
+- **Two core scenarios**: Join-based and union-based multi-table integration
+- **Standardized evaluation**: Fixed train/validation/test splits for reproducibility
+- **Comprehensive baselines**: 15+ methods including tree models, neural networks, transfer learning, and foundation models
+- **Augmentation strategies**: Pre-computed Feature Augmentation (FA) and Data Augmentation (DA) results
 
 ---
 
@@ -21,150 +29,120 @@ Modern data lakes and lakehouses often store heterogeneous tables that exhibit w
 
 ```
 LakeMLB/
-├── benckmark/              # Benchmark datasets (see below)
-│   ├── join_based/         # Join-based datasets
-│   │   ├── dsmusic/
-│   │   ├── lhstocks/
-│   │   └── nnstocks/
-│   └── union_based/        # Union-based datasets
-│       ├── gacars/
-│       ├── mstraffic/
-│       └── ncbuilding/
-├── benchmark_extra/        # FA / DA augmentation data used in the paper
-│   ├── results_fa_*/       #   Feature Augmentation outputs
-│   └── results_da_*/       #   Data Augmentation outputs
-├── baseline/               # Baseline model implementations (Python)
-├── scripts/                # Shell scripts for running experiments
-├── datasets/               # Dataset loading utilities
-├── data/                   # Raw and processed data files
+├── benckmark/              # Benchmark datasets
+│   ├── join_based/         # dsmusic, lhstocks, nnstocks
+│   └── union_based/        # gacars, mstraffic, ncbuilding
+├── benchmark_extra/        # Pre-computed FA/DA augmentation results
+├── baseline/               # Model implementations
+├── scripts/                # Experiment scripts
+├── datasets/               # Data loading utilities
 └── lib/                    # Modified third-party libraries
 ```
 
 ---
 
-## Benchmark Datasets
+## Datasets
 
-All benchmark datasets are located in the **`benckmark/`** directory and are organized into two categories based on the type of cross-table association. The following table summarizes the statistics of all benchmark datasets:
+### Statistics
 
-### Dataset Statistics
+![Dataset Statistics](docs/image/benchmark_details.png)
 
-<table>
-  <thead>
-    <tr>
-      <th rowspan="2">Relation</th>
-      <th rowspan="2">Dataset</th>
-      <th rowspan="2">Task</th>
-      <th colspan="4" style="text-align:center">Target Table</th>
-      <th colspan="4" style="text-align:center">Auxiliary Table</th>
-    </tr>
-    <tr>
-      <th>Name</th><th>#row</th><th>#col</th><th>#class</th>
-      <th>Name</th><th>#row</th><th>#col</th><th>#class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3"><strong>Union</strong></td>
-      <td>MSTraffic</td><td>collision-type</td>
-      <td>Maryland</td><td>10,800</td><td>37</td><td>9</td>
-      <td>Seattle</td><td>10,800</td><td>50</td><td>9</td>
-    </tr>
-    <tr>
-      <td>NCBuilding</td><td>violation-category</td>
-      <td>NewYork</td><td>30,000</td><td>40</td><td>30</td>
-      <td>Chicago</td><td>37,000</td><td>23</td><td>37</td>
-    </tr>
-    <tr>
-      <td>GACars</td><td>price-range</td>
-      <td>German</td><td>13,000</td><td>15</td><td>10</td>
-      <td>Australian</td><td>36,000</td><td>19</td><td>8</td>
-    </tr>
-    <tr>
-      <td rowspan="3"><strong>Join</strong></td>
-      <td>NNStocks</td><td>sector-cls</td>
-      <td>NNList</td><td>1,078</td><td>11</td><td>11</td>
-      <td>NNWiki</td><td>937</td><td>22</td><td>—</td>
-    </tr>
-    <tr>
-      <td>LHStocks</td><td>sector-cls</td>
-      <td>LHList</td><td>1,120</td><td>16</td><td>10</td>
-      <td>LHWiki</td><td>854</td><td>21</td><td>—</td>
-    </tr>
-    <tr>
-      <td>DSMusic</td><td>music-genre</td>
-      <td>Discogs</td><td>11,000</td><td>5</td><td>11</td>
-      <td>Spotify</td><td>11,000</td><td>21</td><td>—</td>
-    </tr>
-  </tbody>
-</table>
+All datasets are located in `benckmark/` with two categories:
 
-Each dataset folder contains the source CSV files, a pre-computed data split mask (`mask.pt`), and a per-dataset `README.md` with detailed provenance and processing notes.
+- **Join-based** (`join_based/`): dsmusic, lhstocks, nnstocks
+- **Union-based** (`union_based/`): gacars, mstraffic, ncbuilding
+
+Each dataset includes source CSV files, pre-computed split masks (`mask.pt`), and detailed documentation.
+
+### Augmentation Data
+
+The `benchmark_extra/` directory contains pre-computed augmentation results for reproducibility:
+
+- `results_fa_*/` — Feature Augmentation (FA) outputs
+- `results_da_*/` — Data Augmentation (DA) outputs
 
 ---
 
-## FA & DA Strategy Data
+## Baselines
 
-The **`benchmark_extra/`** directory contains the augmented data generated by the **Feature Augmentation (FA)** and **Data Augmentation (DA)** strategies described in the paper. These augmented artifacts are provided so that all experiments discussed in the paper can be faithfully reproduced without re-running the augmentation pipelines.
+We provide implementations of 15+ methods across four categories:
 
-- **`results_fa_*/`** — Merged tables and column / row mappings produced by the FA strategy.
-- **`results_da_*/`** — Augmented CSV files, label mappings, and DA masks produced by the DA strategy.
-
----
-
-## Baseline Models
-
-All baseline experiment code resides in the **`baseline/`** directory. The following model families are implemented:
-
-| Category | Models | Script |
-|----------|--------|--------|
-| **Tree-based models** | XGBoost, CatBoost, LightGBM | `tree_models.py` |
-| **Tabular neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `tnns_test.py` |
-| **Transfer learning** | TransTab (single / transfer / contrastive) CARTE (single / joint) | `transtab_single.py`, `transtab_transfer.py`, `transtab_transfer_cl.py` `carte_single.py`, `carte_joint.py` |
+| Category | Methods | Entry Point |
+|----------|---------|-------------|
+| **Tree-based** | XGBoost, CatBoost, LightGBM | `tree_models.py` |
+| **Neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `tnns_test.py` |
+| **Transfer learning** | TransTab, CARTE | `transtab_*.py`, `carte_*.py` |
 | **Foundation models** | TabPFN v2, TabICL | `tabpfnv2.py`, `tabicl_clf.py` |
 
 ---
 
-## Running Experiments
+## Quick Start
 
-Experiment shell scripts are located in the **`scripts/`** directory:
-
-| Script | Description |
-|--------|-------------|
-| `example.sh` | Quick-start examples demonstrating how to invoke each baseline method with minimal arguments. |
-| `run_tree_models.sh` | Grid search and repeated evaluation for tree-based models. |
-| `run_nn_grid_search.sh` | Memory-efficient parallel grid search for tabular neural networks. |
-| `run_transtab.sh` | Repeated TransTab runs with concurrency control. |
-| `run_carte.sh` | CARTE single-table and multi-table experiments. |
-| `run_fundation_models.sh` | Repeated runs of foundation models with accuracy statistics. |
-
-### Quick Start
-
-For a quick demonstration of all baseline methods, run:
+Run all baseline methods with default hyperparameters:
 
 ```bash
 bash scripts/example.sh
 ```
 
-This script sequentially launches each baseline model with default hyperparameters, covering tree-based models (CPU), tabular neural networks, TransTab, and foundation models (GPU). Refer to `scripts/example.sh` for the full list of commands and available arguments.
+For systematic evaluation:
+
+```bash
+# Tree models (CPU)
+bash scripts/run_tree_models.sh
+
+# Neural networks (GPU)
+bash scripts/run_nn_grid_search.sh
+
+# Transfer learning (GPU)
+bash scripts/run_transtab.sh
+bash scripts/run_carte.sh
+
+# Foundation models (GPU)
+bash scripts/run_fundation_models.sh
+```
 
 ---
 
-## Dependencies
+## Requirements
 
-- The modified source code of third-party libraries (e.g., `transtab`, `carte_ai`, `rllm`) is bundled in the **`lib/`** directory. These modifications ensure unified data loading, fixed train/test splits, and standardized preprocessing across all baselines.
-- CARTE-based methods require the FastText model `cc.en.300.bin`. Download it from [here](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz) and place it at `lib/FastText/cc.en.300.bin`.
-- TabICL-based methods require the model checkpoint `tabicl-classifier-v1.1-0506.ckpt`. Due to its large file size (103 MB), it is not included in this repository. Please download or obtain the checkpoint and place it at `lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt` before running TabICL experiments.
+### Dependencies
+
+Modified third-party libraries are bundled in `lib/` with unified data loading and standardized preprocessing:
+
+- **rllm**: Our team's open-source library for tabular learning ([rllm-team/rllm](https://github.com/rllm-team/rllm))
+  - To reproduce experiments, clone the repository and place it in `lib/rllm/`
+  - ```bash
+    git clone https://github.com/rllm-team/rllm.git lib/rllm
+    ```
+- **transtab**, **carte_ai**: Modified versions for benchmark compatibility
+
+### External Resources
+
+**CARTE** requires FastText embeddings:
+- Download [`cc.en.300.bin.gz`](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz)
+- Extract and place at `lib/FastText/cc.en.300.bin`
+
+**TabICL** requires model checkpoint (103 MB, not included):
+- Obtain `tabicl-classifier-v1.1-0506.ckpt`
+- Place at `lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
 
 ---
 
 ## Citation
 
-If you find LakeMLB useful in your research, please consider citing the accompanying paper.
+If you find LakeMLB useful in your research, please cite:
 
-<!-- BibTeX entry will be added upon publication. -->
+```bibtex
+@article{pan2026lakemlb,
+  title={LakeMLB: Data Lake Machine Learning Benchmark},
+  author={Pan, Feiyu and Zhang, Tianbin and Zhang, Aoqian and Sun, Yu and Wang, Zheng and Chen, Lixing and Pan, Li and Li, Jianhua},
+  journal={arXiv preprint arXiv:2602.10441},
+  year={2026}
+}
+```
 
 ---
 
 ## License
 
-This project is provided for academic and research purposes. Please refer to individual dataset README files for data provenance and licensing details.
+This project is provided for academic and research purposes. Refer to individual dataset README files for data provenance and licensing details.
