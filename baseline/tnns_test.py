@@ -7,10 +7,9 @@ import os.path as osp
 _THIS_DIR = osp.abspath(osp.dirname(__file__))
 PROJECT_ROOT = osp.abspath(osp.join(_THIS_DIR, ".."))
 LIB_ROOT = osp.abspath(osp.join(PROJECT_ROOT, "lib"))
-REPO_ROOT = osp.abspath(osp.join(_THIS_DIR, "../.."))  # Repo root (/home/pfy/devrepo/lakemlb0204)
 
 # Precedence (highest first): this dir -> repo root -> lib -> project root
-for _p in reversed([_THIS_DIR, REPO_ROOT, LIB_ROOT, PROJECT_ROOT]):
+for _p in reversed([_THIS_DIR, LIB_ROOT, PROJECT_ROOT]):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -28,7 +27,7 @@ import torch.nn.functional as F
 from sklearn.metrics import accuracy_score, classification_report
 import numpy as np
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
-from datasets.mstraffic_datasets import MSTrafficDataset
+from lib.rllm.datasets.lakemlb import MSTrafficDataset
 from utils import (
     set_seed, parse_list_of_ints, parse_list_of_floats, get_device,
     get_batch, to_device, save_model, load_model, print_grid_config

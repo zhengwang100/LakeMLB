@@ -81,7 +81,7 @@ print(f"Auxiliary config: {len(aux_config['cat'])} cat, {len(aux_config['num'])}
 allset1, trainset1, valset1, testset1, cat_cols1, num_cols1, bin_cols1 = transtab.load_data(
     [DATA_DIR], 
     dataset_config={DATA_DIR: aux_config}, 
-    filename='wiki_lh.csv'
+    filename='lhwiki.csv'
 )
 
 print(f"Train: {len(trainset1[0][0])}, Val: {len(valset1[0][0])}, Test: {len(testset1[0][0])}")
@@ -116,7 +116,7 @@ print("Contrastive learning model saved to ./ckpt_cl/pretrained")
 allset2, trainset2, valset2, testset2, cat_cols2, num_cols2, bin_cols2 = transtab.load_data(
     [DATA_DIR], 
     dataset_config={DATA_DIR: task_config}, 
-    filename='stocks_lh.csv'
+    filename='lhlist.csv'
 )
 
 print(f"Train: {len(trainset2[0][0])}, Val: {len(valset2[0][0])}, Test: {len(testset2[0][0])}")
