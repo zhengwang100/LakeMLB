@@ -27,7 +27,7 @@ import torch.nn.functional as F
 from sklearn.metrics import accuracy_score, classification_report
 import numpy as np
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
-from lib.rllm.datasets.lakemlb import MSTrafficDataset
+from lib.rllm.datasets import MSTrafficDataset
 from utils import (
     set_seed, parse_list_of_ints, parse_list_of_floats, get_device,
     get_batch, to_device, save_model, load_model, print_grid_config

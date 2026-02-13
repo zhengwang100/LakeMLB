@@ -16,8 +16,8 @@ sys.path.insert(0, osp.join(osp.dirname(__file__), '..', '..'))
 sys.path.insert(0, osp.join(osp.dirname(__file__), '..', "lib"))
 
 from rllm.types import ColType
-from rllm.datasets.lakemlb import MSTrafficDataset
-from rllm.datasets.lakemlb import LHStocksDataset
+from rllm.datasets import MSTrafficDataset
+from rllm.datasets import LHStocksDataset
 from rllm.transforms.table_transforms import DefaultTableTransform
 # from utils import set_global_seed
 
