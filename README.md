@@ -20,8 +20,8 @@
 - **Real-world datasets**: Six curated datasets covering finance, government, and e-commerce domains
 - **Two core scenarios**: Join-based and union-based multi-table integration
 - **Standardized evaluation**: Fixed train/validation/test splits for reproducibility
-- **Comprehensive baselines**: 15+ methods including tree models, neural networks, transfer learning, and foundation models
-- **Augmentation strategies**: Pre-computed Feature Augmentation (FA) and Data Augmentation (DA) results
+- **Comprehensive baselines**: 12+ methods including tree models, neural networks, transfer learning, and foundation models
+- **Augmentation support**: Mapping files for Feature Augmentation (FA) and guidelines for Data Augmentation (DA)
 
 ---
 
@@ -32,11 +32,11 @@ LakeMLB/
 ├── benckmark/              # Benchmark datasets
 │   ├── join_based/         # dsmusic, lhstocks, nnstocks
 │   └── union_based/        # gacars, mstraffic, ncbuilding
-├── benchmark_extra/        # Pre-computed FA/DA augmentation results
-├── baseline/               # Model implementations
-├── scripts/                # Experiment scripts
-├── datasets/               # Data loading utilities
-└── lib/                    # Modified third-party libraries
+├── codes/                  # Implementation code
+│   ├── baseline/           # Model implementations
+│   ├── scripts/             # Experiment scripts
+│   └── lib/                 # Modified third-party libraries
+└── benchmark_details.png   # Dataset statistics figure
 ```
 
 ---
@@ -45,34 +45,43 @@ LakeMLB/
 
 ### Statistics
 
-![Dataset Statistics](docs/image/benchmark_details.png)
+![Dataset Statistics](benchmark_details.png)
 
 All datasets are located in `benckmark/` with two categories:
 
 - **Join-based** (`join_based/`): dsmusic, lhstocks, nnstocks
 - **Union-based** (`union_based/`): gacars, mstraffic, ncbuilding
 
-Each dataset includes source CSV files, pre-computed split masks (`mask.pt`), and detailed documentation.
+Each dataset includes:
+- Source CSV files for each table
+- Pre-computed split masks (`mask.pt`) for train/validation/test splits
+- **Mapping file** (`mapping.csv`) for Feature Augmentation (FA) strategy
+- Detailed documentation (`README.md`)
 
-### Augmentation Data
+### Augmentation Strategies
 
-The `benchmark_extra/` directory contains pre-computed augmentation results for reproducibility:
+To reproduce the augmentation experiments in the paper:
 
-- `results_fa_*/` — Feature Augmentation (FA) outputs
-- `results_da_*/` — Data Augmentation (DA) outputs
+**Feature Augmentation (FA)**: Each dataset includes a `mapping.csv` file that provides row index correspondences between two tables for feature joining. The mapping contains:
+- `T1_index`, `T2_index`: Row indices for table matching
+- `cosine_similarity`, `cosine_distance`: Similarity metrics for the matched pairs
+
+Users can use this mapping to perform feature augmentation by joining tables based on the provided correspondences.
+
+**Data Augmentation (DA)**: Implemented via vertical concatenation (union) of tables. See the paper for detailed implementation specifications.
 
 ---
 
 ## Baselines
 
-We provide implementations of 15+ methods across four categories:
+We provide implementations of 12+ methods across four categories:
 
 | Category | Methods | Entry Point |
 |----------|---------|-------------|
-| **Tree-based** | XGBoost, CatBoost, LightGBM | `tree_models.py` |
-| **Neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `tnns_test.py` |
-| **Transfer learning** | TransTab, CARTE | `transtab_*.py`, `carte_*.py` |
-| **Foundation models** | TabPFN v2, TabICL | `tabpfnv2.py`, `tabicl_clf.py` |
+| **Tree-based** | XGBoost, CatBoost, LightGBM | `codes/baseline/tree_models.py` |
+| **Neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `codes/baseline/tnns_test.py` |
+| **Transfer learning** | TransTab, CARTE | `codes/baseline/transtab_*.py`, `codes/baseline/carte_*.py` |
+| **Foundation models** | TabPFN v2, TabICL | `codes/baseline/tabpfnv2.py`, `codes/baseline/tabicl_clf.py` |
 
 ---
 
@@ -81,24 +90,24 @@ We provide implementations of 15+ methods across four categories:
 Run all baseline methods with default hyperparameters:
 
 ```bash
-bash scripts/example.sh
+bash codes/scripts/example.sh
 ```
 
 For systematic evaluation:
 
 ```bash
 # Tree models (CPU)
-bash scripts/run_tree_models.sh
+bash codes/scripts/run_tree_models.sh
 
 # Neural networks (GPU)
-bash scripts/run_nn_grid_search.sh
+bash codes/scripts/run_nn_grid_search.sh
 
 # Transfer learning (GPU)
-bash scripts/run_transtab.sh
-bash scripts/run_carte.sh
+bash codes/scripts/run_transtab.sh
+bash codes/scripts/run_carte.sh
 
 # Foundation models (GPU)
-bash scripts/run_fundation_models.sh
+bash codes/scripts/run_fundation_models.sh
 ```
 
 ---
@@ -107,12 +116,12 @@ bash scripts/run_fundation_models.sh
 
 ### Dependencies
 
-Modified third-party libraries are bundled in `lib/` with unified data loading and standardized preprocessing:
+Modified third-party libraries are bundled in `codes/lib/` with unified data loading and standardized preprocessing:
 
 - **rllm**: Our team's open-source library for tabular learning ([rllm-team/rllm](https://github.com/rllm-team/rllm))
-  - To reproduce experiments, clone the repository and place it in `lib/rllm/`
+  - To reproduce experiments, clone the repository and place it in `codes/lib/rllm/`
   - ```bash
-    git clone https://github.com/rllm-team/rllm.git lib/rllm
+    git clone https://github.com/rllm-team/rllm.git codes/lib/rllm
     ```
 - **transtab**, **carte_ai**: Modified versions for benchmark compatibility
 
@@ -120,11 +129,11 @@ Modified third-party libraries are bundled in `lib/` with unified data loading a
 
 **CARTE** requires FastText embeddings:
 - Download [`cc.en.300.bin.gz`](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz)
-- Extract and place at `lib/FastText/cc.en.300.bin`
+- Extract and place at `codes/lib/FastText/cc.en.300.bin`
 
 **TabICL** requires model checkpoint (103 MB, not included):
 - Obtain `tabicl-classifier-v1.1-0506.ckpt`
-- Place at `lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
+- Place at `codes/lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
 
 ---
 
