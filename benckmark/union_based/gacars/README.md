@@ -26,4 +26,6 @@ The used car listing prices were divided into 8 intervals, with each interval sp
 
 - **mask.pt**: This file provides the train/validation/test split for the task table (german.csv). Since the dataset is class-balanced, samples within each category are randomly partitioned into train/validation/test sets at a ratio of 70%/10%/20%, respectively. The mask.pt file stores a dictionary containing three keys — train_mask, val_mask, and test_mask — each corresponding to a Boolean tensor of the same length as the total number of samples (13,000), indicating whether each sample belongs to the training, validation, or test set.
 
+- **mapping.csv**: This file contains row-level matching results between the task table (german.csv) and the auxiliary table (australian.csv) for feature augmentation. Given the absence of explicit join keys, we employ row-text 1-NN matching: each row is represented as a textual sequence (concatenated column name–cell value pairs), encoded into embeddings, and matched via 1-NN in the embedding space. The file comprises four columns: T1_index (task table row index), T2_index (matched auxiliary table row index), cosine_similarity, and cosine_distance. This mapping enables feature augmentation by concatenating matched auxiliary features to target records.
+
 ## References

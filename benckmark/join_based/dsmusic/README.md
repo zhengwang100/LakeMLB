@@ -26,7 +26,7 @@ Single-label categories were extracted based on the genres column. A total of 1,
 
 - **Spotify_music.csv**: This file contains 11,000 music track records with 20 features.
 
-- **map.csv**: This file contains the mapping relationships obtained through 1NN matching based on track names, which can be used for join operations to leverage feature augmentation from Spotify_music.csv. It has a three-column structure: (T1_index, T2_index, cosine_similarity).
+- **mapping.csv**: This file contains the mapping relationships obtained through 1NN matching based on track names, which can be used for join operations to leverage feature augmentation from Spotify_music.csv. It has a four-column structure: (T1_index, T2_index, cosine_similarity, cosine_distance).
 
 <p>
 

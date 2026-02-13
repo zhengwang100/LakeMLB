@@ -25,7 +25,7 @@ Deduplication was performed when entity-matched Wikipedia pages were identical (
 
 - **wiki.csv**: This file contains 937 retrievable Wikipedia homepage infobox records, with 22 features after cleaning.
 
-- **map.csv**: This file contains the mapping relationships obtained through 1NN matching based on entity names, which can be used for join operations to leverage feature augmentation from wiki.csv. It has a three-column structure: (T1_index, T2_index, cosine_similarity).
+- **mapping.csv**: This file contains the mapping relationships obtained through 1NN matching based on entity names, which can be used for join operations to leverage feature augmentation from wiki.csv. It has a four-column structure: (T1_index, T2_index, cosine_similarity, cosine_distance).
 
 <p>
 
