@@ -52,6 +52,8 @@ All datasets are located in `benckmark/` with two categories:
 - **Join-based** (`join_based/`): dsmusic, lhstocks, nnstocks
 - **Union-based** (`union_based/`): gacars, mstraffic, ncbuilding
 
+All six datasets are distributed as ZIP archives under `benckmark/`, and each archive contains a dataset-specific `README.md`; for detailed information, please download and inspect the corresponding ZIP package.
+
 Each dataset includes:
 - Source CSV files for each table
 - Pre-computed split masks (`mask.pt`) for train/validation/test splits
