@@ -130,7 +130,7 @@ DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data',
 task_config = transtab.create_dataset_config(
     col_types_dict=task_col_types,
     target_col='Collision Type',
-    mask_path=os.path.join(DATA_DIR, 'maryland_mask.pt'),
+    mask_path=os.path.join(DATA_DIR, 'mask_maryland.pt'),
 )
 
 aux_config = transtab.create_dataset_config(

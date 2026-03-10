@@ -63,14 +63,14 @@ DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data',
 task_config = transtab.create_dataset_config(
     col_types_dict=task_col_types,
     target_col='ICB Industry', #target(task)
-    mask_path=os.path.join(DATA_DIR, 'stocks_lh_mask.pt'),
+    mask_path=os.path.join(DATA_DIR, 'mask_lhlist.pt'),
 )
 
 # Auxiliary config for unsupervised contrastive learning
 aux_config = transtab.create_dataset_config(
     col_types_dict=aux_col_types,
     target_col=None,  # No target(aux)
-    mask_path=os.path.join(DATA_DIR, 'wiki_lh_mask.pt'),
+    mask_path=os.path.join(DATA_DIR, 'mask_lhwiki.pt'),
 )
 
 print(f"Task config: {len(task_config['cat'])} cat, {len(task_config['num'])} num features")
