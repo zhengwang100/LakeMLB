@@ -120,9 +120,9 @@ bash codes/scripts/run_fundation_models.sh
 
 Modified third-party libraries are bundled in `codes/lib/` with unified data loading and standardized preprocessing:
 
-- **rllm**: Open-source library for tabular learning ([rllm-team/rllm](https://github.com/rllm-team/rllm)). Experiments use the pinned branch [`Feature1-FeiyuPan`](https://github.com/FeiyuPan/rllm/tree/Feature1-FeiyuPan) on [FeiyuPan/rllm](https://github.com/FeiyuPan/rllm) to match this codebase; upstream `main` may introduce breaking API changes during active maintenance.
+- **rllm**: Open-source library for tabular learning ([rllm-team/rllm](https://github.com/rllm-team/rllm)). For reproducibility, use branch [`Feature1-FeiyuPan`](https://github.com/FeiyuPan/rllm/tree/Feature1-FeiyuPan), which is aligned with this codebase; [`rllm-team/rllm`](https://github.com/rllm-team/rllm) `main` may change APIs during ongoing development.
   - Clone into `codes/lib/rllm/`:
-  - ```bash
+    ```bash
     git clone -b Feature1-FeiyuPan https://github.com/FeiyuPan/rllm.git codes/lib/rllm
     ```
 - **transtab**, **carte_ai**: Modified versions for benchmark compatibility
