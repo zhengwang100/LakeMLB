@@ -20,6 +20,7 @@ import time
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 
+import pandas as pd
 import torch
 import numpy as np
 from sklearn.metrics import accuracy_score, classification_report, f1_score
@@ -28,18 +29,65 @@ from catboost import CatBoostClassifier
 import lightgbm as lgb
 
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
-from lib.rllm.datasets import MSTrafficDataset
+from lib.rllm.data.table_data import TableData
+from lib.rllm.types import ColType
+from lib.rllm.datasets import MSTrafficDataset, NNStocksDataset
 from utils import set_seed, get_device
+
+_NNSTOCKS_TABLE_NAMES = {
+    3: "nnstocks_fa",
+    4: "stocks_wiki_llm_1nn",
+    5: "stocks_wiki_llm_2nn",
+    6: "stocks_wiki_llm_4nn",
+    7: "stocks_wiki_llm_8nn",
+    8: "stocks_wiki_tfidf_1nn",
+}
+
+# ── per-dataset parquet configs (carte-preprocessed) ──────────────────────────
+_NNSTOCKS_COL_TYPES = {
+    "symbol":        ColType.CATEGORICAL,
+    "name":          ColType.CATEGORICAL,
+    "lastsale":      ColType.NUMERICAL,
+    "netchange":     ColType.NUMERICAL,
+    "pctchange":     ColType.NUMERICAL,
+    "volume":        ColType.NUMERICAL,
+    "marketCap":     ColType.NUMERICAL,
+    "country":       ColType.CATEGORICAL,
+    "url":           ColType.CATEGORICAL,
+    "wiki_title":    ColType.CATEGORICAL,
+    "company_type":  ColType.CATEGORICAL,
+    "traded_as":     ColType.CATEGORICAL,
+    "founded":       ColType.CATEGORICAL,
+    "headquarters":  ColType.CATEGORICAL,
+    "key_people":    ColType.CATEGORICAL,
+    "revenue":       ColType.CATEGORICAL,
+    "net_income":    ColType.CATEGORICAL,
+    "total_assets":  ColType.CATEGORICAL,
+    "num_employees": ColType.CATEGORICAL,
+    "products":      ColType.CATEGORICAL,
+}
+
+_PARQUET_CONFIGS = {
+    "stocks_wiki_llm_1nn": {"parquet": "stocks_wiki_llm_1nn", "mask": "mask_nnlist", "target": "sector", "col_types": _NNSTOCKS_COL_TYPES},
+    "stocks_wiki_llm_2nn": {"parquet": "stocks_wiki_llm_2nn", "mask": "mask_nnlist", "target": "sector", "col_types": _NNSTOCKS_COL_TYPES},
+    "stocks_wiki_llm_4nn": {"parquet": "stocks_wiki_llm_4nn", "mask": "mask_nnlist", "target": "sector", "col_types": _NNSTOCKS_COL_TYPES},
+    "stocks_wiki_llm_8nn": {"parquet": "stocks_wiki_llm_8nn", "mask": "mask_nnlist", "target": "sector", "col_types": _NNSTOCKS_COL_TYPES},
+}
 
 
 AVAILABLE_MODELS = ["xgboost", "catboost", "lightgbm"]
 _DATA_CACHE = {}
 
 
-SCRIPT_DIR = osp.dirname(osp.abspath(__file__))
-DATA_DIR = osp.join(SCRIPT_DIR, "..", "data")
+SCRIPT_DIR  = osp.dirname(osp.abspath(__file__))
+DATA_DIR    = osp.join(SCRIPT_DIR, "..", "data")
 RESULTS_DIR = osp.join(SCRIPT_DIR, "..", "results", "tree_models")
+LIB_DIR     = osp.join(SCRIPT_DIR, "..", "lib")
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+# carte config (for parquet / mask paths)
+sys.path.insert(0, LIB_DIR)
+from carte_ai.configs.directory import config_directory as _CARTE_CFG
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -47,13 +95,20 @@ def parse_args():
         choices=AVAILABLE_MODELS,
         help="Tree model to use"
     )
-    
+    parser.add_argument("--table_idx", type=int, default=None,
+                        choices=[3, 4, 5, 6, 7, 8],
+                        help="NNStocksDataset table index: "
+                             "3=fa, 4=llm_1nn, 5=llm_2nn, 6=llm_4nn, 7=llm_8nn, 8=tfidf_1nn. "
+                             "If None, falls back to MSTrafficDataset.")
+    parser.add_argument("--data_name", type=str, default=None,
+                        help="(Optional) parquet-based loading override.")
+
     # Experiment settings
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", type=int, default=1)
     parser.add_argument("--num_runs", type=int, default=10)
     parser.add_argument("--save_results", type=str, default=None)
-    parser.add_argument("--force_reload", action="store_true", default=True)
+    parser.add_argument("--force_reload", action="store_true", default=False)
     parser.add_argument("--xgb_n_estimators", type=int, default=500)
     parser.add_argument("--xgb_max_depth", type=int, default=6)
     parser.add_argument("--xgb_lr", type=float, default=0.03)
@@ -79,11 +134,12 @@ def load_data(
     device: torch.device = None,
     emb_dim: int = 32,
     force_reload: bool = False,
+    table_idx: int = 0,
     **dataset_kwargs
 ) -> Tuple:
     global _DATA_CACHE
     
-    cache_key = f"{dataset_name}_{emb_dim}"
+    cache_key = f"{dataset_name}_{table_idx}_{emb_dim}"
     
     if cache_key in _DATA_CACHE:
         return _DATA_CACHE[cache_key]
@@ -102,7 +158,7 @@ def load_data(
         **dataset_kwargs
     )
     
-    data = dataset.data_list[0]
+    data = dataset.data_list[table_idx]
     data.y = data.y.long().to(device)
     
     if not (hasattr(data, 'train_mask') and hasattr(data, 'val_mask') and hasattr(data, 'test_mask')):
@@ -136,6 +192,63 @@ def load_data(
     
     print(f"Dataset loaded: train={len(y_train)}, val={len(y_val)}, test={len(y_test)}, classes={num_classes}, dim={X_train.shape[1]}")
     
+    return result
+
+
+def load_data_from_parquet(
+    data_name: str,
+    emb_dim: int = 32,
+    device: torch.device = None,
+) -> tuple:
+    """Load dataset from carte-preprocessed parquet + mask file."""
+    global _DATA_CACHE
+    cache_key = f"{data_name}_{emb_dim}"
+    if cache_key in _DATA_CACHE:
+        return _DATA_CACHE[cache_key]
+
+    cfg = _PARQUET_CONFIGS[data_name]
+    parquet_path = osp.join(_CARTE_CFG['data_singletable'], cfg['parquet'], "raw.parquet")
+    mask_path    = osp.join(_CARTE_CFG['data_raw'], f"{cfg['mask']}.pt")
+
+    df    = pd.read_parquet(parquet_path)
+    masks = torch.load(mask_path, weights_only=False)
+
+    data = TableData(
+        df=df,
+        col_types=cfg['col_types'],
+        target_col=cfg['target'],
+        train_mask=masks['train_mask'],
+        val_mask=masks['val_mask'],
+        test_mask=masks['test_mask'],
+    )
+    DefaultTableTransform(out_dim=emb_dim)(data)
+
+    if device is None:
+        device = torch.device('cpu')
+    data.y = data.y.long().to(device)
+
+    train_mask = data.train_mask.cpu().numpy()
+    val_mask   = data.val_mask.cpu().numpy()
+    test_mask  = data.test_mask.cpu().numpy()
+
+    feat_dict = data.get_feat_dict()
+    feat_list = []
+    for key in sorted(feat_dict.keys()):
+        t = feat_dict[key]
+        if t.dim() == 1:
+            t = t.unsqueeze(1)
+        feat_list.append(t.cpu().numpy())
+
+    X = np.concatenate(feat_list, axis=1)
+    y = data.y.cpu().numpy()
+
+    result = (X[train_mask], y[train_mask], X[val_mask], y[val_mask],
+              X[test_mask], y[test_mask], len(np.unique(y)))
+    _DATA_CACHE[cache_key] = result
+
+    X_train, y_train, _, _, X_test, y_test, num_classes = result
+    print(f"Parquet loaded [{data_name}]: train={len(y_train)}, test={len(y_test)}, "
+          f"classes={num_classes}, dim={X_train.shape[1]}")
     return result
 
 
@@ -390,8 +503,8 @@ def save_results_to_file(
     
     output = {
         "model": model_name,
-        "task": "stock_sector_classification",
-        "dataset": "NNStocks",
+        "task": "classification",
+        "dataset": osp.basename(save_path),
         "config": config,
         "num_runs": len(results),
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -484,23 +597,46 @@ def main():
     set_seed(args.seed)
     device = get_device(args.device)
     
-    print(f"\nModel: {args.model.upper()}")
-    
-    data = load_data(
-        dataset_class=MSTrafficDataset,
-        dataset_name="mstraffic",
-        device=device,
-        emb_dim=32,
-        force_reload=args.force_reload,
-        cached_dir=DATA_DIR
-    )
+    if args.table_idx is not None:
+        data_tag = _NNSTOCKS_TABLE_NAMES.get(args.table_idx, f"nnstocks_{args.table_idx}")
+    elif args.data_name:
+        data_tag = args.data_name
+    else:
+        data_tag = "mstraffic"
+    print(f"\nModel: {args.model.upper()}  Dataset: {data_tag}")
+
+    if args.table_idx is not None:
+        data = load_data(
+            dataset_class=NNStocksDataset,
+            dataset_name="nnstocks",
+            device=device,
+            emb_dim=32,
+            force_reload=args.force_reload,
+            table_idx=args.table_idx,
+            cached_dir=DATA_DIR,
+        )
+    elif args.data_name and args.data_name in _PARQUET_CONFIGS:
+        data = load_data_from_parquet(
+            data_name=args.data_name,
+            emb_dim=32,
+            device=device,
+        )
+    else:
+        data = load_data(
+            dataset_class=MSTrafficDataset,
+            dataset_name="mstraffic",
+            device=device,
+            emb_dim=32,
+            force_reload=args.force_reload,
+            cached_dir=DATA_DIR
+        )
     X_train, y_train, X_val, y_val, X_test, y_test, num_classes = data
-    
+
     if args.save_results is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         args.save_results = osp.join(
             RESULTS_DIR,
-            f"{args.model}_{args.num_runs}runs_{timestamp}.json"
+            f"{args.model}_{data_tag}_{args.num_runs}runs_{timestamp}.json"
         )
     
     if args.model == "xgboost":

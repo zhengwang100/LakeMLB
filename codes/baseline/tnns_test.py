@@ -22,12 +22,15 @@ import fcntl
 from datetime import datetime
 from typing import Dict, List, Tuple
 
+import pandas as pd
 import torch
 import torch.nn.functional as F
 from sklearn.metrics import accuracy_score, classification_report
 import numpy as np
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
-from lib.rllm.datasets import MSTrafficDataset
+from lib.rllm.data.table_data import TableData
+from lib.rllm.types import ColType
+from lib.rllm.datasets import MSTrafficDataset, NCBuildingDataset, GACarsDataset, NNStocksDataset, LHStocksDataset, DSMusicDataset
 from utils import (
     set_seed, parse_list_of_ints, parse_list_of_floats, get_device,
     get_batch, to_device, save_model, load_model, print_grid_config
@@ -72,6 +75,10 @@ parser.add_argument("--skip_final_train", action="store_true", default=False,
 
 parser.add_argument("--seed", type=int, default=42)
 parser.add_argument("--device", type=str, default="cuda:0")
+parser.add_argument("--table_idx", type=int, default=None,
+                    choices=[3, 4, 5, 6, 7, 8],
+                    help="NNStocksDataset index: 3=fa,4=llm_1nn,5=llm_2nn,6=llm_4nn,7=llm_8nn,8=tfidf_1nn. "
+                         "If None, uses MSTrafficDataset.")
 
 parser.add_argument("--num_runs", type=int, default=5,
                     help="Number of runs with different seeds")
@@ -89,59 +96,77 @@ for _d in (RESULTS_DIR, CKPT_DIR):
     os.makedirs(_d, exist_ok=True)
 if args.save_results is None and args.num_runs > 1:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    args.save_results = osp.join(RESULTS_DIR, f"{args.model}_{args.num_runs}runs_{timestamp}.json")
+    _data_tag = (_NNSTOCKS_TABLE_NAMES.get(args.table_idx, f"nnstocks_{args.table_idx}")
+                 if args.table_idx is not None else "mstraffic")
+    args.save_results = osp.join(RESULTS_DIR, f"{args.model}_{_data_tag}_{args.num_runs}runs_{timestamp}.json")
     print(f"Results will be auto-saved to: {args.save_results}")
 
 
 # ======================== Dataset (memory-efficient) ========================
+_NNSTOCKS_TABLE_NAMES = {
+    3: "nnstocks_fa",
+    4: "stocks_wiki_llm_1nn",
+    5: "stocks_wiki_llm_2nn",
+    6: "stocks_wiki_llm_4nn",
+    7: "stocks_wiki_llm_8nn",
+    8: "stocks_wiki_tfidf_1nn",
+}
+
+
 def build_dataset(emb_dim: int, gpu_device: torch.device):
-    """Load dataset on CPU, only move batches to GPU during training.
-    
-    Key changes:
-    - Dataset kept on CPU
-    - Only batches moved to GPU during training
-    - Cache stored on CPU to save GPU memory
-    """
+    """Load dataset on CPU; only batches are moved to GPU during training."""
     global _DATA_CACHE
-    
-    cache_key = f"{emb_dim}"  # does not depend on device
-    
+
+    table_idx = args.table_idx  # None → MSTraffic; int → NNStocks
+    cache_key = f"{emb_dim}_{table_idx}"
+
     if cache_key in _DATA_CACHE:
         cached = _DATA_CACHE[cache_key]
-        print(f"Using cached dataset (emb_dim={emb_dim}) from CPU")
+        print(f"Using cached dataset (emb_dim={emb_dim}, table_idx={table_idx}) from CPU")
         return cached["data"], cached["train_idx"], cached["val_idx"], cached["test_idx"]
-    
-    print(f"Loading dataset (emb_dim={emb_dim}) to CPU...")
-    
+
+    print(f"Loading dataset (emb_dim={emb_dim}, table_idx={table_idx}) to CPU...")
+
     lock_file = osp.join(DATA_DIR, ".data_load.lock")
     os.makedirs(DATA_DIR, exist_ok=True)
-    
+
     with open(lock_file, 'w') as lock_f:
         fcntl.flock(lock_f.fileno(), fcntl.LOCK_EX)
         try:
             table_transform = DefaultTableTransform(out_dim=emb_dim)
 
-            dataset = MSTrafficDataset(
-                cached_dir=DATA_DIR,
-                force_reload=True,
-                transform=table_transform,
-                device=torch.device('cpu')
-            )
-            data = dataset.data_list[0]
+            if table_idx is not None:
+                dataset = NNStocksDataset(
+                    cached_dir=DATA_DIR,
+                    force_reload=False,
+                    transform=table_transform,
+                    device=torch.device('cpu')
+                )
+                data = dataset.data_list[table_idx]
+            else:
+                dataset = MSTrafficDataset(
+                    cached_dir=DATA_DIR,
+                    force_reload=True,
+                    transform=table_transform,
+                    device=torch.device('cpu')
+                )
+                data = dataset.data_list[0]
+
             data.y = data.y.long()
 
             train_indices = torch.nonzero(data.train_mask, as_tuple=False).view(-1)
-            val_indices = torch.nonzero(data.val_mask, as_tuple=False).view(-1)
-            test_indices = torch.nonzero(data.test_mask, as_tuple=False).view(-1)
-            
+            val_indices   = torch.nonzero(data.val_mask,   as_tuple=False).view(-1)
+            test_indices  = torch.nonzero(data.test_mask,  as_tuple=False).view(-1)
+
             _DATA_CACHE[cache_key] = {
                 "data": data,
                 "train_idx": train_indices,
-                "val_idx": val_indices,
-                "test_idx": test_indices
+                "val_idx":   val_indices,
+                "test_idx":  test_indices
             }
-            
-            print(f"Dataset loaded to CPU. Train: {len(train_indices)}, Val: {len(val_indices)}, Test: {len(test_indices)}")
+
+            print(f"Dataset loaded to CPU. Train: {len(train_indices)}, "
+                  f"Val: {len(val_indices)}, Test: {len(test_indices)}")
         finally:
             fcntl.flock(lock_f.fileno(), fcntl.LOCK_UN)
 
@@ -496,7 +521,7 @@ def main():
             print("Final training with best config")
             print("="*60)
             
-            if args.num_runs > 1:
+            if args.num_runs >= 1:
                 results = run_multiple_experiments(
                     config=best_cfg,
                     model_name=args.model,
@@ -606,7 +631,7 @@ def main():
         }
         print(f"Config: {cfg}\n")
         
-        if args.num_runs > 1:
+        if args.num_runs >= 1:
             results = run_multiple_experiments(
                 config=cfg,
                 model_name=args.model,

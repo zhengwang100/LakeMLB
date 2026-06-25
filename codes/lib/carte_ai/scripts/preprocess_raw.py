@@ -1618,6 +1618,145 @@ def preprocess_data(data_name):
         le = LabelEncoder()
         data[target_name] = le.fit_transform(data[target_name])
 
+    elif data_name == "german_reg":
+        # basic info
+        target_name = "price_in_euro"
+        entity_name = "id"
+        task = "regression"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # target (keep as raw float, no LabelEncoder)
+        data[target_name] = data[target_name].astype("float")
+
+        # numeric columns
+        num_cols = ["year", "power_kw", "power_ps", "mileage_in_km"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = pd.to_numeric(data[col], errors='coerce')
+
+        # categorical columns
+        cat_cols = [
+            "id", "brand", "model", "color", "registration_date",
+            "transmission_type", "fuel_type", "fuel_consumption_l_100km",
+            "fuel_consumption_g_km", "offer_description"
+        ]
+        for col in cat_cols:
+            if col in data.columns:
+                data[col] = data[col].astype("str")
+
+    elif data_name == "australian_reg":
+        # basic info
+        target_name = "Price"
+        entity_name = None
+        task = "regression"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # target (keep as raw float, no LabelEncoder)
+        data[target_name] = data[target_name].astype("float")
+
+        # numeric columns
+        num_cols = ["Year", "Kilometres"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = pd.to_numeric(data[col], errors='coerce')
+
+        # categorical columns
+        cat_cols = [
+            "Brand", "Model", "Car/Suv", "Title", "UsedOrNew",
+            "Transmission", "Engine", "DriveType", "FuelType",
+            "FuelConsumption", "ColourExtInt", "Location",
+            "CylindersinEngine", "BodyType", "Doors", "Seats"
+        ]
+        for col in cat_cols:
+            if col in data.columns:
+                data[col] = data[col].astype("str")
+
+    elif data_name == "gacars_da_reg":
+        # basic info – DA merged table (German rows + appended Australian rows)
+        target_name = "price"
+        entity_name = None
+        task = "regression"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # target (keep as raw float, no LabelEncoder)
+        data[target_name] = data[target_name].astype("float")
+
+        # numeric columns (German + Australian)
+        num_cols = ["id", "year", "power_kw", "power_ps", "mileage_in_km", "Kilometres"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = pd.to_numeric(data[col], errors='coerce')
+
+        # categorical columns (German + unmatched Australian columns)
+        cat_cols = [
+            "brand", "model", "color", "registration_date",
+            "transmission_type", "fuel_type", "fuel_consumption_l_100km",
+            "fuel_consumption_g_km", "offer_description",
+            "Car/Suv", "Title", "UsedOrNew", "Transmission", "Engine",
+            "DriveType", "FuelConsumption", "ColourExtInt", "Location",
+            "CylindersinEngine", "BodyType", "Doors", "Seats"
+        ]
+        for col in cat_cols:
+            if col in data.columns:
+                data[col] = data[col].astype("str")
+
+    elif data_name == "gacars_fa_reg":
+        # basic info – FA augmented table (German rows + Australian feature columns)
+        target_name = "price_in_euro"
+        entity_name = "id"
+        task = "regression"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # target (keep as raw float, no LabelEncoder)
+        data[target_name] = data[target_name].astype("float")
+
+        # numeric columns (German + 1-NN matched Australian num columns)
+        num_cols = [
+            "id", "year", "power_kw", "power_ps", "mileage_in_km",
+            "Year", "Kilometres", "Price"
+        ]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = pd.to_numeric(data[col], errors='coerce')
+
+        # categorical columns (German + 1-NN matched Australian cat columns)
+        cat_cols = [
+            "brand", "model", "color", "registration_date",
+            "transmission_type", "fuel_type", "fuel_consumption_l_100km",
+            "fuel_consumption_g_km", "offer_description",
+            "Brand", "Model", "Car/Suv", "Title", "UsedOrNew",
+            "Transmission", "Engine", "DriveType", "FuelType",
+            "FuelConsumption", "ColourExtInt", "Location",
+            "CylindersinEngine", "BodyType", "Doors", "Seats"
+        ]
+        for col in cat_cols:
+            if col in data.columns:
+                data[col] = data[col].astype("str")
+
     elif data_name == "newyork":
         # basic info
         target_name = "StatuteCodes"
@@ -2099,6 +2238,216 @@ def preprocess_data(data_name):
         for col in cat_cols:
             data[col] = data[col].astype("str")
         
+        # encode target
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "stocks_wiki_llm_1nn":
+        # basic info
+        target_name = "sector"
+        entity_name = "symbol"
+        task = "classification"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # drop url column
+        data.drop(columns=["industry", "wiki_url", "website"], errors="ignore", inplace=True)
+
+        # numeric columns - remove $ and , symbols
+        num_cols = ["lastsale", "netchange", "volume", "marketCap", "ipoyear"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = data[col].astype(str).str.replace("$", "").str.replace(",", "")
+                data[col] = pd.to_numeric(data[col], errors="coerce")
+
+        # pctchange special handling - remove %
+        if "pctchange" in data.columns:
+            data["pctchange"] = data["pctchange"].str.rstrip("%")
+            data["pctchange"] = pd.to_numeric(data["pctchange"], errors="coerce")
+
+        # categorical columns
+        cat_cols = ["symbol", "name", "country", "url", "sector", "wiki_title", "company_type", "traded_as", "founded",
+            "headquarters", "num_locations", "area_served", "key_people",
+            "services", "revenue", "operating_income", "net_income",
+            "total_assets", "total_equity", "num_employees", "subsidiaries",
+            "founders", "formerly", "products", "isin"]
+        cat_cols = [c for c in cat_cols if c in data.columns]
+        for col in cat_cols:
+            data[col] = data[col].astype("str")
+
+        # encode target
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "stocks_wiki_llm_2nn":
+        # basic info
+        target_name = "sector"
+        entity_name = "symbol"
+        task = "classification"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # drop url column
+        data.drop(columns=["industry", "wiki_url", "website"], errors="ignore", inplace=True)
+
+        # numeric columns - remove $ and , symbols
+        num_cols = ["lastsale", "netchange", "volume", "marketCap", "ipoyear"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = data[col].astype(str).str.replace("$", "").str.replace(",", "")
+                data[col] = pd.to_numeric(data[col], errors="coerce")
+
+        # pctchange special handling - remove %
+        if "pctchange" in data.columns:
+            data["pctchange"] = data["pctchange"].str.rstrip("%")
+            data["pctchange"] = pd.to_numeric(data["pctchange"], errors="coerce")
+
+        # categorical columns
+        cat_cols = ["symbol", "name", "country", "url", "sector", "wiki_title", "company_type", "traded_as", "founded",
+            "headquarters", "num_locations", "area_served", "key_people",
+            "services", "revenue", "operating_income", "net_income",
+            "total_assets", "total_equity", "num_employees", "subsidiaries",
+            "founders", "formerly", "products", "isin"]
+        cat_cols = [c for c in cat_cols if c in data.columns]
+        for col in cat_cols:
+            data[col] = data[col].astype("str")
+
+        # encode target
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "stocks_wiki_llm_4nn":
+        # basic info
+        target_name = "sector"
+        entity_name = "symbol"
+        task = "classification"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # drop url column
+        data.drop(columns=["industry", "wiki_url", "website"], errors="ignore", inplace=True)
+
+        # numeric columns - remove $ and , symbols
+        num_cols = ["lastsale", "netchange", "volume", "marketCap", "ipoyear"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = data[col].astype(str).str.replace("$", "").str.replace(",", "")
+                data[col] = pd.to_numeric(data[col], errors="coerce")
+
+        # pctchange special handling - remove %
+        if "pctchange" in data.columns:
+            data["pctchange"] = data["pctchange"].str.rstrip("%")
+            data["pctchange"] = pd.to_numeric(data["pctchange"], errors="coerce")
+
+        # categorical columns
+        cat_cols = ["symbol", "name", "country", "url", "sector", "wiki_title", "company_type", "traded_as", "founded",
+            "headquarters", "num_locations", "area_served", "key_people",
+            "services", "revenue", "operating_income", "net_income",
+            "total_assets", "total_equity", "num_employees", "subsidiaries",
+            "founders", "formerly", "products", "isin"]
+        cat_cols = [c for c in cat_cols if c in data.columns]
+        for col in cat_cols:
+            data[col] = data[col].astype("str")
+
+        # encode target
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "stocks_wiki_llm_8nn":
+        # basic info
+        target_name = "sector"
+        entity_name = "symbol"
+        task = "classification"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # drop url column
+        data.drop(columns=["industry", "wiki_url", "website"], errors="ignore", inplace=True)
+
+        # numeric columns - remove $ and , symbols
+        num_cols = ["lastsale", "netchange", "volume", "marketCap", "ipoyear"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = data[col].astype(str).str.replace("$", "").str.replace(",", "")
+                data[col] = pd.to_numeric(data[col], errors="coerce")
+
+        # pctchange special handling - remove %
+        if "pctchange" in data.columns:
+            data["pctchange"] = data["pctchange"].str.rstrip("%")
+            data["pctchange"] = pd.to_numeric(data["pctchange"], errors="coerce")
+
+        # categorical columns
+        cat_cols = ["symbol", "name", "country", "url", "sector", "wiki_title", "company_type", "traded_as", "founded",
+            "headquarters", "num_locations", "area_served", "key_people",
+            "services", "revenue", "operating_income", "net_income",
+            "total_assets", "total_equity", "num_employees", "subsidiaries",
+            "founders", "formerly", "products", "isin"]
+        cat_cols = [c for c in cat_cols if c in data.columns]
+        for col in cat_cols:
+            data[col] = data[col].astype("str")
+
+        # encode target
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "stocks_wiki_tfidf_1nn":
+        # basic info
+        target_name = "sector"
+        entity_name = "symbol"
+        task = "classification"
+        repeated = False
+
+        # preprocess
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        data = _drop_high_null(data)
+        data = _drop_single_unique(data)
+
+        # drop url column
+        data.drop(columns=["industry", "wiki_url", "website"], errors="ignore", inplace=True)
+
+        # numeric columns - remove $ and , symbols
+        num_cols = ["lastsale", "netchange", "volume", "marketCap", "ipoyear"]
+        for col in num_cols:
+            if col in data.columns:
+                data[col] = data[col].astype(str).str.replace("$", "").str.replace(",", "")
+                data[col] = pd.to_numeric(data[col], errors="coerce")
+
+        # pctchange special handling - remove %
+        if "pctchange" in data.columns:
+            data["pctchange"] = data["pctchange"].str.rstrip("%")
+            data["pctchange"] = pd.to_numeric(data["pctchange"], errors="coerce")
+
+        # categorical columns
+        cat_cols = ["symbol", "name", "country", "url", "sector", "wiki_title", "company_type", "traded_as", "founded",
+            "headquarters", "num_locations", "area_served", "key_people",
+            "services", "revenue", "operating_income", "net_income",
+            "total_assets", "total_equity", "num_employees", "subsidiaries",
+            "founders", "formerly", "products", "isin"]
+        cat_cols = [c for c in cat_cols if c in data.columns]
+        for col in cat_cols:
+            data[col] = data[col].astype("str")
+
         # encode target
         le = LabelEncoder()
         data[target_name] = le.fit_transform(data[target_name])

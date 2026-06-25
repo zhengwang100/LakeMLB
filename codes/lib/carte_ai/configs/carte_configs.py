@@ -53,6 +53,11 @@ carte_datalist = [
     "wine_vivino_rating",
     "yelp",
     "zomato",
+    # GACars regression datasets
+    "german_reg",
+    "australian_reg",
+    "gacars_da_reg",
+    "gacars_fa_reg",
 ]
 
 # Dictionary of baseline methods
