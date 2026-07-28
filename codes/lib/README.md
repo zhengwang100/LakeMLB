@@ -43,26 +43,22 @@ Download the official compressed English Common Crawl vectors from:
 After extraction, place the file at
 `codes/lib/FastText/cc.en.300.bin`.
 
-### Hugging Face cache inventory
+### TabICLv2 checkpoint
 
-The removed `huggingface/` directory contained only the following TabICL
-checkpoint and its `main` reference:
+The local Hugging Face cache is excluded from the artifact. The TabICL
+experiments use `tabicl==2.0.2` and its default TabICLv2 classifier checkpoint:
 
-- Repository: [`jingang/TabICL-clf`](https://huggingface.co/jingang/TabICL-clf)
-- Cached checkpoint:
-  `hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
-  (108,313,079 bytes)
-- Cached reference:
-  `hub/models--jingang--TabICL-clf/refs/main`
+- Repository: [`jingang/TabICL`](https://huggingface.co/jingang/TabICL)
+- Checkpoint: `tabicl-classifier-v2-20260212.ckpt` (110,368,038 bytes)
 - SHA-256:
-  `cd0296d7eacd4f8fb502be3e3a92900a2b0071faf8a9f6cd323a13afcb641ace`
+  `bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0`
 - Direct download:
-  <https://huggingface.co/jingang/TabICL-clf/resolve/main/tabicl-classifier-v1.1-0506.ckpt?download=true>
+  <https://huggingface.co/jingang/TabICL/resolve/main/tabicl-classifier-v2-20260212.ckpt?download=true>
 
-To preserve the path expected by the baseline scripts, place the downloaded
-checkpoint at:
-
-`codes/lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
+By default, `run_tabicl.sh` downloads this checkpoint to the standard
+Hugging Face cache. A manually downloaded checkpoint can instead be supplied
+with `--model_path /path/to/tabicl-classifier-v2-20260212.ckpt`; combine this
+with `--no_auto_download` to require local-only execution.
 
 
 ### Other local Hugging Face model copies
