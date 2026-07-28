@@ -3,12 +3,18 @@ Utility functions for training and evaluation.
 """
 import os
 import random
+import secrets
 import numpy as np
 import torch
 from typing import List, Optional, Union
 
 
 # ======================== Seed & Device ========================
+def generate_random_seed() -> int:
+    """Generate a non-deterministic seed for repeated experimental runs."""
+    return secrets.randbelow(2**31 - 1)
+
+
 def set_seed(seed: int):
     """Set random seed for reproducibility."""
     random.seed(seed)

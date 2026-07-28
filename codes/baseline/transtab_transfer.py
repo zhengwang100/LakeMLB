@@ -1,220 +1,171 @@
-"""
-TransTab training script for (MSTraffic) dataset.
-Transfer learning: pretrain on Auxiliary table (Seattle), fine-tune on Task table (Maryland).
-"""
-import sys
-import os
+"""TransTab labeled-auxiliary transfer learning for LakeMLB tables."""
 import argparse
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', "lib"))
+import json
+import os
+import os.path as osp
+import random
+import sys
+import time
+from datetime import datetime
 
-import transtab
+sys.path.insert(0, osp.join(osp.dirname(__file__), "..", ".."))
+sys.path.insert(0, osp.join(osp.dirname(__file__), "..", "lib"))
+
 import numpy as np
-from sklearn.metrics import (roc_auc_score, classification_report, 
-                            accuracy_score, precision_score, recall_score, f1_score)
-from rllm.types import ColType
+import torch
+import transtab
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    f1_score,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 
-# ==================== Parse Arguments ====================
+from transtab_lakemlb_utils import prepare_table
 
-parser = argparse.ArgumentParser(description='TransTab Transfer Learning')
-parser.add_argument('--ckpt_dir', type=str, default='./checkpoint',
-                    help='Temporary checkpoint directory during training')
-parser.add_argument('--pretrain_dir', type=str, default='./ckpt_transfer/pretrained',
-                    help='Directory for saving/loading pretrained model')
-parser.add_argument('--num_epoch_pretrain', type=int, default=1,
-                    help='Number of epochs for pretraining')
-parser.add_argument('--num_epoch_finetune', type=int, default=1,
-                    help='Number of epochs for fine-tuning')
-parser.add_argument('--device', type=str, default='cuda:0',
-                    help='Device to use (cpu or cuda:0)')
+
+parser = argparse.ArgumentParser(description="TransTab labeled-auxiliary transfer learning")
+parser.add_argument("--dataset", type=str, default="mstraffic", help="Task dataset family.")
+parser.add_argument("--table_idx", type=int, default=0, help="Task table index.")
+parser.add_argument("--aux_dataset", type=str, default="mstraffic", help="Auxiliary dataset family.")
+parser.add_argument("--aux_table_idx", type=int, default=1, help="Auxiliary table index.")
+parser.add_argument("--work_dir", type=str, default=None)
+parser.add_argument("--ckpt_dir", type=str, default="./checkpoint")
+parser.add_argument("--pretrain_dir", type=str, default="./ckpt_transfer/pretrained")
+parser.add_argument("--num_epoch_pretrain", type=int, default=1)
+parser.add_argument("--num_epoch_finetune", type=int, default=1)
+parser.add_argument("--device", type=str, default="cuda:0")
+parser.add_argument("--seed", type=int, default=42)
+parser.add_argument("--save_results", type=str, default=None)
 args = parser.parse_args()
 
-print(f"Arguments:")
+run_start = time.perf_counter()
+random.seed(args.seed)
+np.random.seed(args.seed)
+torch.manual_seed(args.seed)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(args.seed)
+
+work_dir = args.work_dir or osp.join(args.ckpt_dir, "data")
+task_dir = osp.join(work_dir, "task")
+aux_dir = osp.join(work_dir, "aux")
+
+task_table = prepare_table(
+    args.dataset, args.table_idx, task_dir, "task", args.seed,
+    require_target=True, use_target=True,
+)
+aux_table = prepare_table(
+    args.aux_dataset, args.aux_table_idx, aux_dir, "aux", args.seed + 1,
+    require_target=True, use_target=True,
+)
+
+print("Arguments:")
+print(f"  Task: {args.dataset}[{args.table_idx}] ({task_table.tag})")
+print(f"  Aux : {args.aux_dataset}[{args.aux_table_idx}] ({aux_table.tag})")
 print(f"  Checkpoint directory: {args.ckpt_dir}")
 print(f"  Pretrain directory: {args.pretrain_dir}")
 print(f"  Pretrain epochs: {args.num_epoch_pretrain}")
 print(f"  Finetune epochs: {args.num_epoch_finetune}")
 print(f"  Device: {args.device}")
+print(f"  Seed: {args.seed}")
 
-# Task table column types
-task_col_types = {
-    "Report Number": ColType.CATEGORICAL,
-    "Local Case Number": ColType.CATEGORICAL,
-    "Agency Name": ColType.CATEGORICAL,
-    "ACRS Report Type": ColType.CATEGORICAL,
-    "Crash Date/Time": ColType.CATEGORICAL,
-    "Hit/Run": ColType.CATEGORICAL,
-    "Route Type": ColType.CATEGORICAL,
-    "Lane Direction": ColType.CATEGORICAL,
-    "Lane Type": ColType.CATEGORICAL,
-    "Number of Lanes": ColType.CATEGORICAL,
-    "Direction": ColType.CATEGORICAL,
-    "Distance": ColType.NUMERICAL,
-    "Distance Unit": ColType.CATEGORICAL,
-    "Road Grade": ColType.CATEGORICAL,
-    "Road Name": ColType.CATEGORICAL,
-    "Cross-Street Name": ColType.CATEGORICAL,
-    "Off-Road Description": ColType.CATEGORICAL,
-    "Related Non-Motorist": ColType.CATEGORICAL,
-    "At Fault": ColType.CATEGORICAL,
-    "Collision Type": ColType.CATEGORICAL,
-    "Weather": ColType.CATEGORICAL,
-    "Surface Condition": ColType.CATEGORICAL,
-    "Light": ColType.CATEGORICAL,
-    "Traffic Control": ColType.CATEGORICAL,
-    "Driver Substance Abuse": ColType.CATEGORICAL,
-    "Non-Motorist Substance Abuse": ColType.CATEGORICAL,
-    "First Harmful Event": ColType.CATEGORICAL,
-    "Second Harmful Event": ColType.CATEGORICAL,
-    "Junction": ColType.CATEGORICAL,
-    "Intersection Type": ColType.CATEGORICAL,
-    "Road Alignment": ColType.CATEGORICAL,
-    "Road Condition": ColType.CATEGORICAL,
-    "Road Division": ColType.CATEGORICAL,
-    "Latitude": ColType.NUMERICAL,
-    "Longitude": ColType.NUMERICAL,
-    "Location": ColType.CATEGORICAL,
-}
-
-# Auxiliary table column types
-aux_col_types = {
-    "OBJECTID": ColType.NUMERICAL,
-    "SE_ANNO_CAD_DATA": ColType.CATEGORICAL,
-    "INCKEY": ColType.NUMERICAL,
-    "COLDETKEY": ColType.NUMERICAL,
-    "REPORTNO": ColType.CATEGORICAL,
-    "STATUS": ColType.CATEGORICAL,
-    "ADDRTYPE": ColType.CATEGORICAL,
-    "INTKEY": ColType.NUMERICAL,
-    "LOCATION": ColType.CATEGORICAL,
-    "SEVERITYCODE": ColType.CATEGORICAL,
-    "SEVERITYDESC": ColType.CATEGORICAL,
-    "COLLISIONTYPE": ColType.CATEGORICAL,
-    "PERSONCOUNT": ColType.NUMERICAL,
-    "PEDCOUNT": ColType.NUMERICAL,
-    "PEDCYLCOUNT": ColType.NUMERICAL,
-    "VEHCOUNT": ColType.NUMERICAL,
-    "INJURIES": ColType.NUMERICAL,
-    "SERIOUSINJURIES": ColType.NUMERICAL,
-    "FATALITIES": ColType.NUMERICAL,
-    "INCDATE": ColType.CATEGORICAL,
-    "INCDTTM": ColType.CATEGORICAL,
-    "JUNCTIONTYPE": ColType.CATEGORICAL,
-    "UNDERINFL": ColType.CATEGORICAL,
-    "WEATHER": ColType.CATEGORICAL,
-    "ROADCOND": ColType.CATEGORICAL,
-    "LIGHTCOND": ColType.CATEGORICAL,
-    "DIAGRAMLINK": ColType.CATEGORICAL,
-    "REPORTLINK": ColType.CATEGORICAL,
-    "PEDROWNOTGRNT": ColType.CATEGORICAL,
-    "SPEEDING": ColType.CATEGORICAL,
-    "CROSSWALKKEY": ColType.NUMERICAL,
-    "HITPARKEDCAR": ColType.CATEGORICAL,
-    "SPDCASENO": ColType.CATEGORICAL,
-    "Source of the collision report": ColType.CATEGORICAL,
-    "Source description": ColType.CATEGORICAL,
-    "Added date": ColType.CATEGORICAL,
-    "Modified date": ColType.CATEGORICAL,
-    "SHAREDMICROMOBILITYCD": ColType.CATEGORICAL,
-    "SHAREDMICROMOBILITYDESC": ColType.CATEGORICAL,
-    "x": ColType.NUMERICAL,
-    "y": ColType.NUMERICAL,
-}
-
-# ==================== Configuration Generation ====================
-
-# Data directory (absolute path)
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'table_mstraffic', 'raw'))
-
-# Create dataset configs
-task_config = transtab.create_dataset_config(
-    col_types_dict=task_col_types,
-    target_col='Collision Type',
-    mask_path=os.path.join(DATA_DIR, 'mask_maryland.pt'),
-)
-
-aux_config = transtab.create_dataset_config(
-    col_types_dict=aux_col_types,
-    target_col='COLLISIONTYPE',
-    mask_path=os.path.join(DATA_DIR, 'mask_seattle.pt'),
-)
-
-print(f"Task config: {len(task_config['cat'])} cat, {len(task_config['num'])} num features")
-print(f"Auxiliary config: {len(aux_config['cat'])} cat, {len(aux_config['num'])} num features")
-
-# Pretrain on Auxiliary table
-print("Stage 1: Pretraining")
-
-# Load Seattle data
+print("Stage 1: Pretraining on labeled auxiliary table")
 allset1, trainset1, valset1, testset1, cat_cols1, num_cols1, bin_cols1 = transtab.load_data(
-    [DATA_DIR], 
-    dataset_config={DATA_DIR: aux_config}, 
-    filename='seattle.csv'
+    [aux_table.csv_dir],
+    dataset_config={aux_table.csv_dir: aux_table.config},
+    filename=aux_table.csv_name,
 )
+print(f"Aux train={len(trainset1[0][0])}, val={len(valset1[0][0])}, test={len(testset1[0][0])}, classes={aux_table.num_classes}")
 
-print(f"Train: {len(trainset1[0][0])}, Val: {len(valset1[0][0])}, Test: {len(testset1[0][0])}")
-
-# Build classifier
 model = transtab.build_classifier(
     categorical_columns=cat_cols1,
     numerical_columns=num_cols1,
     binary_columns=bin_cols1,
-    num_class=9,
+    num_class=aux_table.num_classes,
     num_layer=4,
-    device=args.device
+    device=args.device,
 )
-
-# Train
-transtab.train(model, trainset1, valset1, num_epoch=args.num_epoch_pretrain, eval_metric='val_loss',
-               eval_less_is_better=True, output_dir=args.ckpt_dir)
-
-# Save model
+transtab.train(
+    model, trainset1, valset1,
+    num_epoch=args.num_epoch_pretrain,
+    eval_metric="val_loss",
+    eval_less_is_better=True,
+    output_dir=args.ckpt_dir,
+)
 model.save(args.pretrain_dir)
 print(f"Model saved to {args.pretrain_dir}")
 
-# Fine-tune on Task table
-
-# Load pretrained model
+print("Stage 2: Fine-tuning on task table")
 model.load(args.pretrain_dir)
-
-# Load Maryland data
 allset2, trainset2, valset2, testset2, cat_cols2, num_cols2, bin_cols2 = transtab.load_data(
-    [DATA_DIR], 
-    dataset_config={DATA_DIR: task_config}, 
-    filename='maryland.csv'
+    [task_table.csv_dir],
+    dataset_config={task_table.csv_dir: task_table.config},
+    filename=task_table.csv_name,
+)
+print(f"Task train={len(trainset2[0][0])}, val={len(valset2[0][0])}, test={len(testset2[0][0])}, classes={task_table.num_classes}")
+
+model.update({"cat": cat_cols2, "num": num_cols2, "bin": bin_cols2, "num_class": task_table.num_classes})
+transtab.train(
+    model, trainset2, valset2,
+    num_epoch=args.num_epoch_finetune,
+    eval_metric="val_loss",
+    eval_less_is_better=True,
+    output_dir=args.ckpt_dir,
 )
 
-print(f"Train: {len(trainset2[0][0])}, Val: {len(valset2[0][0])}, Test: {len(testset2[0][0])}")
-
-# Update model for new dataset
-model.update({'cat': cat_cols2, 'num': num_cols2, 'bin': bin_cols2, 'num_class': 9})
-
-# Fine-tune
-transtab.train(model, trainset2, valset2, num_epoch=args.num_epoch_finetune, eval_metric='val_loss',
-               eval_less_is_better=True, output_dir=args.ckpt_dir)
-
-# Predict
 x_test, y_test = testset2[0]
 ypred_prob = transtab.predict(model, x_test, y_test)
+preds = np.argmax(ypred_prob, axis=1)
+try:
+    auc_score = roc_auc_score(y_test, ypred_prob, multi_class="ovr")
+except ValueError:
+    auc_score = float("nan")
+accuracy = accuracy_score(y_test, preds)
+precision = precision_score(y_test, preds, average="weighted", zero_division=0)
+recall = recall_score(y_test, preds, average="weighted", zero_division=0)
+f1 = f1_score(y_test, preds, average="weighted", zero_division=0)
 
-# Calculate metrics
-auc_score = roc_auc_score(y_test, ypred_prob, multi_class='ovr')
-accuracy = accuracy_score(y_test, np.argmax(ypred_prob, axis=1))
-precision = precision_score(y_test, np.argmax(ypred_prob, axis=1), average='weighted')
-recall = recall_score(y_test, np.argmax(ypred_prob, axis=1), average='weighted')
-f1 = f1_score(y_test, np.argmax(ypred_prob, axis=1), average='weighted')
-
-# Print results
-print(f'\nTest Performance:')
-print(f'  AUC:       {auc_score:.4f}')
-print(f'  Accuracy:  {accuracy:.4f}')
-print(f'  Precision: {precision:.4f}')
-print(f'  Recall:    {recall:.4f}')
-print(f'  F1 Score:  {f1:.4f}')
-
+print("\nTest Performance:")
+print(f"  AUC:       {auc_score:.4f}")
+print(f"  Accuracy:  {accuracy:.4f}")
+print(f"  Precision: {precision:.4f}")
+print(f"  Recall:    {recall:.4f}")
+print(f"  F1 Score:  {f1:.4f}")
 print("\nClassification Report:")
-print(classification_report(y_test, np.argmax(ypred_prob, axis=1), digits=4))
+print(classification_report(y_test, preds, digits=4, zero_division=0))
 
-print("="*70)
-print("Training and evaluation completed!")
-print("="*70)
+runtime = time.perf_counter() - run_start
+print(f"Runtime: {runtime:.2f}s")
+
+if args.save_results:
+    output = {
+        "model": "transtab_transfer",
+        "task": "classification",
+        "dataset_name": args.dataset,
+        "table_idx": args.table_idx,
+        "dataset": task_table.tag,
+        "auxiliary_dataset_name": args.aux_dataset,
+        "auxiliary_table_idx": args.aux_table_idx,
+        "auxiliary_dataset": aux_table.tag,
+        "seed": args.seed,
+        "num_epoch_pretrain": args.num_epoch_pretrain,
+        "num_epoch_finetune": args.num_epoch_finetune,
+        "device": args.device,
+        "ckpt_dir": args.ckpt_dir,
+        "pretrain_dir": args.pretrain_dir,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "runtime": runtime,
+        "metrics": {
+            "auc": float(auc_score),
+            "accuracy": float(accuracy),
+            "precision": float(precision),
+            "recall": float(recall),
+            "f1": float(f1),
+        },
+    }
+    os.makedirs(os.path.dirname(args.save_results) or ".", exist_ok=True)
+    with open(args.save_results, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"Results saved -> {args.save_results}")

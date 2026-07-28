@@ -3,7 +3,7 @@ from pathlib import Path
 # Get the base path relative to this file's location
 base_path = (
     Path(__file__).resolve().parent.parent
-)  # This gives '/home/infres/gbrison/carte/carte_ai'
+)
 
 config_directory = dict()
 config_directory["base_path"] = base_path

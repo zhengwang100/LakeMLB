@@ -9,11 +9,14 @@ from typing import Optional
 try:
     import openml
     _has_openml = True
-except ImportError:
+except Exception as exc:
+    openml = None
     _has_openml = False
 
 import logging
 logger = logging.getLogger(__name__)
+if not _has_openml:
+    logger.warning("OpenML is unavailable; local CSV datasets still work.")
 
 OPENML_DATACONFIG = {
     'credit-g': {'bin': ['own_telephone', 'foreign_worker']},
@@ -387,7 +390,7 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
         for col in num_cols:
             # 强制将数值列转为数值型，非法值变为 NaN
             X[col] = pd.to_numeric(X[col], errors="coerce")
-            # X[col] = X[col].fillna(X[col].mode()[0]) #pfymod0119
+            # X[col] = X[col].fillna(X[col].mode()[0])
             mode_series = X[col].mode()
             if not mode_series.empty:
                 X[col] = X[col].fillna(mode_series.iloc[0])
@@ -413,7 +416,7 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
 
     if len(bin_cols) > 0:
         for col in bin_cols:
-            # X[col] = X[col].fillna(X[col].mode()[0]) #pfymod0119
+            # X[col] = X[col].fillna(X[col].mode()[0])
             mode_series = X[col].mode()
             if not mode_series.empty:
                 X[col] = X[col].fillna(mode_series.iloc[0])

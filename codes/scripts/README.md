@@ -1,28 +1,116 @@
-# Scripts
+# Experiment Scripts
 
-Shell scripts for running baseline experiments. All Python source files are in `../baseline/`.
+This directory contains the six shell entry points used for the classification
+experiments. Baseline implementations are located in `codes/baseline/`. Run all
+commands from the repository root.
 
-| Script | Description |
-|---|---|
-| `example.sh` | Quick-start examples showing how to run each method with minimal arguments. |
-| `run_tree_models.sh` | Grid search + repeated evaluation for XGBoost, CatBoost, and LightGBM. |
-| `run_nn_grid_search.sh` | Parallel grid search (memory-efficient) for tabular neural networks (FTTransformer, TabTransformer, ExcelFormer, SAINT, TromptNet). |
-| `run_transtab.sh` | Repeated runs of TransTab with concurrency control. |
-| `run_carte.sh` | Run CARTE single-table and multi-table experiments. Supports mode selection via argument (`single`, `multi`, or both). |
-| `run_fundation_models.sh` | Repeated runs of foundation models (TabPFN v2, TabICL) with accuracy statistics. |
+Unless specified otherwise, the scripts use table 0 of `mstraffic` and perform
+10 repeated runs. Use `bash codes/scripts/<script>.sh --help` for the complete
+argument list.
 
-Results and logs are saved under `../results/`.
+## Tree-Based Models
 
-## Note
+Run hyperparameter search and repeated evaluation for XGBoost, CatBoost, and
+LightGBM:
 
-CARTE methods (`carte_single.py`, `carte_joint.py`) require the FastText model `cc.en.300.bin`.
-Download it and place it at `../lib/FastText/cc.en.300.bin` before running.
+```bash
+bash codes/scripts/run_tree_models.sh \
+  --dataset mstraffic --table_idx 0 --device 0 --num_runs 10
+```
 
-Download: https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz
+Use `--models` to select a subset of models and `--num_threads` to control the
+number of CPU threads used by each learner.
 
-TabICL methods (`tabicl_clf.py`) require the model checkpoint `tabicl-classifier-v1.1-0506.ckpt`.
-Due to its large file size (103 MB), it is not included in this repository.
-Please obtain the checkpoint and place it at `../lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt` before running.
+## Tabular Neural Networks
 
-Detailed grid search ranges and hyperparameter settings are described in the paper appendix.
+Run FTTransformer, TabTransformer, ExcelFormer, SAINT, and TromptNet:
 
+```bash
+bash codes/scripts/run_nn_grid_search.sh \
+  --dataset mstraffic --table_idx 0 --gpu 0 --num_runs 10 --num_tasks 2
+```
+
+Use `--models` to select a subset and `--num_tasks` to control parallel
+hyperparameter-search tasks.
+
+## TransTab
+
+The unified TransTab script supports single-table learning, supervised transfer,
+and contrastive transfer:
+
+```bash
+# Single-table learning
+bash codes/scripts/run_transtab.sh \
+  --mode single --dataset mstraffic --table_idx 0 --gpu 0 --num_runs 10
+
+# Supervised transfer from a labeled auxiliary table
+bash codes/scripts/run_transtab.sh \
+  --mode transfer \
+  --dataset mstraffic --table_idx 0 \
+  --aux_dataset mstraffic --aux_table_idx 1 \
+  --gpu 0 --num_runs 10 --max_jobs 1
+
+# Contrastive transfer from an unlabeled auxiliary table
+bash codes/scripts/run_transtab.sh \
+  --mode contrastive \
+  --dataset nnstocks --table_idx 0 \
+  --aux_dataset nnstocks --aux_table_idx 1 \
+  --gpu 0 --num_runs 10 --max_jobs 1
+```
+
+## CARTE
+
+CARTE uses preprocessed `data_name` identifiers rather than
+`--dataset/--table_idx`:
+
+```bash
+# Single-table learning
+bash codes/scripts/run_carte.sh \
+  --mode single \
+  --data_name maryland --mask_basename maryland \
+  --gpu 0 --num_runs 10 --max_jobs 1
+
+# Multi-table transfer
+bash codes/scripts/run_carte.sh \
+  --mode joint \
+  --target_data_name maryland --source_data_name seattle \
+  --mask_basename maryland \
+  --gpu 0 --num_runs 10 --max_jobs 1
+```
+
+**Data preprocessing.** The preprocessed CARTE data are excluded from this
+artifact due to the submission size limit. To reproduce the experiments, process
+the raw data using the preprocessing procedure specified by CARTE. The dataset
+definitions used in this study are retained in
+`codes/lib/carte_ai/scripts/preprocess_raw.py`.
+
+## Foundation Models
+
+Run TabPFN v3:
+
+```bash
+bash codes/scripts/run_tabpfn.sh \
+  --dataset mstraffic --table_idx 0 --gpu 0 --num_runs 10 --max_jobs 1
+```
+
+Run TabICLv2:
+
+```bash
+bash codes/scripts/run_tabicl.sh \
+  --dataset mstraffic --table_idx 0 --gpu 0 --num_runs 10 --max_jobs 1
+```
+
+Use `--model_path` to specify a local checkpoint. TabICL additionally supports
+`--checkpoint` and `--no_auto_download`.
+
+## Data and Outputs
+
+- `--dataset` selects a dataset and `--table_idx` selects a table.
+- `--gpu N` exposes physical GPU `N`; the tree-model script uses `--device N`.
+- `--max_jobs` controls concurrent repeated runs on one GPU. Use `1` when GPU
+  memory is limited.
+- Results, logs, and model artifacts are written under `codes/results/`.
+
+Dataset indices and the reproduction protocol are documented in the repository
+README. Public data and pretrained weights excluded from this artifact are
+documented in [`../lib/README.md`](../lib/README.md).

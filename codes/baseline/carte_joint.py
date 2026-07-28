@@ -2,6 +2,11 @@ import os
 from pathlib import Path
 import sys
 import os.path as osp
+import argparse
+import pickle
+import random
+import time
+from datetime import datetime
 os.chdir(Path().cwd().parent)
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', "lib"))
@@ -16,6 +21,25 @@ from carte_ai.src.carte_table_to_graph import Table2GraphTransformer
 from carte_ai.src.carte_estimator import CARTEMultitableClassifer
 from carte_ai.configs.directory import config_directory
 
+parser = argparse.ArgumentParser(description="CARTE multi-table transfer classification")
+parser.add_argument("--target_data_name", type=str, default="maryland")
+parser.add_argument("--source_data_name", type=str, default="seattle",
+                    help="Comma-separated source table names")
+parser.add_argument("--mask_basename", type=str, default="maryland")
+parser.add_argument("--num_model", type=int, default=5)
+parser.add_argument("--device", type=str, default="cuda:0")
+parser.add_argument("--seed", type=int, default=42)
+parser.add_argument("--save_results", type=str, default=None)
+parser.add_argument("--model_output", type=str, default=None,
+                    help="Optional pickle path for the fitted CARTE estimator")
+args = parser.parse_args()
+
+run_start = time.perf_counter()
+random.seed(args.seed)
+np.random.seed(args.seed)
+torch.manual_seed(args.seed)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(args.seed)
 
 def _load_data(data_name):
     data_pd = pd.read_parquet(f"{config_directory['data_singletable']}/{data_name}/raw.parquet")
@@ -132,12 +156,16 @@ class CARTEMultitableClassiferFixedSplit(CARTEMultitableClassifer):
         return splits
 
 
-target_data_name = "maryland"
-source_data_name = ["seattle"]
-mask_basename = "maryland"
+target_data_name = args.target_data_name
+source_data_name = [name.strip() for name in args.source_data_name.split(",") if name.strip()]
+mask_basename = args.mask_basename
 
 print(f"CARTE Multi-Table - Fixed split (mask_{mask_basename}.pt)")
 print("=" * 80)
+print(f"Target: {target_data_name}")
+print(f"Sources: {source_data_name}")
+print(f"Device: {args.device}")
+print(f"Seed: {args.seed}")
 
 print("\n[1] Loading data...")
 data_t, config_t = _load_data(target_data_name)
@@ -170,13 +198,13 @@ print("=" * 80)
 
 fixed_params = {
     "source_data": Xs_carte,
-    "num_model": 5,
-    "n_jobs": 5,
-    "random_state": 0,
+    "num_model": args.num_model,
+    "n_jobs": args.num_model,
+    "random_state": args.seed,
     "disable_pbar": False,
     "loss": "categorical_crossentropy",
     "scoring": "accuracy",
-    "device": "cuda:0",
+    "device": args.device,
     "num_layers": 1,
     "batch_size": 256,
     "learning_rate": 1e-3,
@@ -193,6 +221,15 @@ estimator = CARTEMultitableClassiferFixedSplit(
     **fixed_params
 )
 estimator.fit(Xt_tr_val, yt_tr_val)
+
+if args.model_output:
+    os.makedirs(osp.dirname(args.model_output) or ".", exist_ok=True)
+    try:
+        with open(args.model_output, "wb") as f:
+            pickle.dump(estimator, f)
+        print(f"Model saved -> {args.model_output}")
+    except Exception as exc:
+        print(f"WARNING: failed to save CARTE estimator to {args.model_output}: {exc}")
 
 print("\nDomain information:")
 print("=" * 80)
@@ -221,3 +258,29 @@ print(f"Overfitting: {acc_train - acc_test:.4f}")
 print("\nClassification report:")
 print(classification_report(yt_te, y_pred_test, digits=4))
 
+runtime = time.perf_counter() - run_start
+print(f"Runtime: {runtime:.2f}s")
+
+if args.save_results:
+    output = {
+        "model": "carte_joint",
+        "task": "classification",
+        "dataset": target_data_name,
+        "source_datasets": source_data_name,
+        "mask_basename": mask_basename,
+        "seed": args.seed,
+        "device": args.device,
+        "num_model": args.num_model,
+        "model_output": args.model_output,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "runtime": runtime,
+        "metrics": {
+            "train_acc": float(acc_train),
+            "test_acc": float(acc_test),
+            "overfitting": float(acc_train - acc_test),
+        },
+    }
+    os.makedirs(osp.dirname(args.save_results) or ".", exist_ok=True)
+    with open(args.save_results, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"Results saved -> {args.save_results}")
