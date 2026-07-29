@@ -1,0 +1,39 @@
+# Tested with Python 3.9.21.
+#
+# Install PyTorch and PyTorch Geometric builds compatible with the CUDA runtime
+# on the target machine when the default PyPI wheels are not suitable.
+
+# Core scientific stack
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+scikit-learn==1.6.1
+joblib==1.4.2
+pyarrow==19.0.0
+
+# Deep learning
+torch==2.8.0
+torch-geometric==2.6.1
+torcheval==0.0.7
+einops==0.8.1
+
+# Baseline models
+xgboost==2.1.4
+catboost==1.2.8
+lightgbm==4.6.0
+tabpfn==8.0.7
+tabicl==2.0.2
+
+# Text processing and data augmentation
+transformers==4.57.3
+sentence-transformers==5.1.2
+huggingface-hub==0.36.0
+faiss-cpu==1.13.0
+fasttext==0.9.3
+category-encoders==2.2.2
+tqdm==4.67.1
+
+# Utilities and visualization
+requests==2.32.5
+matplotlib==3.9.4
+seaborn==0.13.2

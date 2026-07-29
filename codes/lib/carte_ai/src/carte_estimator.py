@@ -1,7 +1,7 @@
 """CARTE estimators for regression and classification."""
 
 import torch
-#import torch.cuda.amp as amp #pfy add #
+# import torch.cuda.amp as amp
 from torch.amp import autocast, GradScaler
 import contextlib
 import numpy as np
@@ -183,7 +183,7 @@ class BaseCARTEEstimator(BaseEstimator):
         optimizer.zero_grad()  # Clear gradients.
         data.to(self.device_)  # Send to device
 
-        #with amp.autocast():  # Enable autocasting #pfy add #
+        # with amp.autocast():  # Enable autocasting
         # —— 根据 device 决定是否启用混合精度 —— 
         if self.device_.type == "cuda":
             # GPU 上开启 autocast；device_type 参数必填
@@ -194,7 +194,6 @@ class BaseCARTEEstimator(BaseEstimator):
         with autocast_ctx:
             out = model(data)  # Perform a single forward pass.
             target = data.y  # Set target
-            #pfymod
             # For multitable learning: only compute loss on target data (domain=0)
             # Source data labels may be in different label space
             if hasattr(data, 'domain') and data.domain is not None:
@@ -208,7 +207,6 @@ class BaseCARTEEstimator(BaseEstimator):
                 else:
                     # If no target data in batch, skip loss computation
                     return
-            #pfymod
             if self.loss == "categorical_crossentropy":
                 target = target.to(torch.long)
             if self.output_dim_ == 1:
@@ -943,7 +941,7 @@ class BaseCARTEMultitableEstimator(BaseCARTEEstimator):
             model_run_train.parameters(), lr=self.learning_rate
         )
 
-        if target_only_flag: #pfy add
+        if target_only_flag:
             from torch.amp import GradScaler
             scaler = GradScaler(device='cuda' if self.device_.type == 'cuda' else 'cpu')
 
@@ -972,7 +970,7 @@ class BaseCARTEMultitableEstimator(BaseCARTEEstimator):
 
             # Run epoch
             if target_only_flag:
-                self._run_epoch(model_run_train, optimizer, train_loader, scaler) # pfy mod
+                self._run_epoch(model_run_train, optimizer, train_loader, scaler)
             else:
                 self._run_epoch_multitable(
                     ds_train_source,
@@ -1008,14 +1006,14 @@ class BaseCARTEMultitableEstimator(BaseCARTEEstimator):
         """Run an epoch for multitable of the input model."""
         model.train()
         idx_iterator.train_flag = True
-        scaler = GradScaler(device='cuda' if self.device_.type == 'cuda' else 'cpu') #pfy add
+        scaler = GradScaler(device='cuda' if self.device_.type == 'cuda' else 'cpu')
         while idx_iterator.train_flag:
             idx_batch_target, idx_batch_source = idx_iterator.sample()
             ds_source_batch = [ds_source[idx] for idx in idx_batch_source]
             ds_target_batch = [ds_target[idx] for idx in idx_batch_target]
             ds_batch = ds_source_batch + ds_target_batch
             ds_train = self._set_data_eval(data=ds_batch)
-            #self._run_step(data=ds_train, model=model, optimizer=optimizer) #pfy add #
+            # self._run_step(data=ds_train, model=model, optimizer=optimizer)
             self._run_step(model=model,
                            data=ds_train,
                            optimizer=optimizer,

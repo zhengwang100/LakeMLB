@@ -9,7 +9,7 @@ sys.path.insert(0, osp.join(osp.dirname(__file__), '..', '..'))
 sys.path.insert(0, osp.join(osp.dirname(__file__), '..', "lib"))
 sys.path.insert(0, osp.dirname(__file__))
 
-import random
+import secrets
 import torch
 import pandas as pd
 from sklearn.metrics import accuracy_score
@@ -35,7 +35,7 @@ parser.add_argument("--workers", type=int, default=1)
 args = parser.parse_args()
 
 
-seed = random.randint(0, 100000)
+seed = secrets.randbelow(2**31 - 1)
 # set_global_seed(seed)
 
 path = osp.join(osp.dirname(osp.realpath(__file__)), "..", "data")

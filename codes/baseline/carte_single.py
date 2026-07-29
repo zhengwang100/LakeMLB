@@ -7,7 +7,8 @@ import os
 import sys
 import argparse
 import json
-import random
+import secrets
+import time
 from pathlib import Path
 from datetime import datetime
 
@@ -43,6 +44,7 @@ parser.add_argument('--num_runs',     type=int, default=5)
 parser.add_argument('--seed',         type=int, default=0)
 parser.add_argument('--save_results', type=str, default=None)
 args = parser.parse_args()
+script_start = time.perf_counter()
 
 if args.save_results is None:
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -141,7 +143,8 @@ print("=" * 80)
 all_runs = []
 
 for run_id in range(args.num_runs):
-    seed = args.seed if run_id == 0 else args.seed + random.randint(1, 10000)
+    run_start = time.perf_counter()
+    seed = args.seed if args.num_runs == 1 else secrets.randbelow(2**31 - 1)
 
     fixed_params = {
         "num_model":             args.num_model,
@@ -166,17 +169,32 @@ for run_id in range(args.num_runs):
     estimator.fit(X=X_train_val_graphs, y=y_tv_shuf)
     preds    = estimator.predict(X_test_graphs)
     test_acc = accuracy_score(y_test, preds)
+    runtime = time.perf_counter() - run_start
 
-    all_runs.append({"run_id": run_id + 1, "seed": seed, "test_acc": test_acc})
-    print(f"  Run {run_id+1}/{args.num_runs}: test_acc={test_acc:.4f}  seed={seed}")
+    all_runs.append({
+        "run_id": run_id + 1,
+        "seed": seed,
+        "test_acc": test_acc,
+        "runtime": runtime,
+    })
+    print(
+        f"  Run {run_id+1}/{args.num_runs}: test_acc={test_acc:.4f}  "
+        f"seed={seed} time={runtime:.2f}s"
+    )
 
 # ── statistics & save ─────────────────────────────────────────────────────────
 vals  = [r["test_acc"] for r in all_runs]
+runtimes = [r["runtime"] for r in all_runs]
 stats = {
     "test_acc_mean": float(np.mean(vals)),
     "test_acc_std":  float(np.std(vals)),
     "test_acc_min":  float(np.min(vals)),
     "test_acc_max":  float(np.max(vals)),
+    "runtime_mean": float(np.mean(runtimes)),
+    "runtime_std": float(np.std(runtimes)),
+    "runtime_min": float(np.min(runtimes)),
+    "runtime_max": float(np.max(runtimes)),
+    "total_runtime": time.perf_counter() - script_start,
 }
 print(f"\nTest Acc: {stats['test_acc_mean']:.4f} ± {stats['test_acc_std']:.4f}")
 
@@ -184,6 +202,12 @@ output = {
     "model":           "carte_single",
     "task":            "classification",
     "dataset":         args.data_name,
+    "mask_basename":   args.mask_basename,
+    "seed":            all_runs[0]["seed"] if len(all_runs) == 1 else args.seed,
+    "runtime":         stats["total_runtime"],
+    "metrics": {
+        "test_acc": stats["test_acc_mean"],
+    },
     "num_runs":        len(all_runs),
     "timestamp":       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     "individual_runs": all_runs,

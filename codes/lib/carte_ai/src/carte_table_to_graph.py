@@ -8,7 +8,7 @@ from typing import Union
 from torch_geometric.data import Data
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import PowerTransformer
-from sklearn.preprocessing import StandardScaler #pfymod
+from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.feature_extraction import (
     FeatureHasher,
@@ -92,7 +92,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
         n_components: int = 300,
         n_jobs: int = 1,
         fasttext_model_path: str = None,
-        num_transformer=None,      # pfy add
+        num_transformer=None,
     ):
         super().__init__()
         self.include_edge_attr = include_edge_attr
@@ -101,7 +101,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
         self.n_jobs = n_jobs
         self.fasttext_model_path = fasttext_model_path
         self.is_fitted_ = False
-        self.num_transformer = num_transformer # pfy add
+        self.num_transformer = num_transformer
 
     def fit(self, X, y=None):
         """
@@ -143,9 +143,9 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
 
         self.col_names = self.cat_col_names + self.num_col_names
 
-        #self.num_transformer_ = PowerTransformer().set_output(transform="pandas") #pfymmod
+        # self.num_transformer_ = PowerTransformer().set_output(transform="pandas")
         # 如果用户在构造时传了 transformer，就用它；否则默认 PowerTransformer
-        if self.num_transformer is not None: # pfy add
+        if self.num_transformer is not None:
             self.num_transformer_ = self.num_transformer
         else:
             self.num_transformer_ = PowerTransformer().set_output(transform="pandas")
@@ -200,7 +200,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
         # Use the original numerical column names for transformation
         num_cols_exist = [col for col in self.num_col_names if col in X.columns]
         if num_cols_exist:
-            #X_numerical = self._transform_numerical(X[num_cols_exist]) #pfy mod
+            # X_numerical = self._transform_numerical(X[num_cols_exist])
             transformed = self._transform_numerical(X[num_cols_exist])
             # 如果返回的是 ndarray，就包装回 DataFrame
             if isinstance(transformed, np.ndarray):

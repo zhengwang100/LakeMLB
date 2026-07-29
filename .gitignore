@@ -1,13 +1,45 @@
-# 模型检查点文件
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+
+# Local environments and secrets
+.env
+.env.*
+.venv/
+venv/
+
+# Model checkpoints and downloaded assets
 *.ckpt
+codes/lib/FastText/
+codes/lib/models/
+codes/lib/huggingface/
+codes/lib/huggingface_backup/
 
-# Hugging Face 模型缓存
-lib/huggingface/hub/models--*/
+# CARTE runtime data; keep the loader source files.
+codes/lib/carte_ai/data/*
+!codes/lib/carte_ai/data/__init__.py
+!codes/lib/carte_ai/data/load_data.py
 
-download_test/
-codes/lib/
-codes/lib/carte_ai
+# Runtime datasets; keep reproducible construction utilities.
+codes/data/*
+!codes/data/process_data/
+!codes/data/process_data/*.py
+!codes/data/process_data/*.md
 
+# Generated experiment outputs
 codes/results/
+codes/results_v1/
+codes/baseline/catboost_info/
+download_test/
 
-codes/data/
+# Local full environment inventory (requirements.txt is portable).
+/requirements.md
+
+# Editor and operating-system files
+.DS_Store
+*.swp
+*.swo

@@ -16,11 +16,11 @@ for _p in reversed([_THIS_DIR, LIB_ROOT, PROJECT_ROOT]):
 import argparse
 import itertools
 import json
-import random
 import glob
 import fcntl
+import time
 from datetime import datetime
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 import torch
@@ -30,35 +30,109 @@ import numpy as np
 from lib.rllm.transforms.table_transforms import DefaultTableTransform
 from lib.rllm.data.table_data import TableData
 from lib.rllm.types import ColType
-from lib.rllm.datasets import MSTrafficDataset, NCBuildingDataset, GACarsDataset, NNStocksDataset, LHStocksDataset, DSMusicDataset
+from lib.rllm.datasets import (
+    MSTrafficDataset,
+    NCBuildingDataset,
+    GACarsDataset,
+    NNStocksDataset,
+    LHStocksDataset,
+    DSMusicDataset,
+    NCTaxiDataset,
+    AGBooksDataset,
+)
 from utils import (
     set_seed, parse_list_of_ints, parse_list_of_floats, get_device,
-    get_batch, to_device, save_model, load_model, print_grid_config
+    get_batch, to_device, save_model, load_model, print_grid_config,
+    generate_random_seed
 )
 from tnns_models import create_model, AVAILABLE_MODELS
 
 _DATA_CACHE = {}
+
+_NNSTOCKS_TABLE_NAMES = {
+    3: "nnstocks_fa",
+    4: "stocks_wiki_llm_1nn",
+    5: "t1_enriched_rank2",
+    6: "t1_enriched_rank4",
+    7: "t1_enriched_rank8",
+    8: "stocks_wiki_tfidf_1nn",
+    9: "t1_enriched_random",
+}
+
+_DATASET_REGISTRY = {
+    "mstraffic": MSTrafficDataset,
+    "ncbuilding": NCBuildingDataset,
+    "gacars": GACarsDataset,
+    "nnstocks": NNStocksDataset,
+    "lhstocks": LHStocksDataset,
+    "dsmusic": DSMusicDataset,
+    "nctaxi": NCTaxiDataset,
+    "agbooks": AGBooksDataset,
+}
+
+_TABLE_TAGS = {
+    "mstraffic": {
+        0: "mstraffic_maryland",
+        1: "mstraffic_seattle",
+        2: "mstraffic_da",
+        3: "mstraffic_fa",
+    },
+    "nctaxi": {
+        0: "nctaxi_newyork_taxi",
+        1: "nctaxi_chicago_taxi",
+    },
+    "dsmusic": {
+        0: "dsmusic_discogs",
+        1: "dsmusic_spotify",
+        2: "dsmusic_da",
+        3: "dsmusic_fa",
+        4: "dsmusic_1nn",
+        5: "dsmusic_2nn",
+        6: "dsmusic_4nn",
+        7: "dsmusic_8nn",
+        8: "dsmusic_random",
+    },
+    "agbooks": {
+        0: "agbooks_amazon",
+        1: "agbooks_goodreads",
+        2: "agbooks_amazon_enriched",
+        4: "agbooks_amazon_no_features",
+        5: "agbooks_amazon_no_features_10k",
+        6: "agbooks_1nn",
+        7: "agbooks_2nn",
+        8: "agbooks_4nn",
+        9: "agbooks_8nn",
+        10: "agbooks_random",
+    },
+    "nnstocks": _NNSTOCKS_TABLE_NAMES,
+}
+
+
+def get_dataset_tag(dataset_name: str, table_idx: int) -> str:
+    return _TABLE_TAGS.get(dataset_name, {}).get(
+        table_idx, f"{dataset_name}_table{table_idx}"
+    )
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, default="fttransformer",
                     choices=AVAILABLE_MODELS,
                     help="Model to use")
-parser.add_argument("--epochs", type=int, default=200)
+parser.add_argument("--epochs", type=int, default=500)
 parser.add_argument("--lr", type=float, default=1e-3)
 parser.add_argument("--wd", type=float, default=1e-4)
-parser.add_argument("--batch_size", type=int, default=512)
-parser.add_argument("--patience", type=int, default=100)
+parser.add_argument("--batch_size", type=int, default=256)
+parser.add_argument("--patience", type=int, default=10)
 parser.add_argument("--gradient_accumulation_steps", type=int, default=1,
                     help="Number of gradient accumulation steps (larger effective batch)")
 
 parser.add_argument("--grid", action="store_true", default=False)
-parser.add_argument("--grid_hidden", type=str, default="32,64,128")
+parser.add_argument("--grid_hidden", type=str, default="64,128")
 parser.add_argument("--grid_layers", type=str, default="2,3,4")
-parser.add_argument("--grid_lr", type=str, default="1e-3,1e-4,5e-4")
-parser.add_argument("--grid_wd", type=str, default="1e-4,1e-3,5e-4")
-parser.add_argument("--grid_bs", type=str, default="512")
-parser.add_argument("--grid_epochs", type=int, default=100)
+parser.add_argument("--grid_lr", type=str, default="1e-3,5e-4,1e-4")
+parser.add_argument("--grid_wd", type=str, default="5e-4")
+parser.add_argument("--grid_bs", type=str, default="256")
+parser.add_argument("--grid_epochs", type=int, default=500)
 parser.add_argument("--grid_patience", type=int, default=10)
 
 # Parallel grid search arguments
@@ -75,15 +149,22 @@ parser.add_argument("--skip_final_train", action="store_true", default=False,
 
 parser.add_argument("--seed", type=int, default=42)
 parser.add_argument("--device", type=str, default="cuda:0")
-parser.add_argument("--table_idx", type=int, default=None,
-                    choices=[3, 4, 5, 6, 7, 8],
-                    help="NNStocksDataset index: 3=fa,4=llm_1nn,5=llm_2nn,6=llm_4nn,7=llm_8nn,8=tfidf_1nn. "
-                         "If None, uses MSTrafficDataset.")
+parser.add_argument("--dataset", type=str, default="mstraffic",
+                    choices=sorted(_DATASET_REGISTRY.keys()),
+                    help="LakeMLB dataset name. Default: mstraffic.")
+parser.add_argument("--table_idx", type=int, default=0,
+                    help="Table index inside the selected LakeMLB dataset. "
+                         "Default: 0, the task table for most datasets.")
+parser.add_argument("--force_reload", action="store_true", default=False)
 
 parser.add_argument("--num_runs", type=int, default=5,
                     help="Number of runs with different seeds")
 parser.add_argument("--save_results", type=str, default=None,
                     help="Path to save results (JSON format)")
+parser.add_argument("--log_dir", type=str, default=None,
+                    help="Directory for stdout/stderr log files")
+parser.add_argument("--artifact_dir", type=str, default=None,
+                    help="Directory for best model checkpoints and metadata")
 
 args = parser.parse_args()
 
@@ -92,40 +173,77 @@ args = parser.parse_args()
 DATA_DIR = osp.join(PROJECT_ROOT, "data")
 RESULTS_DIR = osp.join(PROJECT_ROOT, "results")
 CKPT_DIR = osp.join(RESULTS_DIR, "checkpoints")
-for _d in (RESULTS_DIR, CKPT_DIR):
+LOG_DIR = osp.join(RESULTS_DIR, "logs", "tnns")
+ARTIFACT_DIR = osp.join(RESULTS_DIR, "artifacts", "tnns")
+if args.log_dir is None:
+    args.log_dir = LOG_DIR
+if args.artifact_dir is None:
+    args.artifact_dir = ARTIFACT_DIR
+for _d in (RESULTS_DIR, CKPT_DIR, args.log_dir, args.artifact_dir):
     os.makedirs(_d, exist_ok=True)
-if args.save_results is None and args.num_runs > 1:
+
+
+class Tee:
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for stream in self.streams:
+            stream.write(data)
+            stream.flush()
+
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()
+
+
+def data_tag() -> str:
+    return get_dataset_tag(args.dataset, args.table_idx)
+
+
+def setup_logging() -> str:
+    os.makedirs(args.log_dir, exist_ok=True)
+    mode = "merge" if args.merge_results else "grid" if args.grid else "single"
+    log_path = osp.join(
+        args.log_dir,
+        f"{args.model}_{data_tag()}_{mode}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log",
+    )
+    log_f = open(log_path, "a", encoding="utf-8")
+    sys.stdout = Tee(sys.stdout, log_f)
+    sys.stderr = Tee(sys.stderr, log_f)
+    print(f"Log file: {log_path}")
+    return log_path
+
+
+def artifact_path(stage: str, filename: str) -> str:
+    return osp.join(args.artifact_dir, data_tag(), args.model, stage, filename)
+
+
+LOG_PATH = setup_logging()
+if args.save_results is None and args.num_runs > 1 and not args.grid:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    _data_tag = (_NNSTOCKS_TABLE_NAMES.get(args.table_idx, f"nnstocks_{args.table_idx}")
-                 if args.table_idx is not None else "mstraffic")
-    args.save_results = osp.join(RESULTS_DIR, f"{args.model}_{_data_tag}_{args.num_runs}runs_{timestamp}.json")
+    _data_tag = data_tag()
+    args.save_results = osp.join(RESULTS_DIR, "tnns", f"{args.model}_{_data_tag}_{args.num_runs}runs_{timestamp}.json")
     print(f"Results will be auto-saved to: {args.save_results}")
-
-
-# ======================== Dataset (memory-efficient) ========================
-_NNSTOCKS_TABLE_NAMES = {
-    3: "nnstocks_fa",
-    4: "stocks_wiki_llm_1nn",
-    5: "stocks_wiki_llm_2nn",
-    6: "stocks_wiki_llm_4nn",
-    7: "stocks_wiki_llm_8nn",
-    8: "stocks_wiki_tfidf_1nn",
-}
 
 
 def build_dataset(emb_dim: int, gpu_device: torch.device):
     """Load dataset on CPU; only batches are moved to GPU during training."""
     global _DATA_CACHE
 
-    table_idx = args.table_idx  # None → MSTraffic; int → NNStocks
-    cache_key = f"{emb_dim}_{table_idx}"
+    dataset_name = args.dataset
+    table_idx = args.table_idx
+    cache_key = f"{dataset_name}_{table_idx}_{emb_dim}"
 
     if cache_key in _DATA_CACHE:
         cached = _DATA_CACHE[cache_key]
-        print(f"Using cached dataset (emb_dim={emb_dim}, table_idx={table_idx}) from CPU")
+        print(
+            f"Using cached dataset ({dataset_name}[{table_idx}], "
+            f"emb_dim={emb_dim}) from CPU"
+        )
         return cached["data"], cached["train_idx"], cached["val_idx"], cached["test_idx"]
 
-    print(f"Loading dataset (emb_dim={emb_dim}, table_idx={table_idx}) to CPU...")
+    print(f"Loading dataset {dataset_name}[{table_idx}] (emb_dim={emb_dim}) to CPU...")
 
     lock_file = osp.join(DATA_DIR, ".data_load.lock")
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -135,22 +253,28 @@ def build_dataset(emb_dim: int, gpu_device: torch.device):
         try:
             table_transform = DefaultTableTransform(out_dim=emb_dim)
 
-            if table_idx is not None:
-                dataset = NNStocksDataset(
-                    cached_dir=DATA_DIR,
-                    force_reload=False,
-                    transform=table_transform,
-                    device=torch.device('cpu')
+            dataset_class = _DATASET_REGISTRY[dataset_name]
+            dataset = dataset_class(
+                cached_dir=DATA_DIR,
+                force_reload=args.force_reload,
+                transform=table_transform,
+                device=torch.device('cpu')
+            )
+            if table_idx < 0 or table_idx >= len(dataset.data_list):
+                raise IndexError(
+                    f"table_idx={table_idx} is out of range for {dataset_name}; "
+                    f"available range is 0..{len(dataset.data_list) - 1}."
                 )
-                data = dataset.data_list[table_idx]
-            else:
-                dataset = MSTrafficDataset(
-                    cached_dir=DATA_DIR,
-                    force_reload=True,
-                    transform=table_transform,
-                    device=torch.device('cpu')
+            data = dataset.data_list[table_idx]
+            if not (
+                hasattr(data, "train_mask")
+                and hasattr(data, "val_mask")
+                and hasattr(data, "test_mask")
+            ):
+                raise ValueError(
+                    f"{dataset_name}[{table_idx}] must have train_mask, val_mask, "
+                    "and test_mask for supervised TNNS evaluation."
                 )
-                data = dataset.data_list[0]
 
             data.y = data.y.long()
 
@@ -165,8 +289,11 @@ def build_dataset(emb_dim: int, gpu_device: torch.device):
                 "test_idx":  test_indices
             }
 
-            print(f"Dataset loaded to CPU. Train: {len(train_indices)}, "
-                  f"Val: {len(val_indices)}, Test: {len(test_indices)}")
+            print(
+                f"Dataset loaded to CPU: {dataset_name}[{table_idx}]. "
+                f"Train: {len(train_indices)}, Val: {len(val_indices)}, "
+                f"Test: {len(test_indices)}"
+            )
         finally:
             fcntl.flock(lock_f.fileno(), fcntl.LOCK_UN)
 
@@ -239,6 +366,7 @@ def evaluate(model, data, indices, batch_size, device) -> float:
 def run_training(config, epochs, patience, device, model_name, save_path=None, seed=None,
                  eval_test_each_epoch=True, verbose=False, gradient_accumulation_steps=1):
     """Run training with early stopping and memory management."""
+    training_start = time.perf_counter()
     if seed is not None:
         set_seed(seed)
 
@@ -253,7 +381,7 @@ def run_training(config, epochs, patience, device, model_name, save_path=None, s
         weight_decay=config["wd"]
     )
 
-    best_val, best_test, best_epoch = 0.0, -1.0, 0
+    best_val, best_test, best_epoch = -1.0, -1.0, 0
     no_improve = 0
     best_state = None
 
@@ -302,6 +430,8 @@ def run_training(config, epochs, patience, device, model_name, save_path=None, s
         "best_val": best_val,
         "best_test": best_test,
         "best_epoch": best_epoch,
+        "training_time": time.perf_counter() - training_start,
+        "model_path": save_path,
     }
 
 
@@ -324,10 +454,7 @@ def run_multiple_experiments(
     print(f"{'='*60}\n")
     
     for run_id in range(num_runs):
-        if run_id == 0:
-            seed = base_seed
-        else:
-            seed = base_seed + random.randint(1, 10000)
+        seed = generate_random_seed()
         print(f"\n[Run {run_id+1}/{num_runs}]")
         print("-" * 40)
         
@@ -350,11 +477,13 @@ def run_multiple_experiments(
             "best_val_acc": result["best_val"],
             "test_acc": result["best_test"],
             "best_epoch": result["best_epoch"],
+            "training_time": result["training_time"],
         }
         results.append(run_result)
         
         print(f"  Val Acc: {run_result['best_val_acc']:.4f}")
         print(f"  Test Acc: {run_result['test_acc']:.4f}")
+        print(f"  Time: {run_result['training_time']:.2f}s")
         
         if device.type == 'cuda':
             torch.cuda.empty_cache()
@@ -364,7 +493,7 @@ def run_multiple_experiments(
 
 def compute_statistics(results: List[Dict]) -> Dict:
     """Compute mean and std of multiple runs."""
-    metrics = ["best_val_acc", "test_acc"]
+    metrics = ["best_val_acc", "test_acc", "training_time"]
     stats = {}
     
     for metric in metrics:
@@ -388,9 +517,11 @@ def save_results_to_file(
     output = {
         "model": model_name,
         "task": "classification",
+        "dataset": data_tag(),
         "config": config,
         "num_runs": len(results),
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "log_path": LOG_PATH,
         "individual_runs": results,
         "statistics": stats,
     }
@@ -410,7 +541,54 @@ def print_statistics(stats: Dict, num_runs: int):
     print("="*60)
     print(f"Val Acc:  {stats['best_val_acc_mean']:.4f} ± {stats['best_val_acc_std']:.4f}")
     print(f"Test Acc: {stats['test_acc_mean']:.4f} ± {stats['test_acc_std']:.4f}")
+    print(f"Time:     {stats['training_time_mean']:.2f}s ± {stats['training_time_std']:.2f}s")
     print("="*60)
+
+
+def save_best_checkpoint_and_metadata(
+    config: Dict,
+    model_name: str,
+    device: torch.device,
+    seed: int,
+    epochs: int,
+    patience: int,
+    stage: str,
+    summary: Dict,
+    gradient_accumulation_steps: int = 1,
+) -> Tuple[str, str, Dict]:
+    checkpoint_path = artifact_path(stage, f"best_seed{seed}.pt")
+    result = run_training(
+        config=config,
+        epochs=epochs,
+        patience=patience,
+        device=device,
+        model_name=model_name,
+        save_path=checkpoint_path,
+        seed=seed,
+        eval_test_each_epoch=False,
+        verbose=False,
+        gradient_accumulation_steps=gradient_accumulation_steps,
+    )
+    metadata_path = osp.join(osp.dirname(checkpoint_path), "best_model_metadata.json")
+    os.makedirs(osp.dirname(metadata_path), exist_ok=True)
+    with open(metadata_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "model": model_name,
+            "dataset": data_tag(),
+            "stage": stage,
+            "config": config,
+            "seed": seed,
+            "epochs": epochs,
+            "patience": patience,
+            "result": result,
+            "summary": summary,
+            "checkpoint_path": checkpoint_path,
+            "log_path": LOG_PATH,
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        }, f, indent=2, ensure_ascii=False)
+    print(f"Best checkpoint saved to: {checkpoint_path}")
+    print(f"Best checkpoint metadata saved to: {metadata_path}")
+    return checkpoint_path, metadata_path, result
 
 
 # ======================== Grid Search Functions ========================
@@ -440,6 +618,7 @@ def get_task_combinations(all_combinations: List[Tuple], task_id: int, num_tasks
 
 def save_grid_results(results: List[Dict], output_path: str):
     """Save grid search results."""
+    os.makedirs(osp.dirname(output_path) if osp.dirname(output_path) else ".", exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"Grid results saved to: {output_path}")
@@ -475,10 +654,16 @@ def merge_all_grid_results(grid_output_dir: str, model_name: str) -> Tuple[Dict,
     merged_path = osp.join(grid_output_dir, f"{model_name}_grid_merged.json")
     merged_output = {
         "model": model_name,
+        "dataset": data_tag(),
         "total_combinations": len(all_results),
         "best_config": best_cfg,
+        "best_result": best_result,
         "best_val_acc": best_result["best_val"],
         "best_test_acc": best_result["best_test"],
+        "selection": {
+            "primary": "best_val",
+        },
+        "log_path": LOG_PATH,
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "all_results": all_results
     }
@@ -491,6 +676,7 @@ def merge_all_grid_results(grid_output_dir: str, model_name: str) -> Tuple[Dict,
 
 # ======================== Main ========================
 def main():
+    script_start = time.perf_counter()
     set_seed(args.seed)
     device = get_device(args.device)
     
@@ -515,6 +701,23 @@ def main():
         best_result = max(all_results, key=lambda x: x["best_val"])
         print(f"Best val acc: {best_result['best_val']:.4f}")
         print(f"Best test acc: {best_result['best_test']:.4f}")
+
+        grid_checkpoint_path, grid_metadata_path, grid_checkpoint_result = (
+            save_best_checkpoint_and_metadata(
+                config=best_cfg,
+                model_name=args.model,
+                device=device,
+                seed=args.seed,
+                epochs=args.grid_epochs,
+                patience=args.grid_patience,
+                stage="grid",
+                summary={
+                    "best_grid_result": best_result,
+                    "grid_output_dir": args.grid_output_dir,
+                },
+                gradient_accumulation_steps=args.gradient_accumulation_steps,
+            )
+        )
         
         if not args.skip_final_train:
             print("\n" + "="*60)
@@ -534,10 +737,29 @@ def main():
                 )
                 
                 stats = compute_statistics(results)
+                stats["total_runtime"] = time.perf_counter() - script_start
+                stats["grid_checkpoint_path"] = grid_checkpoint_path
+                stats["grid_metadata_path"] = grid_metadata_path
                 print_statistics(stats, args.num_runs)
+
+                best_run = max(results, key=lambda x: x["best_val_acc"])
+                final_checkpoint_path, final_metadata_path, _ = save_best_checkpoint_and_metadata(
+                    config=best_cfg,
+                    model_name=args.model,
+                    device=device,
+                    seed=best_run["seed"],
+                    epochs=args.epochs,
+                    patience=args.patience,
+                    stage="final",
+                    summary={"best_run": best_run, "statistics": stats},
+                    gradient_accumulation_steps=args.gradient_accumulation_steps,
+                )
+                stats["final_checkpoint_path"] = final_checkpoint_path
+                stats["final_metadata_path"] = final_metadata_path
                 
                 if args.save_results:
                     save_results_to_file(results, stats, best_cfg, args.model, args.save_results)
+        print(f"Total runtime: {time.perf_counter() - script_start:.2f}s")
         return
 
     # ==================== Grid Search Mode ====================
@@ -589,6 +811,7 @@ def main():
                 "best_val": result["best_val"],
                 "best_test": result["best_test"],
                 "best_epoch": result["best_epoch"],
+                "training_time": result["training_time"],
                 "global_idx": global_idx
             })
             
@@ -619,6 +842,30 @@ def main():
         print(f"Best config: {best_cfg}")
         print(f"Best val acc={best_val:.4f}, Test acc={best_test:.4f}")
         print("="*60)
+        grid_checkpoint_path, grid_metadata_path, _ = save_best_checkpoint_and_metadata(
+            config=best_cfg,
+            model_name=args.model,
+            device=device,
+            seed=args.seed,
+            epochs=args.grid_epochs,
+            patience=args.grid_patience,
+            stage="grid",
+            summary={"best_val": best_val, "best_test": best_test},
+            gradient_accumulation_steps=args.gradient_accumulation_steps,
+        )
+        merged_path = osp.join(args.grid_output_dir, f"{args.model}_grid_merged.json")
+        save_grid_results({
+            "model": args.model,
+            "dataset": data_tag(),
+            "total_combinations": len(task_results),
+            "best_config": best_cfg,
+            "best_val_acc": best_val,
+            "best_test_acc": best_test,
+            "grid_checkpoint_path": grid_checkpoint_path,
+            "grid_metadata_path": grid_metadata_path,
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "all_results": task_results,
+        }, merged_path)
 
     else:
         # Single config training
@@ -644,12 +891,28 @@ def main():
             )
             
             stats = compute_statistics(results)
+            stats["total_runtime"] = time.perf_counter() - script_start
             print_statistics(stats, args.num_runs)
+
+            best_run = max(results, key=lambda x: x["best_val_acc"])
+            final_checkpoint_path, final_metadata_path, _ = save_best_checkpoint_and_metadata(
+                config=cfg,
+                model_name=args.model,
+                device=device,
+                seed=best_run["seed"],
+                epochs=args.epochs,
+                patience=args.patience,
+                stage="final",
+                summary={"best_run": best_run, "statistics": stats},
+                gradient_accumulation_steps=args.gradient_accumulation_steps,
+            )
+            stats["final_checkpoint_path"] = final_checkpoint_path
+            stats["final_metadata_path"] = final_metadata_path
             
             if args.save_results:
                 save_results_to_file(results, stats, cfg, args.model, args.save_results)
+    print(f"Total runtime: {time.perf_counter() - script_start:.2f}s")
 
 
 if __name__ == "__main__":
     main()
-

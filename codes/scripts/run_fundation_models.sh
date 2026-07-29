@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-PYTHON="/home/pfy/.conda/envs/lake/bin/python"
+PYTHON="${PYTHON:-python}"
 SCRIPT="tabicl_clf.py" # tabpfnv2.py
 NUM_RUNS=10
 OUTPUT_DIR="../results/fundation_models"

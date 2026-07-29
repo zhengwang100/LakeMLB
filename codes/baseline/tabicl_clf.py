@@ -1,7 +1,7 @@
 import sys
 import argparse
 import os.path as osp
-import random
+import secrets
 from pathlib import Path
 
 import pandas as pd
@@ -41,7 +41,7 @@ if args.model_path:
     args.model_path = str(model_path.resolve())
 
 
-seed = random.randint(0, 100000)
+seed = secrets.randbelow(2**31 - 1)
 # set_global_seed(seed)
 
 path = osp.join(osp.dirname(osp.realpath(__file__)), "..", "data")
@@ -105,4 +105,3 @@ predictions = clf.predict(X_test)
 test_accuracy = accuracy_score(y_test, predictions)
 
 print(f"Test Accuracy: {test_accuracy:.4f}")
-

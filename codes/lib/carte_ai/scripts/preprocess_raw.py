@@ -54,6 +54,17 @@ def _load_raw_data(data_name, file_type="csv", sep=","):
     return data
 
 
+def _cast_lakemlb_columns(data, numeric_cols, categorical_cols):
+    """Cast LakeMLB raw columns to CARTE-friendly dtypes."""
+    for col in numeric_cols:
+        if col in data.columns:
+            data[col] = pd.to_numeric(data[col], errors="coerce")
+    for col in categorical_cols:
+        if col in data.columns:
+            data[col] = data[col].astype("str")
+    return data
+
+
 def _save_processed_data(data_name, data, target_name, entity_name, task, repeated):
     """Save the preprocessed data and configs."""
     # save the data
@@ -2981,8 +2992,15 @@ def preprocess_data(data_name):
         le = LabelEncoder()
         data[target_name] = le.fit_transform(data[target_name])
 
-    #LakeMLB DSMusic 1nn datasets
-    elif data_name == "dsmusic_enriched":
+    # LakeMLB DSMusic title-matching datasets
+    elif data_name in {
+        "dsmusic_enriched",
+        "dsmusic_1nn",
+        "dsmusic_2nn",
+        "dsmusic_4nn",
+        "dsmusic_8nn",
+        "dsmusic_random",
+    }:
         # basic info
         target_name = "genres"
         entity_name = "title"
@@ -3571,6 +3589,195 @@ def preprocess_data(data_name):
         le = LabelEncoder()
         data[target_name] = le.fit_transform(data[target_name])
 
+
+    # LakeMLB NCTaxi datasets
+    elif data_name == "nctaxi_newyork_taxi":
+        target_name = "dolocationid"
+        entity_name = "tpep_pickup_datetime"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "passenger_count", "trip_distance", "fare_amount", "extra",
+            "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge",
+            "total_amount", "congestion_surcharge", "airport_fee",
+        ]
+        categorical_cols = [
+            "vendorid", "tpep_pickup_datetime", "tpep_dropoff_datetime",
+            "ratecodeid", "store_and_fwd_flag", "pulocationid",
+            "dolocationid", "payment_type",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name in {
+        "nctaxi_chicago_taxi",
+        "nctaxi_chicago_taxi_25pct",
+        "nctaxi_chicago_taxi_50pct",
+        "nctaxi_chicago_taxi_75pct",
+    }:
+        target_name = "dropoff_community_area"
+        entity_name = "trip_id"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "trip_seconds", "trip_miles", "fare", "tips", "tolls", "extras",
+            "trip_total", "pickup_centroid_latitude", "pickup_centroid_longitude",
+        ]
+        categorical_cols = [
+            "trip_id", "taxi_id", "trip_start_timestamp", "trip_end_timestamp",
+            "pickup_census_tract", "pickup_community_area",
+            "dropoff_community_area", "payment_type", "company",
+            "pickup_centroid_location",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "nctaxi_da":
+        target_name = "dolocationid"
+        entity_name = "tpep_pickup_datetime"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "passenger_count", "trip_distance", "fare_amount", "extra",
+            "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge",
+            "total_amount", "congestion_surcharge", "airport_fee",
+            "trip_seconds", "trip_miles", "fare", "tips", "tolls", "extras",
+            "trip_total", "pickup_centroid_latitude", "pickup_centroid_longitude",
+        ]
+        categorical_cols = [
+            "vendorid", "tpep_pickup_datetime", "tpep_dropoff_datetime",
+            "ratecodeid", "store_and_fwd_flag", "pulocationid",
+            "dolocationid", "payment_type", "trip_id", "taxi_id",
+            "trip_start_timestamp", "trip_end_timestamp", "pickup_census_tract",
+            "pickup_community_area", "company", "pickup_centroid_location",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "nctaxi_fa":
+        target_name = "dolocationid"
+        entity_name = "tpep_pickup_datetime"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "passenger_count", "trip_distance", "fare_amount", "extra",
+            "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge",
+            "total_amount", "congestion_surcharge", "airport_fee",
+            "trip_seconds", "trip_miles", "fare", "tips", "tolls", "extras",
+            "trip_total", "pickup_centroid_latitude", "pickup_centroid_longitude",
+        ]
+        categorical_cols = [
+            "vendorid", "tpep_pickup_datetime", "tpep_dropoff_datetime",
+            "ratecodeid", "store_and_fwd_flag", "pulocationid",
+            "dolocationid", "payment_type", "trip_id", "taxi_id",
+            "trip_start_timestamp", "trip_end_timestamp", "pickup_census_tract",
+            "pickup_community_area", "dropoff_community_area",
+            "aux_payment_type", "company", "pickup_centroid_location",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    # LakeMLB AGBooks datasets
+    elif data_name == "agbooks_amazon":
+        target_name = "categories"
+        entity_name = "title"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = ["average_rating", "rating_number"]
+        categorical_cols = [
+            "parent_asin", "title", "main_category", "price", "store",
+            "features", "description", "details", "categories",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "agbooks_goodreads":
+        target_name = None
+        entity_name = "title"
+        task = "classification"
+        repeated = False
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "average_rating", "ratings_count", "text_reviews_count",
+            "publication_year", "publication_month", "publication_day",
+            "num_pages",
+        ]
+        categorical_cols = [
+            "book_id", "title", "title_without_series", "publisher",
+            "language_code", "format", "isbn", "isbn13", "is_ebook",
+            "kindle_asin", "author_ids", "similar_books", "description",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+
+    elif data_name in {
+        "agbooks_amazon_enriched",
+        "agbooks_1nn",
+        "agbooks_2nn",
+        "agbooks_4nn",
+        "agbooks_8nn",
+        "agbooks_random",
+    }:
+        target_name = "categories"
+        entity_name = "title"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "average_rating", "rating_number", "goodreads_average_rating",
+            "ratings_count", "text_reviews_count", "publication_year",
+            "publication_month", "publication_day", "num_pages",
+        ]
+        categorical_cols = [
+            "parent_asin", "title", "main_category", "price", "store",
+            "features", "description", "details", "categories", "book_id",
+            "goodreads_title", "title_without_series", "publisher",
+            "language_code", "format", "isbn", "isbn13", "is_ebook",
+            "kindle_asin", "author_ids", "similar_books",
+            "goodreads_description",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
+
+    elif data_name == "agbooks_da":
+        target_name = "categories"
+        entity_name = "title"
+        task = "classification"
+        repeated = False
+        data.dropna(subset=[target_name], inplace=True)
+        data.reset_index(drop=True, inplace=True)
+        numeric_cols = [
+            "average_rating", "rating_number", "goodreads_average_rating",
+            "ratings_count", "text_reviews_count", "publication_year",
+            "publication_month", "publication_day", "num_pages",
+        ]
+        categorical_cols = [
+            "parent_asin", "title", "main_category", "price", "store",
+            "features", "description", "details", "categories", "book_id",
+            "goodreads_title", "title_without_series", "publisher",
+            "language_code", "format", "isbn", "isbn13", "is_ebook",
+            "kindle_asin", "author_ids", "similar_books",
+            "goodreads_description",
+        ]
+        data = _cast_lakemlb_columns(data, numeric_cols, categorical_cols)
+        le = LabelEncoder()
+        data[target_name] = le.fit_transform(data[target_name])
 
     # Save data
     _save_processed_data(data_name, data, target_name, entity_name, task, repeated)
