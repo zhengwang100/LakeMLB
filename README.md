@@ -2,142 +2,174 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2602.10441-b31b1b.svg)](https://arxiv.org/abs/2602.10441)
 
-**Official implementation of the LakeMLB benchmark**
+Official implementation of **LakeMLB: Data Lake Machine Learning Benchmark**.
 
-> **LakeMLB: Data Lake Machine Learning Benchmark**  
-> Feiyu Pan, Tianbin Zhang, Aoqian Zhang, Yu Sun, Zheng Wang, Lixing Chen, Li Pan, Jianhua Li  
-> *arXiv preprint arXiv:2602.10441, 2026*  
+> Feiyu Pan, Tianbin Zhang, Aoqian Zhang, Yu Sun, Zheng Wang, Lixing Chen,
+> Li Pan, and Jianhua Li.
+> *arXiv preprint arXiv:2602.10441, 2026.*
 > [[Paper](https://arxiv.org/abs/2602.10441)]
 
----
+## Overview
 
-## About
+LakeMLB evaluates how machine learning methods use weakly associated,
+heterogeneous tables from data lakes for downstream tabular classification.
+The benchmark contains six real-world datasets and two multi-table relations:
 
-**LakeMLB** is a standardized benchmark for evaluating machine learning methods on multi-table scenarios in data lake environments. It addresses the critical challenge of leveraging weakly-associated heterogeneous tables to improve downstream ML performance.
+- **Union-based:** the task and auxiliary tables describe similar entities or
+  events but may use different schemas and label vocabularies.
+- **Join-based:** task rows are associated with auxiliary rows through weak
+  entity matching, such as company, song, or book names.
 
-### Key Features
-
-- **Real-world datasets**: Six curated datasets covering finance, government, and e-commerce domains
-- **Two core scenarios**: Join-based and union-based multi-table integration
-- **Standardized evaluation**: Fixed train/validation/test splits for reproducibility
-- **Comprehensive baselines**: 12+ methods including tree models, neural networks, transfer learning, and foundation models
-- **Augmentation support**: Mapping files for Feature Augmentation (FA) and guidelines for Data Augmentation (DA)
-
----
+The implementation provides fixed data splits, data construction utilities,
+feature/data augmentation variants, and 12 baselines across four model
+families.
 
 ## Repository Structure
 
-```
+```text
 LakeMLB/
-├── benckmark/              # Benchmark datasets
-│   ├── join_based/         # dsmusic, lhstocks, nnstocks
-│   └── union_based/        # gacars, mstraffic, ncbuilding
-├── codes/                  # Implementation code
-│   ├── baseline/           # Model implementations
-│   ├── scripts/             # Experiment scripts
-│   └── lib/                 # Modified third-party libraries
-└── benchmark_details.png   # Dataset statistics figure
+├── benckmark/
+│   ├── union_based/              # Packaged MSTraffic, NCBuilding, NCTaxi
+│   └── join_based/               # Packaged NNStocks, DSMusic, AGBooks
+├── codes/
+│   ├── baseline/                 # Model implementations and result utilities
+│   ├── data/                     # Data-construction utilities; runtime data is local
+│   ├── lib/                      # Adapted TransTab/CARTE source and setup guide
+│   ├── scripts/                  # Maintained experiment entry points
+│   └── results/                  # Local results, logs, checkpoints, and artifacts
+├── requirements.txt              # Tested Python package versions
+└── benchmark_details.png         # Dataset statistics
 ```
-
----
 
 ## Datasets
 
-### Statistics
-
 ![Dataset Statistics](benchmark_details.png)
 
-All datasets are located in `benckmark/` with two categories:
+| Relation | Dataset | Task table | Auxiliary table | Task label | Classes |
+|---|---|---|---|---|---:|
+| Union | MSTraffic | Maryland | Seattle | `Collision Type` | 9 |
+| Union | NCBuilding | New York | Chicago | `StatuteCodes` | 30 |
+| Union | NCTaxi | New York | Chicago | `dolocationid` | 50 |
+| Join | NNStocks | NNList | NNWiki | `sector` | 11 |
+| Join | DSMusic | Discogs | Spotify | `genres` | 11 |
+| Join | AGBooks | Amazon | Goodreads | `categories` | 40 |
 
-- **Join-based** (`join_based/`): dsmusic, lhstocks, nnstocks
-- **Union-based** (`union_based/`): gacars, mstraffic, ncbuilding
+Packaged archives are stored under `benckmark/`, and each archive contains its
+dataset README. Working CSV files, processed tables, and split masks are
+generated locally and are not committed under `codes/data/`.
 
-All six datasets are distributed as ZIP archives under `benckmark/`, and each archive contains a dataset-specific `README.md`; for detailed information, please download and inspect the corresponding ZIP package.
+### Augmentation Variants
 
-Each dataset includes:
-- Source CSV files for each table
-- Pre-computed split masks (`mask.pt`) for train/validation/test splits
-- **Mapping file** (`mapping.csv`) for Feature Augmentation (FA) strategy
-- Detailed documentation (`README.md`)
+- **Feature Augmentation (FA):** auxiliary features are horizontally joined to
+  task rows using entity mappings or nearest-neighbor matching.
+- **Data Augmentation (DA):** compatible task and auxiliary rows are vertically
+  concatenated after schema handling.
+- **Join ablations:** selected datasets include 1-NN, 2-NN, 4-NN, 8-NN, and
+  random-match variants.
 
-### Augmentation Strategies
-
-To reproduce the augmentation experiments in the paper:
-
-**Feature Augmentation (FA)**: Each dataset includes a `mapping.csv` file that provides row index correspondences between two tables for feature joining. The mapping contains:
-- `T1_index`, `T2_index`: Row indices for table matching
-- `cosine_similarity`, `cosine_distance`: Similarity metrics for the matched pairs
-
-Users can use this mapping to perform feature augmentation by joining tables based on the provided correspondences.
-
-**Data Augmentation (DA)**: Implemented via vertical concatenation (union) of tables. See the paper for detailed implementation specifications.
-
----
+The original split masks are reused by augmented task tables so methods are
+evaluated on consistent task rows.
 
 ## Baselines
 
-We provide implementations of 12+ methods across four categories:
+| Family | Methods | Maintained entry point |
+|---|---|---|
+| Tree-based | XGBoost, CatBoost, LightGBM | `codes/scripts/run_tree_models.sh` |
+| Deep tabular | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `codes/scripts/run_nn_grid_search.sh` |
+| Transfer learning | TransTab, CARTE | `codes/scripts/run_transtab.sh`, `codes/scripts/run_carte.sh` |
+| Foundation models | TabPFN v3, TabICLv2 | `codes/scripts/run_tabpfn.sh`, `codes/scripts/run_tabicl.sh` |
 
-| Category | Methods | Entry Point |
-|----------|---------|-------------|
-| **Tree-based** | XGBoost, CatBoost, LightGBM | `codes/baseline/tree_models.py` |
-| **Neural networks** | FT-Transformer, TabTransformer, ExcelFormer, SAINT, TromptNet | `codes/baseline/tnns_test.py` |
-| **Transfer learning** | TransTab, CARTE | `codes/baseline/transtab_*.py`, `codes/baseline/carte_*.py` |
-| **Foundation models** | TabPFN v2, TabICL | `codes/baseline/tabpfnv2.py`, `codes/baseline/tabicl_clf.py` |
-
----
+Tree and deep tabular baselines perform validation-based grid search before
+repeated evaluation. Transfer and foundation-model runners support repeated
+runs, per-run seeds, runtime measurement, persistent logs, and result
+aggregation.
 
 ## Quick Start
 
-Run all baseline methods with default hyperparameters:
+The tested environment uses Python 3.9 and is recorded in
+[`requirements.txt`](requirements.txt). Before running experiments, prepare
+rLLM and the external model files described in
+[`codes/lib/README.md`](codes/lib/README.md). Then activate the project
+environment and run commands from the repository root:
 
 ```bash
-bash codes/scripts/example.sh
+cd LakeMLB
+conda activate lake
 ```
 
-For systematic evaluation:
+Except for CARTE, a table is selected by dataset name and by its index in the
+dataset class's `processed_filenames` list:
 
 ```bash
-# Tree models (CPU)
-bash codes/scripts/run_tree_models.sh
+# Tree models
+bash codes/scripts/run_tree_models.sh \
+  --dataset mstraffic --table_idx 0 --device 1 --num_runs 10 --num_threads 16
 
-# Neural networks (GPU)
-bash codes/scripts/run_nn_grid_search.sh
+# Deep tabular models
+bash codes/scripts/run_nn_grid_search.sh \
+  --dataset mstraffic --table_idx 0 --gpu 1 --num_runs 10 --num_tasks 2
 
-# Transfer learning (GPU)
-bash codes/scripts/run_transtab.sh
-bash codes/scripts/run_carte.sh
+# TransTab single-table classification
+bash codes/scripts/run_transtab.sh \
+  --mode single --dataset mstraffic --table_idx 0 --gpu 1 --num_runs 10
 
-# Foundation models (GPU)
-bash codes/scripts/run_fundation_models.sh
+# TabPFN v3
+bash codes/scripts/run_tabpfn.sh \
+  --dataset mstraffic --table_idx 0 --gpu 1 --num_runs 10
+
+# TabICLv2
+bash codes/scripts/run_tabicl.sh \
+  --dataset mstraffic --table_idx 0 --gpu 1 --num_runs 10
 ```
 
----
+CARTE selects independently preprocessed tables with `--data_name` in single
+mode or `--target_data_name/--source_data_name` in joint mode.
 
-## Requirements
+See [codes/scripts/README.md](codes/scripts/README.md) for all maintained
+commands, TransTab/CARTE modes, concurrency options, output directories, and
+`nohup` usage. Every shell entry point also supports `--help`.
 
-### Dependencies
+## Outputs
 
-Modified third-party libraries are bundled in `codes/lib/` with unified data loading and standardized preprocessing:
+Experiments write persistent files under `codes/results/`:
 
-- **rllm**: Open-source library for tabular learning ([rllm-team/rllm](https://github.com/rllm-team/rllm)). For reproducibility, use branch [`Feature1-FeiyuPan`](https://github.com/FeiyuPan/rllm/tree/Feature1-FeiyuPan), which is aligned with this codebase; [`rllm-team/rllm`](https://github.com/rllm-team/rllm) `main` may change APIs during ongoing development.
-  - Clone into `codes/lib/rllm/`:
-    ```bash
-    git clone -b Feature1-FeiyuPan https://github.com/FeiyuPan/rllm.git codes/lib/rllm
-    ```
-- **transtab**, **carte_ai**: Modified versions for benchmark compatibility
+```text
+tree_models/          Tree grid-search and final results
+grid_search/tnns/     Deep-model grid-search shards and merged results
+tnns/                 Deep-model repeated-run summaries
+transfer/             TransTab and CARTE results
+foundation/           TabPFN and TabICL results
+artifacts/            Selected checkpoints and model files
+logs/                 Method-specific terminal logs
+nohup/                Optional outer logs for detached jobs
+```
 
-### External Resources
+Repeated-run JSON files retain the actual random seed, metrics, and runtime for
+each run. Summary files report aggregate statistics.
 
-**CARTE** requires FastText embeddings:
-- Download [`cc.en.300.bin.gz`](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.bin.gz)
-- Extract and place at `codes/lib/FastText/cc.en.300.bin`
+## Dependencies and Model Files
 
-**TabICL** requires model checkpoint (103 MB, not included):
-- Obtain `tabicl-classifier-v1.1-0506.ckpt`
-- Place at `codes/lib/huggingface/hub/models--jingang--TabICL-clf/snapshots/main/tabicl-classifier-v1.1-0506.ckpt`
+Pinned versions of the main packages, including PyTorch, XGBoost, CatBoost,
+LightGBM, TabPFN, TabICL, Transformers, and FAISS, are listed in
+[`requirements.txt`](requirements.txt).
 
----
+LakeMLB-adapted versions of TransTab and CARTE are retained under `codes/lib/`.
+rLLM is not bundled; the required local package layout and LakeMLB dataset
+integration requirements are documented in
+[`codes/lib/README.md`](codes/lib/README.md).
+
+External model resources:
+
+- **CARTE:** place `cc.en.300.bin` at
+  `codes/lib/FastText/cc.en.300.bin` and `kg_pretrained.pt` at
+  `codes/lib/carte_ai/data/etc/kg_pretrained.pt`. CARTE CSV files, masks, and
+  preprocessed Parquet/config files are also local-only resources.
+- **TabPFN v3:** the default classifier uses the TabPFN cache. Initial weight
+  access requires a Prior Labs account/API key and acceptance of the applicable
+  model license; `run_tabpfn.sh --model_path` can select a local checkpoint.
+- **TabICLv2:** `run_tabicl.sh` defaults to
+  `tabicl-classifier-v2-20260212.ckpt` and supports automatic download or an
+  explicit `--model_path`.
 
 ## Citation
 
@@ -152,8 +184,7 @@ If you find LakeMLB useful in your research, please cite:
 }
 ```
 
----
-
 ## License
 
-This project is provided for academic and research purposes. Refer to individual dataset README files for data provenance and licensing details.
+This project is intended for academic and research use. Refer to each dataset's
+README for provenance, citation requirements, and redistribution terms.

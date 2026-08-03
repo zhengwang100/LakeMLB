@@ -18,6 +18,8 @@ codes/lib/FastText/
 codes/lib/models/
 codes/lib/huggingface/
 codes/lib/huggingface_backup/
+codes/lib/rllm/
+codes/lib/rllm_old_version/
 
 # CARTE runtime data; keep the loader source files.
 codes/lib/carte_ai/data/*
@@ -26,9 +28,15 @@ codes/lib/carte_ai/data/*
 
 # Runtime datasets; keep reproducible construction utilities.
 codes/data/*
+!codes/data/README.md
 !codes/data/process_data/
 !codes/data/process_data/*.py
 !codes/data/process_data/*.md
+!codes/data/table_*/
+codes/data/table_*/*
+!codes/data/table_*/raw/
+codes/data/table_*/raw/*
+!codes/data/table_*/raw/README.md
 
 # Generated experiment outputs
 codes/results/
