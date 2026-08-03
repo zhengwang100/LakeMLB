@@ -295,7 +295,7 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
         all_cols = [col.lower() for col in X.columns.tolist()]
 
         X.columns = all_cols
-        # 去重：小写化后可能出现重名列，保留首次出现的列
+        # Lowercasing can create duplicate names; keep the first occurrence.
         if X.columns.duplicated().any():
             dup_cols = X.columns[X.columns.duplicated()].tolist()
             logger.warning(f"Duplicated columns after lowercasing, keep first: {dup_cols}")
@@ -321,7 +321,7 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
             if 'num' in dataset_config:
                 num_cols = dataset_config['num']
 
-        # 过滤掉在实际数据中不存在的列，避免长度不一致
+        # Remove configured columns absent from the data to avoid size mismatches.
         if dataset_config is not None:
             cols_in_data = set(X.columns)
             if 'bin' in dataset_config:
@@ -330,7 +330,8 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
                 cat_cols = [c for c in cat_cols if c in cols_in_data]
             if 'num' in dataset_config:
                 num_cols = [c for c in num_cols if c in cols_in_data]
-            # 去重列名（保持原顺序），避免重复列导致赋值长度不一致
+            # Deduplicate names while preserving order to avoid assignment
+            # length mismatches.
             def _unique_keep_order(cols):
                 seen = set()
                 result = []
@@ -388,14 +389,14 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
     # process num
     if len(num_cols) > 0:
         for col in num_cols:
-            # 强制将数值列转为数值型，非法值变为 NaN
+            # Coerce numerical columns, converting invalid values to NaN.
             X[col] = pd.to_numeric(X[col], errors="coerce")
             # X[col] = X[col].fillna(X[col].mode()[0])
             mode_series = X[col].mode()
             if not mode_series.empty:
                 X[col] = X[col].fillna(mode_series.iloc[0])
             else:
-                # 全空列或无众数时，使用 0 作为默认值
+                # Use zero when a column is empty or has no mode.
                 X[col] = X[col].fillna(0)
         X[num_cols] = MinMaxScaler().fit_transform(X[num_cols])
 
@@ -421,7 +422,7 @@ def load_single_data(dataname, dataset_config=None, encode_cat=False, data_cut=N
             if not mode_series.empty:
                 X[col] = X[col].fillna(mode_series.iloc[0])
             else:
-                # 全空列或无众数时，先填充为 "Unknown" 以便后续映射
+                # Use "Unknown" when a column is empty or has no mode.
                 X[col] = X[col].fillna("Unknown")
         if 'binary_indicator' in dataset_config:
             X[bin_cols] = X[bin_cols].astype(str).applymap(

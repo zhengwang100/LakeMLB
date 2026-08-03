@@ -1431,21 +1431,21 @@ def preprocess_data(data_name):
         data = _drop_single_unique(data)
         # drop unneeded columns
         drop_cols = [
-            "Local_Case_Number",   # 次要 ID
-            "Location"             # 已用 Latitude/Longitude
+            "Local_Case_Number",   # Secondary identifier
+            "Location"             # Represented by Latitude/Longitude
         ]
         data.drop(columns=drop_cols, inplace=True)
-        # 把时间列先转成字符串
+        # Convert the datetime column to a string representation.
         data["Crash_Date/Time"] = pd.to_datetime(
             data["Crash_Date/Time"],
             format="%m/%d/%Y %I:%M:%S %p"
         ).dt.strftime("%Y-%m-%d %H:%M:%S")
-        # 数值型列
+        # Numerical columns.
         data["Number_of_Lanes"] = data["Number_of_Lanes"].astype(float)
         data["Distance"]        = data["Distance"].astype(float)
         data["Latitude"]        = data["Latitude"].astype(float)
         data["Longitude"]       = data["Longitude"].astype(float)
-        # 类别型列转为字符串
+        # Convert categorical columns to strings.
         cat_cols = [
             "Crash_Date/Time",
             "Agency_Name",
@@ -1481,7 +1481,7 @@ def preprocess_data(data_name):
 
         le = LabelEncoder()
         data[target_name] = le.fit_transform(data[target_name])
-        # # 可选：保存映射关系以便后续解码
+        # Optionally retain the label mapping for later decoding.
         # label_mapping = dict(zip(le.classes_, le.transform(le.classes_)))
 
         # return data, {
@@ -3055,8 +3055,8 @@ def preprocess_data(data_name):
         data = _drop_single_unique(data)
         # drop unneeded columns
         drop_cols = [
-            "Local_Case_Number",   # 次要 ID
-            # "Location",            # 已用 Latitude/Longitude
+            "Local_Case_Number",   # Secondary identifier
+            # "Location",            # Represented by Latitude/Longitude
             "SE_ANNO_CAD_DATA",      # binary attachment
             "DIAGRAMLINK",           # image link
             "REPORTLINK",            # pdf link
@@ -3067,7 +3067,7 @@ def preprocess_data(data_name):
         ]
         data.drop(columns=drop_cols, errors="ignore", inplace=True)
         
-        # 把时间列转成字符串 - Maryland特有
+        # Convert the Maryland datetime column to a string representation.
         if "Crash_Date/Time" in data.columns:
             data["Crash_Date/Time"] = pd.to_datetime(
                 data["Crash_Date/Time"],
@@ -3075,7 +3075,7 @@ def preprocess_data(data_name):
                 errors="coerce"
             ).dt.strftime("%Y-%m-%d %H:%M:%S")
         
-        # datetime columns → string categories - Seattle特有
+        # Convert Seattle datetime columns to string categories.
         for dt in ["INCDATE", "INCDTTM"]:
             if dt in data.columns:
                 data[dt] = pd.to_datetime(
@@ -3084,12 +3084,12 @@ def preprocess_data(data_name):
                     infer_datetime_format=True
                 ).dt.strftime("%Y-%m-%d %H:%M:%S")
         
-        # 数值型列 - Maryland特有
+        # Maryland numerical columns.
         for col in ["Number_of_Lanes", "Distance", "Latitude", "Longitude"]:
             if col in data.columns:
                 data[col] = data[col].astype(float)
         
-        # 数值型列 - Seattle特有
+        # Seattle numerical columns.
         num_cols = [
             "PERSONCOUNT", "PEDCOUNT", "PEDCYLCOUNT",
             "VEHCOUNT", "INJURIES", "SERIOUSINJURIES",
@@ -3098,8 +3098,8 @@ def preprocess_data(data_name):
         for col in num_cols:
             if col in data.columns:
                 data[col] = data[col].astype(float)
-        # 类别型列转为字符串
-        # Maryland特有列
+        # Convert categorical columns to strings.
+        # Maryland-specific columns.
         maryland_cat_cols = [
             "Crash_Date/Time",
             "Agency_Name",
@@ -3130,7 +3130,7 @@ def preprocess_data(data_name):
             "Road_Condition",
             "Road_Division",
         ]
-        # Seattle特有列
+        # Seattle-specific columns.
         seattle_cat_cols = [
             "OBJECTID", "STATUS", "ADDRTYPE", "JUNCTIONTYPE",
             "SDOT_COLCODE", "SDOT_COLDESC",
@@ -3141,7 +3141,7 @@ def preprocess_data(data_name):
             "STCOLCODE", "ST_COLDESC",
             # "COLLISIONTYPE",
         ]
-        # 合并所有类别列
+        # Combine categorical columns from both tables.
         cat_cols = maryland_cat_cols + seattle_cat_cols
         cat_cols = [c for c in cat_cols if c in data.columns]
         for col in cat_cols:
@@ -3454,8 +3454,8 @@ def preprocess_data(data_name):
         data = _drop_single_unique(data)
         # drop unneeded columns
         drop_cols = [
-            "Local_Case_Number",   # 次要 ID
-            "Location",            # 已用 Latitude/Longitude
+            "Local_Case_Number",   # Secondary identifier
+            "Location",            # Represented by Latitude/Longitude
             "SE_ANNO_CAD_DATA",      # binary attachment
             "DIAGRAMLINK",           # image link
             "REPORTLINK",            # pdf link
@@ -3466,7 +3466,7 @@ def preprocess_data(data_name):
         ]
         data.drop(columns=drop_cols, errors="ignore", inplace=True)
         
-        # 把时间列转成字符串 - Maryland特有
+        # Convert the Maryland datetime column to a string representation.
         if "Crash_Date/Time" in data.columns:
             data["Crash_Date/Time"] = pd.to_datetime(
                 data["Crash_Date/Time"],
@@ -3474,7 +3474,7 @@ def preprocess_data(data_name):
                 errors="coerce"
             ).dt.strftime("%Y-%m-%d %H:%M:%S")
         
-        # datetime columns → string categories - Seattle特有
+        # Convert Seattle datetime columns to string categories.
         for dt in ["INCDATE", "INCDTTM"]:
             if dt in data.columns:
                 data[dt] = pd.to_datetime(
@@ -3483,12 +3483,12 @@ def preprocess_data(data_name):
                     infer_datetime_format=True
                 ).dt.strftime("%Y-%m-%d %H:%M:%S")
         
-        # 数值型列 - Maryland特有
+        # Maryland numerical columns.
         for col in ["Number_of_Lanes", "Distance", "Latitude", "Longitude"]:
             if col in data.columns:
                 data[col] = data[col].astype(float)
         
-        # 数值型列 - Seattle特有
+        # Seattle numerical columns.
         num_cols = [
             "PERSONCOUNT", "PEDCOUNT", "PEDCYLCOUNT",
             "VEHCOUNT", "INJURIES", "SERIOUSINJURIES",
@@ -3497,8 +3497,8 @@ def preprocess_data(data_name):
         for col in num_cols:
             if col in data.columns:
                 data[col] = data[col].astype(float)
-        # 类别型列转为字符串
-        # Maryland特有列
+        # Convert categorical columns to strings.
+        # Maryland-specific columns.
         maryland_cat_cols = [
             "Crash_Date/Time",
             "Agency_Name",
@@ -3529,7 +3529,7 @@ def preprocess_data(data_name):
             "Road_Condition",
             "Road_Division",
         ]
-        # Seattle特有列
+        # Seattle-specific columns.
         seattle_cat_cols = [
             "OBJECTID", "STATUS", "ADDRTYPE", "JUNCTIONTYPE",
             "SDOT_COLCODE", "SDOT_COLDESC",
@@ -3540,7 +3540,7 @@ def preprocess_data(data_name):
             "STCOLCODE", "ST_COLDESC",
             "COLLISIONTYPE",
         ]
-        # 合并所有类别列
+        # Combine categorical columns from both tables.
         cat_cols = maryland_cat_cols + seattle_cat_cols
         cat_cols = [c for c in cat_cols if c in data.columns]
         for col in cat_cols:

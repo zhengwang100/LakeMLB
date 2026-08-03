@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Merge repeated TabPFN or TabICL run files into one summary."""
+
 import argparse
 import json
 from datetime import datetime

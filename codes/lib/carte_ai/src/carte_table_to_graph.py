@@ -144,7 +144,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
         self.col_names = self.cat_col_names + self.num_col_names
 
         # self.num_transformer_ = PowerTransformer().set_output(transform="pandas")
-        # 如果用户在构造时传了 transformer，就用它；否则默认 PowerTransformer
+        # Use the supplied transformer, or PowerTransformer by default.
         if self.num_transformer is not None:
             self.num_transformer_ = self.num_transformer
         else:
@@ -202,7 +202,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
         if num_cols_exist:
             # X_numerical = self._transform_numerical(X[num_cols_exist])
             transformed = self._transform_numerical(X[num_cols_exist])
-            # 如果返回的是 ndarray，就包装回 DataFrame
+            # Wrap ndarray output in a DataFrame.
             if isinstance(transformed, np.ndarray):
                 X_numerical = pd.DataFrame(
                     transformed,
@@ -210,7 +210,7 @@ class Table2GraphTransformer(TransformerMixin, BaseEstimator):
                     columns=num_cols_exist
                 )
             else:
-                # 已经是 DataFrame 的情况
+                # The transformer already returned a DataFrame.
                 X_numerical = transformed
             #print(f"Transformed numerical columns: {X_numerical.head()}")
             # Check mean and variance for each column

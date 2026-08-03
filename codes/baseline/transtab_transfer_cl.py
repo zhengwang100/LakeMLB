@@ -27,9 +27,9 @@ from transtab_lakemlb_utils import prepare_table
 
 
 parser = argparse.ArgumentParser(description="TransTab contrastive transfer learning")
-parser.add_argument("--dataset", type=str, default="lhstocks", help="Task dataset family.")
+parser.add_argument("--dataset", type=str, default="mstraffic", help="Task dataset family.")
 parser.add_argument("--table_idx", type=int, default=0, help="Task table index.")
-parser.add_argument("--aux_dataset", type=str, default="lhstocks", help="Auxiliary dataset family.")
+parser.add_argument("--aux_dataset", type=str, default="mstraffic", help="Auxiliary dataset family.")
 parser.add_argument("--aux_table_idx", type=int, default=1, help="Auxiliary table index.")
 parser.add_argument("--work_dir", type=str, default=None)
 parser.add_argument("--ckpt_dir", type=str, default="./checkpoint")

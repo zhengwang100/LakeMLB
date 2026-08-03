@@ -55,33 +55,29 @@ done
 if [[ -z "$DATA_TAG" ]]; then
     case "${DATASET}:${TABLE_IDX}" in
         mstraffic:0) DATA_TAG="mstraffic_maryland" ;;
+        mstraffic:1) DATA_TAG="mstraffic_seattle" ;;
+        mstraffic:2) DATA_TAG="mstraffic_da" ;;
+        mstraffic:3) DATA_TAG="mstraffic_fa" ;;
+        ncbuilding:0) DATA_TAG="ncbuilding_newyork" ;;
+        ncbuilding:1) DATA_TAG="ncbuilding_chicago" ;;
+        ncbuilding:2) DATA_TAG="ncbuilding_da" ;;
+        ncbuilding:3) DATA_TAG="ncbuilding_fa" ;;
         nctaxi:0) DATA_TAG="nctaxi_newyork_taxi" ;;
-        dsmusic:0) DATA_TAG="dsmusic_discogs" ;;
-        dsmusic:3) DATA_TAG="dsmusic_fa" ;;
-        dsmusic:4) DATA_TAG="dsmusic_1nn" ;;
-        dsmusic:5) DATA_TAG="dsmusic_2nn" ;;
-        dsmusic:6) DATA_TAG="dsmusic_4nn" ;;
-        dsmusic:7) DATA_TAG="dsmusic_8nn" ;;
-        dsmusic:8) DATA_TAG="dsmusic_random" ;;
-        agbooks:0) DATA_TAG="agbooks_amazon" ;;
-        agbooks:2) DATA_TAG="agbooks_amazon_enriched" ;;
-        agbooks:4) DATA_TAG="agbooks_amazon_no_features" ;;
-        agbooks:5) DATA_TAG="agbooks_amazon_no_features_10k" ;;
-        agbooks:6) DATA_TAG="agbooks_1nn" ;;
-        agbooks:7) DATA_TAG="agbooks_2nn" ;;
-        agbooks:8) DATA_TAG="agbooks_4nn" ;;
-        agbooks:9) DATA_TAG="agbooks_8nn" ;;
-        agbooks:10) DATA_TAG="agbooks_random" ;;
+        nctaxi:1) DATA_TAG="nctaxi_chicago_taxi" ;;
+        nctaxi:2) DATA_TAG="nctaxi_da" ;;
+        nctaxi:3) DATA_TAG="nctaxi_fa" ;;
         nnstocks:0) DATA_TAG="nnstocks_nnlist" ;;
         nnstocks:1) DATA_TAG="nnstocks_nnwiki" ;;
         nnstocks:2) DATA_TAG="nnstocks_da" ;;
         nnstocks:3) DATA_TAG="nnstocks_fa" ;;
-        nnstocks:4) DATA_TAG="stocks_wiki_llm_1nn" ;;
-        nnstocks:5) DATA_TAG="t1_enriched_rank2" ;;
-        nnstocks:6) DATA_TAG="t1_enriched_rank4" ;;
-        nnstocks:7) DATA_TAG="t1_enriched_rank8" ;;
-        nnstocks:8) DATA_TAG="stocks_wiki_tfidf_1nn" ;;
-        nnstocks:9) DATA_TAG="t1_enriched_random" ;;
+        dsmusic:0) DATA_TAG="dsmusic_discogs" ;;
+        dsmusic:1) DATA_TAG="dsmusic_spotify" ;;
+        dsmusic:2) DATA_TAG="dsmusic_da" ;;
+        dsmusic:3) DATA_TAG="dsmusic_fa" ;;
+        agbooks:0) DATA_TAG="agbooks_amazon" ;;
+        agbooks:1) DATA_TAG="agbooks_goodreads" ;;
+        agbooks:2) DATA_TAG="agbooks_da" ;;
+        agbooks:3) DATA_TAG="agbooks_fa" ;;
         *) DATA_TAG="${DATASET}_table${TABLE_IDX}" ;;
     esac
 fi
@@ -167,7 +163,7 @@ if [[ "$FAILED" -gt 0 ]]; then
 fi
 
 SUMMARY_JSON="$RESULTS_DIR/summary_${NUM_RUNS}runs_${TS}.json"
-"$PYTHON" "$SCRIPT_DIR/merge_foundation_results.py" \
+"$PYTHON" "$BASELINE_DIR/merge_foundation_results.py" \
     --model tabpfn \
     --dataset "$DATA_TAG" \
     --log_path "$MAIN_LOG" \

@@ -11,15 +11,13 @@ sys.path.insert(0, osp.join(osp.dirname(__file__), "..", ".."))
 sys.path.insert(0, osp.join(osp.dirname(__file__), "..", "lib"))
 
 from transtab.dataset import create_dataset_config
-from rllm.datasets import (
+from rllm.datasets.lakemlb import (
+    AGBooksDataset,
+    DSMusicDataset,
     MSTrafficDataset,
     NCBuildingDataset,
-    GACarsDataset,
-    NNStocksDataset,
-    LHStocksDataset,
-    DSMusicDataset,
     NCTaxiDataset,
-    AGBooksDataset,
+    NNStocksDataset,
 )
 
 
@@ -28,11 +26,9 @@ DATA_DIR = osp.abspath(osp.join(osp.dirname(__file__), "..", "data"))
 DATASET_REGISTRY = {
     "mstraffic": MSTrafficDataset,
     "ncbuilding": NCBuildingDataset,
-    "gacars": GACarsDataset,
-    "nnstocks": NNStocksDataset,
-    "lhstocks": LHStocksDataset,
-    "dsmusic": DSMusicDataset,
     "nctaxi": NCTaxiDataset,
+    "nnstocks": NNStocksDataset,
+    "dsmusic": DSMusicDataset,
     "agbooks": AGBooksDataset,
 }
 
@@ -42,55 +38,37 @@ TABLE_TAGS = {
         1: "mstraffic_seattle",
         2: "mstraffic_da",
         3: "mstraffic_fa",
-        4: "mstraffic_seattle_25pct",
-        5: "mstraffic_seattle_50pct",
-        6: "mstraffic_seattle_75pct",
+    },
+    "ncbuilding": {
+        0: "ncbuilding_newyork",
+        1: "ncbuilding_chicago",
+        2: "ncbuilding_da",
+        3: "ncbuilding_fa",
     },
     "nctaxi": {
         0: "nctaxi_newyork_taxi",
         1: "nctaxi_chicago_taxi",
         2: "nctaxi_da",
         3: "nctaxi_fa",
-        4: "nctaxi_chicago_25pct",
-        5: "nctaxi_chicago_50pct",
-        6: "nctaxi_chicago_75pct",
     },
     "dsmusic": {
         0: "dsmusic_discogs",
         1: "dsmusic_spotify",
         2: "dsmusic_da",
         3: "dsmusic_fa",
-        4: "dsmusic_1nn",
-        5: "dsmusic_2nn",
-        6: "dsmusic_4nn",
-        7: "dsmusic_8nn",
-        8: "dsmusic_random",
     },
     "agbooks": {
         0: "agbooks_amazon",
         1: "agbooks_goodreads",
-        2: "agbooks_amazon_enriched",
-        4: "agbooks_amazon_no_features",
-        5: "agbooks_amazon_no_features_10k",
-        6: "agbooks_1nn",
-        7: "agbooks_2nn",
-        8: "agbooks_4nn",
-        9: "agbooks_8nn",
-        10: "agbooks_random",
+        2: "agbooks_da",
+        3: "agbooks_fa",
     },
     "nnstocks": {
         0: "nnstocks_nnlist",
         1: "nnstocks_nnwiki",
         2: "nnstocks_da",
         3: "nnstocks_fa",
-        4: "stocks_wiki_llm_1nn",
-        5: "t1_enriched_rank2",
-        6: "t1_enriched_rank4",
-        7: "t1_enriched_rank8",
-        8: "stocks_wiki_tfidf_1nn",
-        9: "t1_enriched_random",
     },
-    "lhstocks": {0: "lhstocks_lhlist", 1: "lhstocks_lhwiki", 2: "lhstocks_da", 3: "lhstocks_fa"},
 }
 
 

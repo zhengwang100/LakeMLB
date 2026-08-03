@@ -140,7 +140,7 @@ class BaseCARTEEstimator(BaseEstimator):
         )
 
         # Initialize GradScaler
-        # 对于 torch.amp，默认使用 'cuda'，CPU 上会自动降级为 no-op
+        # Select the GradScaler device from the configured training device.
         scaler = GradScaler(device='cuda' if self.device_.type == 'cuda' else 'cpu')
 
         # Train model
@@ -184,12 +184,12 @@ class BaseCARTEEstimator(BaseEstimator):
         data.to(self.device_)  # Send to device
 
         # with amp.autocast():  # Enable autocasting
-        # —— 根据 device 决定是否启用混合精度 —— 
+        # Enable mixed precision only on CUDA.
         if self.device_.type == "cuda":
-            # GPU 上开启 autocast；device_type 参数必填
+            # autocast requires an explicit device_type.
             autocast_ctx = autocast(device_type="cuda")
         else:
-            # CPU 上跳过混合精度
+            # Skip mixed precision on CPU.
             autocast_ctx = contextlib.nullcontext()
         with autocast_ctx:
             out = model(data)  # Perform a single forward pass.
@@ -225,7 +225,7 @@ class BaseCARTEEstimator(BaseEstimator):
         """
         with torch.no_grad():
             model.eval()
-            # —— 根据 device 决定是否启用混合精度 —— 
+            # Enable mixed precision only on CUDA.
             device_obj = getattr(self, "device_", None)
             if device_obj is not None and device_obj.type == "cuda":
                 eval_ctx = autocast(device_type="cuda")
@@ -240,7 +240,7 @@ class BaseCARTEEstimator(BaseEstimator):
                 if self.output_dim_ == 1:
                     out = out.view(-1).to(torch.float32)
                     target = target.to(torch.float32)
-                # 更新并计算验证损失
+                # Update and compute the validation loss.
                 self.valid_loss_metric_.update(out, target)
                 loss_eval = self.valid_loss_metric_.compute()
                 loss_eval = loss_eval.detach().item()
@@ -1363,7 +1363,7 @@ class CARTEMultitableClassifer(ClassifierMixin, BaseCARTEMultitableEstimator):
         raw_predictions : array, shape (n_samples,) or (n_samples, n_classes)
             The raw predicted values.
         """
-        # 1. 收集各 domain（source_name）下所有模型的输出
+        # 1. Collect model outputs for each domain (source_name).
         out_list = []
         for source_name in self.source_list_total_:
             idxs = np.where(np.array(self.source_list_) == source_name)[0]
@@ -1371,27 +1371,28 @@ class CARTEMultitableClassifer(ClassifierMixin, BaseCARTEMultitableEstimator):
             preds = self._generate_output(X, model_list=model_list, weights=None)
             out_list.append(preds)
 
-        # 转为 numpy 数组：可能是 (n_domains, n_samples) 或 (n_domains, n_samples, n_classes)
+        # Convert to either (n_domains, n_samples) or
+        # (n_domains, n_samples, n_classes).
         arr = np.array(out_list)
 
-        # 2. 根据维度做加权平均
+        # 2. Compute a weighted average based on dimensionality.
         if arr.ndim == 2:
-            # 回归或二分类 logits 情况
-            # arr.shape == (n_domains, n_samples) -> 转置为 (n_samples, n_domains)
+            # Regression or binary-classification logits.
+            # Transpose (n_domains, n_samples) to (n_samples, n_domains).
             arr2 = arr.T
             domain_count = arr2.shape[1]
-            # 如果 weights_ 无效，则退回到等权
+            # Fall back to uniform weights if weights_ is invalid.
             if getattr(self, "weights_", None) is None or len(self.weights_) != domain_count:
                 w = np.ones(domain_count) / domain_count
                 print("Return the right weight!!")
             else:
                 w = self.weights_
                 print("Everything works fine!!")
-            # 点积得到 (n_samples,)
+            # The dot product produces (n_samples,).
             out = arr2.dot(w)
 
         elif arr.ndim == 3:
-            # 多分类 logits/proba 情况
+            # Multiclass logits or probabilities.
             # arr.shape == (n_domains, n_samples, n_classes)
             domain_count = arr.shape[0]
             if getattr(self, "weights_", None) is None or len(self.weights_) != domain_count:
@@ -1400,19 +1401,19 @@ class CARTEMultitableClassifer(ClassifierMixin, BaseCARTEMultitableEstimator):
             else:
                 w = self.weights_
                 print("Everything works fine!!")
-            # tensordot 得到 (n_samples, n_classes)
+            # tensordot produces (n_samples, n_classes).
             out = np.tensordot(w, arr, axes=(0, 0))
 
         else:
             raise ValueError(f"Unexpected output array shape {arr.shape}")
 
-        # 3. 根据 loss 进行 sigmoid 或 softmax
+        # 3. Apply sigmoid or softmax according to the loss.
         if self.loss == "binary_crossentropy":
             out = 1 / (1 + np.exp(-out))
         elif self.loss == "categorical_crossentropy":
             out = softmax(out, axis=1)
 
-        # 4. 对可能出现的 NaN 用整体均值填充
+        # 4. Replace any NaN predictions with the global target mean.
         if np.isnan(out).any():
             global_mean = np.mean(self.y_)
             out = np.where(np.isnan(out), global_mean, out)

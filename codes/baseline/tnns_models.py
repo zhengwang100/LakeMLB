@@ -15,6 +15,10 @@ from rllm.nn.conv.table_conv import (
     SAINTConv,
     TromptConv,
 )
+from rllm.nn.encoder import (
+    FTTransformerPreEncoder,
+    TabTransformerPreEncoder,
+)
 
 
 class FTTransformer(torch.nn.Module):
@@ -28,15 +32,12 @@ class FTTransformer(torch.nn.Module):
     ):
         super().__init__()
         self.task = task
-        self.convs = torch.nn.ModuleList()
-        self.convs.append(
-            FTTransformerConv(
-                conv_dim=hidden_dim,
-                use_pre_encoder=True,
-                metadata=metadata,
-            )
+        self.pre_encoder = FTTransformerPreEncoder(
+            out_dim=hidden_dim,
+            metadata=metadata,
         )
-        for _ in range(layers - 1):
+        self.convs = torch.nn.ModuleList()
+        for _ in range(layers):
             self.convs.append(
                 FTTransformerConv(conv_dim=hidden_dim)
             )
@@ -49,6 +50,7 @@ class FTTransformer(torch.nn.Module):
 
     def forward(self, table_data: SimpleNamespace):
         x = table_data.feat_dict if hasattr(table_data, "feat_dict") else table_data
+        x = self.pre_encoder(x)
         for conv in self.convs:
             x = conv(x)
         out = self.fc(x[:, 0, :])
@@ -69,16 +71,12 @@ class TabTransformer(torch.nn.Module):
     ):
         super().__init__()
         self.task = task
-        self.convs = torch.nn.ModuleList()
-        self.convs.append(
-            TabTransformerConv(
-                conv_dim=hidden_dim,
-                num_heads=num_heads,
-                use_pre_encoder=True,
-                metadata=metadata,
-            )
+        self.pre_encoder = TabTransformerPreEncoder(
+            out_dim=hidden_dim,
+            metadata=metadata,
         )
-        for _ in range(layers - 1):
+        self.convs = torch.nn.ModuleList()
+        for _ in range(layers):
             self.convs.append(
                 TabTransformerConv(conv_dim=hidden_dim, num_heads=num_heads)
             )
@@ -93,6 +91,7 @@ class TabTransformer(torch.nn.Module):
 
     def forward(self, table_data: SimpleNamespace):
         x = table_data.feat_dict if hasattr(table_data, "feat_dict") else table_data
+        x = self.pre_encoder(x, return_dict=True)
         for conv in self.convs:
             x = conv(x)
         if ColType.CATEGORICAL in x:
@@ -118,15 +117,12 @@ class ExcelFormer(torch.nn.Module):
     ):
         super().__init__()
         self.task = task
-        self.convs = torch.nn.ModuleList()
-        self.convs.append(
-            ExcelFormerConv(
-                conv_dim=hidden_dim,
-                use_pre_encoder=True,
-                metadata=metadata,
-            )
+        self.pre_encoder = FTTransformerPreEncoder(
+            out_dim=hidden_dim,
+            metadata=metadata,
         )
-        for _ in range(layers - 1):
+        self.convs = torch.nn.ModuleList()
+        for _ in range(layers):
             self.convs.append(
                 ExcelFormerConv(conv_dim=hidden_dim)
             )
@@ -139,6 +135,7 @@ class ExcelFormer(torch.nn.Module):
 
     def forward(self, table_data: SimpleNamespace):
         x = table_data.feat_dict if hasattr(table_data, "feat_dict") else table_data
+        x = self.pre_encoder(x)
         for conv in self.convs:
             x = conv(x)
         out = self.fc(x.mean(dim=1))
@@ -159,20 +156,16 @@ class SAINT(torch.nn.Module):
     ):
         super().__init__()
         self.task = task
-        self.convs = torch.nn.ModuleList()
-        self.convs.append(
-            SAINTConv(
-                conv_dim=hidden_dim,
-                num_feats=num_feats,
-                use_pre_encoder=True,
-                metadata=metadata,
-            )
+        self.pre_encoder = FTTransformerPreEncoder(
+            out_dim=hidden_dim,
+            metadata=metadata,
         )
-        for _ in range(layers - 1):
+        self.convs = torch.nn.ModuleList()
+        for _ in range(layers):
             self.convs.append(
                 SAINTConv(
                     conv_dim=hidden_dim,
-                    num_feats=num_feats,
+                    num_cols=num_feats,
                 )
             )
         self.fc = torch.nn.Sequential(
@@ -183,6 +176,7 @@ class SAINT(torch.nn.Module):
 
     def forward(self, table_data: SimpleNamespace):
         x = table_data.feat_dict if hasattr(table_data, "feat_dict") else table_data
+        x = self.pre_encoder(x)
         for conv in self.convs:
             x = conv(x)
         out = self.fc(x.mean(dim=1))
@@ -214,7 +208,6 @@ class TromptNet(torch.nn.Module):
                     in_dim=in_dim,
                     out_dim=hidden_dim,
                     num_prompts=num_prompts,
-                    use_pre_encoder=True,
                     metadata=metadata,
                 )
             )
@@ -370,4 +363,3 @@ AVAILABLE_MODELS = [
     "saint",
     "tromptnet",
 ]
-
